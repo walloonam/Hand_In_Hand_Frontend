@@ -40,6 +40,11 @@ a {
     margin-left: 3.87rem;
 }
 
+.logo_btn img {
+    width: 5rem;
+    height: 3.5165rem;
+}
+
 .nav_menu {
     /* position: absolute; */
     flex: 2;
