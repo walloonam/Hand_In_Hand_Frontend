@@ -1,0 +1,166 @@
+body {
+  margin-top: 4.56rem;
+}
+
+.findID_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#findID_arrow {
+  width: 2.1875rem;
+  height: 1.36719rem;
+  flex-shrink: 0;
+}
+
+.findID_header p {
+  color: #434343;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.bottom_findID_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom_findID_header img {
+  width: 9.0625rem;
+  height: 7.375rem;
+  flex-shrink: 0;
+  margin-top: 3.31rem;
+  margin-bottom: 1.81rem;
+}
+
+.findID_header_box {
+  position: relative;
+}
+
+#findID_IDbox {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 9.375rem;
+  height: 3.75rem;
+  flex-shrink: 0;
+  border-radius: 3rem;
+  border: 1px solid #000;
+  background: #3a7dff;
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#findID_pwbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 18.75rem;
+  height: 3.75rem;
+  flex-shrink: 0;
+  border-radius: 3rem;
+  border: 1px solid #000;
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+  padding-right: 30px;
+}
+
+.wrap_findID_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.12rem;
+}
+
+.name_content p,
+.birth_content p {
+  color: #474747;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-left: 0.94rem;
+  margin-bottom: 0.44rem;
+}
+
+#findID_name_input,
+#findID_birth_input {
+  width: 25rem;
+  height: 3.125rem;
+  flex-shrink: 0;
+  border-radius: 0.9375rem;
+  border: 1px solid #9b9b9b;
+  padding-left: 30px;
+}
+
+#findID_name_input::placeholder,
+#findID_birth_input::placeholder {
+  color: #acacac;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.findID_error {
+  display: flex;
+  margin-left: 0.94rem;
+}
+
+.findID_error p {
+  color: #f00;
+  text-align: right;
+  font-family: Inter;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.findID_button {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.18rem;
+}
+
+#findID_button {
+  width: 24.9375rem;
+  height: 4.0625rem;
+  flex-shrink: 0;
+  border-radius: 3rem;
+  border: none;
+  background: #3a7dff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.375rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
