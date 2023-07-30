@@ -1,0 +1,165 @@
+body {
+  margin-top: 6.63rem;
+  margin-bottom: 9.25rem;
+}
+
+.login_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login_header img {
+  width: 9.0625rem;
+  height: 7.375rem;
+  flex-shrink: 0;
+}
+
+.login_header p {
+  color: #434343;
+  text-align: right;
+  font-family: Inter;
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+  margin-top: 1.19rem;
+}
+
+#bottom_header img {
+  margin-left: 17.88rem;
+}
+
+.wrap_login_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.id_content p {
+  color: #474747;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 0.31rem;
+  margin-left: 0.94rem;
+}
+
+#id_input {
+  width: 25rem;
+  height: 3.125rem;
+  flex-shrink: 0;
+  border-radius: 0.9375rem;
+  border: 1px solid #9b9b9b;
+  padding-left: 30px;
+}
+
+#id_input::placeholder {
+  color: #acacac;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.pw_content p {
+  color: #474747;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 0.31rem;
+  margin-left: 0.94rem;
+}
+
+#pw_input {
+  width: 25rem;
+  height: 3.125rem;
+  flex-shrink: 0;
+  border-radius: 0.9375rem;
+  border: 1px solid #9b9b9b;
+  padding-left: 30px;
+}
+
+#pw_input::placeholder {
+  color: #acacac;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.wrap_login_button {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#email_login_button {
+  width: 27rem;
+  height: 3.4375rem;
+  flex-shrink: 0;
+  border-radius: 3rem;
+  border: none;
+  background: #3a7dff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  margin-bottom: 0.81rem;
+}
+
+#email_login_button a {
+  color: #fff;
+  font-family: Inter;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+}
+
+#google_login_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 27rem;
+  height: 3.4375rem;
+  flex-shrink: 0;
+  border-radius: 3rem;
+  border: 1px solid #4b4b4b;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.45);
+}
+
+#google_login_button div {
+  display: flex;
+  align-items: center;
+}
+
+#google_login_button div a {
+  color: #000;
+  font-family: Inter;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+  margin-left: 2.19rem;
+}
+
+.login_footer a {
+  color: #929292;
+  text-align: right;
+  font-family: Inter;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration: none;
+}
