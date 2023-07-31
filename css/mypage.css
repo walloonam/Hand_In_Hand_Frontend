@@ -1,0 +1,171 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.1rem;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/********** nav **********/
+
+.nav_bar {
+    /* position: relative; */
+    width: 67.1875rem;
+    height: 10.7625rem;
+    margin: 0 auto;
+    display: flex;
+    border-bottom: solid 0.0625rem #B2B2B2;
+}
+
+.back_btn {
+    width: 2.1875rem;
+    height: 1.36719rem;
+    margin-top: 5.99rem;
+}
+
+.logo_btn {
+    /* position: absolute; */
+    width: 5rem;
+    height: 3.5165rem;
+    margin-top: 5.99rem;
+    margin-left: 2.51rem;
+}
+
+.logo_btn img {
+    width: 5rem;
+    height: 3.5165rem;
+}
+
+.nav_menu {
+    /* position: absolute; */
+    flex: 2;
+    margin-top: 6.5rem;
+    margin-left: 1.69rem;
+}
+
+.nav_menu ul {
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+.nav_menu ul li {
+    font-size: 1.875rem;
+    font-weight: 700;
+}
+
+.chatting_a {
+    color: #3A7DFF;
+}
+
+.nav_chat {
+    margin-top: 6.94rem;
+    margin-left: 5.62rem;
+    margin-right: 1.94rem;
+}
+
+.chat_btn {
+    width: 9.4375rem;
+    height: 2.8125rem;
+    border: 2px solid #727272;
+    border-radius: 1.25rem;
+    background-color: #727272;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #FFF;
+}
+
+.chat_btn:hover {
+    cursor: pointer;
+}
+
+.nav_logout {
+    display: flex;
+    margin-top: 7.63rem;
+    margin-right: 1.37rem;
+}
+
+.nav_logout a {
+    margin: 0;
+    margin-top: 0.25rem;
+    height: 1.375rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    white-space: nowrap;
+    color: #000;
+}
+
+.nav_logout img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.nav_logout img:hover {
+    cursor: pointer;
+}
+
+.nav_mypage {
+    display: flex;
+    margin-top: 7.63rem;
+    margin-right: 0.94rem;
+}
+
+.nav_mypage img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.nav_mypage img:hover {
+    cursor: pointer;
+}
+
+.nav_mypage a {
+    margin: 0;
+    margin-top: 0.25rem;
+    height: 1.375rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    white-space: nowrap;
+    color: #000;
+}
+
+
+/********** container **********/
+
+.container {
+    /* background-color: #B2B2B2; */
+    margin: 0 auto;
+    width: 67.1875rem;
+    overflow: hidden;
+}
+
+
+/*** back ***/
+
+.back {
+    background-color: #C2D3F5;
+    border-radius: 1.875rem;
+    border: 2px solid #6D6D6D;
+    width: 59.375rem;
+    height: 34.255548rem;
+    margin: 0 auto;
+    margin-top: 1.44rem;
+}
