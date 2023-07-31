@@ -35,12 +35,18 @@ a {
     border-bottom: solid 0.0625rem #B2B2B2;
 }
 
+.back_btn {
+    width: 2.1875rem;
+    height: 1.36719rem;
+    margin-top: 5.99rem;
+}
+
 .logo_btn {
     /* position: absolute; */
     width: 5rem;
     height: 3.5165rem;
     margin-top: 5.99rem;
-    margin-left: 3.87rem;
+    margin-left: 2.51rem;
 }
 
 .logo_btn img {
@@ -145,7 +151,7 @@ a {
 /********** container **********/
 
 .container {
-    background-color: #B2B2B2;
+    /* background-color: #B2B2B2; */
     margin: 0 auto;
     width: 67.1875rem;
 }
@@ -154,7 +160,7 @@ a {
 /*** wrap_bar ***/
 
 .wrap_bar {
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     height: 3.00399rem;
     margin-top: 0.8rem;
     margin-bottom: 0.8rem;
@@ -241,8 +247,8 @@ a {
 /*** wrap_content ***/
 
 .wrap_content {
-    background-color: gold;
-    height: 34.2555rem;
+    /* background-color: gold; */
+    margin-bottom: 2.46rem;
 }
 
 .back {
@@ -281,7 +287,7 @@ a {
 }
 
 .wrap_list {
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     overflow: auto;
     height: 27rem;
     white-space: nowrap;
@@ -309,6 +315,10 @@ a {
     letter-spacing: -0.05rem;
 }
 
+.entity:hover {
+    cursor: pointer;
+}
+
 .profile_img {
     height: 2.3125rem;
     margin-top: 0.58rem;
@@ -324,6 +334,7 @@ a {
 .infor {
     margin-top: 0.58rem;
     margin-left: 0.3rem;
+    margin-right: 1.91rem;
     display: flex;
     flex-direction: column;
 }
@@ -344,7 +355,6 @@ a {
     display: flex;
     flex-direction: column;
     margin-top: 0.57rem;
-    margin-left: 1.91rem;
 }
 
 .func a {
@@ -364,7 +374,7 @@ a {
 /* 채팅창 */
 
 .chat {
-    background-color: #929292;
+    /* background-color: #929292; */
     width: 37.96288rem;
     height: 31.67675rem;
     margin-top: 1.29rem;
@@ -404,8 +414,8 @@ a {
 .point img {
     margin-top: 1.35rem;
     width: 1.91769rem;
-    width: 1.91769rem;
-    height: 1.91769rem;
+    height: 1.97978rem;
+    object-fit: contain;
 }
 
 .point p {
@@ -431,7 +441,7 @@ a {
 }
 
 .user_infor {
-    background-color: grey;
+    /* background-color: grey; */
     height: 4.67406rem;
     margin-top: 1.26rem;
     display: flex;
@@ -473,9 +483,39 @@ a {
 }
 
 .chat_area {
-    background-color: #3A7DFF;
+    /* background-color: #3A7DFF; */
     height: 12.92rem;
     margin-top: 1.26rem;
+    overflow: auto;
+}
+
+.chat_area::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat_area::-webkit-scrollbar-thumb {
+    background: #757575;
+    border-radius: 10px;
+}
+
+.chat_area p {
+    padding: 1rem;
+}
+
+.other_chat {
+    background-color: #FFF;
+    width: 16.86249rem;
+    border-radius: 0rem 1.875rem 1.875rem 1.875rem;
+    margin-left: 1.72rem;
+    margin-bottom: 0.56rem;
+}
+
+.my_chat {
+    background-color: #FFF;
+    width: 16.86249rem;
+    border-radius: 1.875rem 0rem 1.875rem 1.875rem;
+    margin-left: 19.38249rem;
+    margin-bottom: 0.56rem;
 }
 
 .input_area {
@@ -490,15 +530,20 @@ a {
 
 .text_content {
     overflow: scroll;
-    margin-top: 0.82rem;
+    margin-top: 0.42rem;
     margin-left: 0.72rem;
     width: 36.4rem;
     height: 2rem;
     font-size: 0.9375rem;
+    border: none;
+}
+
+.text_content:focus {
+    outline: none;
 }
 
 .chat_func {
-    background-color: #A1A1A1;
+    /* background-color: #A1A1A1; */
     margin-top: 0.3rem;
     display: flex;
 }
@@ -516,10 +561,13 @@ a {
 }
 
 .wrap_number {
-    margin-left: 26.16rem;
+    margin-left: 23.16rem;
+    width: 4rem;
+    display: flex;
+    justify-content: flex-end;
 }
 
-.char_num {
+.wrap_number p {
     color: #6D6D6D;
     font-size: 0.625rem;
     font-weight: 700;
@@ -543,4 +591,8 @@ a {
     color: #FFF;
     font-weight: 700;
     border: none;
+}
+
+.send_btn:hover {
+    cursor: pointer;
 }
