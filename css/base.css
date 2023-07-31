@@ -32,12 +32,18 @@ a {
     border-bottom: solid 0.0625rem #B2B2B2;
 }
 
+.back_btn {
+    width: 2.1875rem;
+    height: 1.36719rem;
+    margin-top: 5.99rem;
+}
+
 .logo_btn {
     /* position: absolute; */
     width: 5rem;
     height: 3.5165rem;
     margin-top: 5.99rem;
-    margin-left: 3.87rem;
+    margin-left: 2.51rem;
 }
 
 .logo_btn img {
@@ -48,8 +54,8 @@ a {
 .nav_menu {
     /* position: absolute; */
     flex: 2;
-    margin-top: 7.44rem;
-    margin-left: 2.94rem;
+    margin-top: 6.5rem;
+    margin-left: 1.69rem;
 }
 
 .nav_menu ul {
