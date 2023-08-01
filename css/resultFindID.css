@@ -1,0 +1,87 @@
+body {
+  margin-top: 4.56rem;
+}
+
+.resultFindID_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#resultFindID_arrow {
+  width: 2.1875rem;
+  height: 1.36719rem;
+  flex-shrink: 0;
+}
+
+.resultFindID_header p {
+  color: #434343;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.bottom_resultFindID_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom_resultFindID_header img {
+  width: 12.5rem;
+  height: 12.5rem;
+  flex-shrink: 0;
+  margin-bottom: 1.7rem;
+}
+
+.wrap_resultFindID_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.email_box {
+  width: 24.9375rem;
+  height: 8.57738rem;
+  flex-shrink: 0;
+  border-radius: 3rem;
+  border: 1px solid #000;
+}
+
+#resultFindID_login_button {
+  width: 24.9375rem;
+  height: 4.0625rem;
+  flex-shrink: 0;
+  border-radius: 3rem;
+  border: none;
+  background: #3a7dff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 1rem;
+}
+
+#resultFindID_back_button {
+  width: 24.9375rem;
+  height: 4.0625rem;
+  flex-shrink: 0;
+  border-radius: 3rem;
+  border: 1px solid #000;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #000;
+  text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
