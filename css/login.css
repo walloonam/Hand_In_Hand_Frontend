@@ -10,8 +10,8 @@ body {
 }
 
 .login_header img {
-  width: 9.0625rem;
-  height: 7.375rem;
+  width: 12.5rem;
+  height: 12.5rem;
   flex-shrink: 0;
 }
 
@@ -36,6 +36,23 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 1.5rem;
+}
+
+.login_content {
+  display: flex;
+  flex-direction: column;
+}
+
+.id_content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pw_content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .id_content p,
@@ -70,8 +87,10 @@ body {
   line-height: normal;
 }
 
-#wrap_login_error {
+.login_error {
   display: flex;
+  align-items: flex-start;
+  margin-left: 0.44rem;
 }
 
 .login_error p {
@@ -86,6 +105,7 @@ body {
 .wrap_login_button {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin-bottom: 1.5rem;
 }
 
@@ -97,7 +117,6 @@ body {
   border: none;
   background: #3a7dff;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
   margin-bottom: 0.81rem;
 }
 
@@ -113,7 +132,7 @@ body {
 
 #google_login_button {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 27rem;
   height: 3.4375rem;
@@ -137,6 +156,15 @@ body {
   line-height: normal;
   text-decoration: none;
   margin-left: 2.19rem;
+}
+
+#google_login_button div img {
+  margin-left: 2.88rem;
+}
+
+.login_footer {
+  display: flex;
+  justify-content: center;
 }
 
 .login_footer a {

@@ -55,7 +55,7 @@ body {
 
 .home_header {
   display: flex;
-  align-items: baseline;
+  align-items: flex-end;
   margin-top: 6.13rem;
 }
 
@@ -72,9 +72,8 @@ body {
 }
 
 .home_header img {
-  width: 4.375rem;
-  height: 3.82875rem;
-  transform: rotate(-13.559deg);
+  width: 10rem;
+  height: 10rem;
   flex-shrink: 0;
 }
 

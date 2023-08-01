@@ -30,10 +30,9 @@ body {
 }
 
 .bottom_signup_header img {
-  width: 9.0625rem;
-  height: 7.375rem;
+  width: 12.5rem;
+  height: 12.5rem;
   flex-shrink: 0;
-  margin-top: 3.31rem;
 }
 
 .wrap_signup_content {

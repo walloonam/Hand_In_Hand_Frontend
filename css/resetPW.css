@@ -2,19 +2,19 @@ body {
   margin-top: 4.56rem;
 }
 
-.findID_header {
+.resetPW_header {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-#findID_arrow {
+#resetPW_arrow {
   width: 2.1875rem;
   height: 1.36719rem;
   flex-shrink: 0;
 }
 
-.findID_header p {
+.resetPW_header p {
   color: #434343;
   text-align: center;
   font-family: Inter;
@@ -24,26 +24,46 @@ body {
   line-height: normal;
 }
 
-.bottom_findID_header {
+.bottom_resetPW_header {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.bottom_findID_header img {
+.bottom_resetPW_header img {
   width: 12.5rem;
   height: 12.5rem;
   flex-shrink: 0;
 }
 
-.findID_header_box {
+.resetPW_header_box {
   position: relative;
 }
 
-#findID_IDbox {
+#resetPW_IDbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 18.75rem;
+  height: 3.75rem;
+  flex-shrink: 0;
+  border-radius: 3rem;
+  border: 1px solid #000;
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+  padding-left: 2.03rem;
+}
+
+#resetPW_PWbox {
   position: absolute;
-  left: 0;
+  left: 55%;
   top: 50%;
   transform: translateY(-50%);
   width: 9.375rem;
@@ -66,35 +86,15 @@ body {
   justify-content: center;
 }
 
-#findID_pwbox {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 18.75rem;
-  height: 3.75rem;
-  flex-shrink: 0;
-  border-radius: 3rem;
-  border: 1px solid #000;
-  color: #000;
-  text-align: center;
-  font-family: Inter;
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  text-decoration: none;
-  padding-right: 30px;
-}
-
-.wrap_findID_content {
+.wrap_resetPW_content {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 1.12rem;
 }
 
-.name_content p,
-.birth_content p {
+.pw_content p,
+.pwcheck_content p {
   color: #474747;
   font-family: Inter;
   font-size: 1.125rem;
@@ -105,8 +105,8 @@ body {
   margin-bottom: 0.44rem;
 }
 
-#findID_name_input,
-#findID_birth_input {
+#resetPW_pw_input,
+#resetPW_pwcheck_input {
   width: 25rem;
   height: 3.125rem;
   flex-shrink: 0;
@@ -115,8 +115,8 @@ body {
   padding-left: 30px;
 }
 
-#findID_name_input::placeholder,
-#findID_birth_input::placeholder {
+#resetPW_pw_input::placeholder,
+#resetPW_pwcheck_input::placeholder {
   color: #acacac;
   font-family: Inter;
   font-size: 1.125rem;
@@ -125,12 +125,12 @@ body {
   line-height: normal;
 }
 
-.findID_error {
+.resetPW_error {
   display: flex;
   margin-left: 0.94rem;
 }
 
-.findID_error p {
+.resetPW_error p {
   color: #f00;
   text-align: right;
   font-family: Inter;
@@ -140,13 +140,13 @@ body {
   line-height: normal;
 }
 
-.findID_button {
+.resetPW_button {
   display: flex;
   justify-content: center;
 }
 
-#findID_button {
-  width: 24.9375rem;
+#resetPW_button {
+  width: 26.81025rem;
   height: 4.0625rem;
   flex-shrink: 0;
   border-radius: 3rem;
