@@ -1,0 +1,361 @@
+body {
+  margin-top: 4.56rem;
+  min-width: 85rem;
+}
+
+/* Find ID page styles */
+
+.findID_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#findID_arrow {
+  width: 2.1875rem;
+  height: 1.36719rem;
+  flex-shrink: 0;
+}
+
+.findID_header p {
+  color: #434343;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.bottom_findID_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom_findID_header img {
+  width: 12.5rem;
+  height: 12.5rem;
+  flex-shrink: 0;
+}
+
+.wrap_findID_content {
+  margin-top: 1.12rem;
+}
+
+.findID_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inner_findID_content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.name_content p,
+.birth_content p {
+  color: #474747;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-left: 0.94rem;
+  margin-bottom: 0.44rem;
+}
+
+#findID_name_input,
+#findID_birth_input {
+  width: 25rem;
+  height: 3.125rem;
+  flex-shrink: 0;
+  border-radius: 0.9375rem;
+  border: 1px solid #9b9b9b;
+  padding-left: 30px;
+}
+
+#findID_name_input::placeholder,
+#findID_birth_input::placeholder {
+  color: #acacac;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.findID_error {
+  display: flex;
+  margin-left: 0.94rem;
+}
+.findID_error p {
+  color: #f00;
+  text-align: right;
+  font-family: Inter;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.findID_button {
+  display: flex;
+  justify-content: center;
+}
+
+#findID_button {
+  width: 24.9375rem;
+  height: 4.0625rem;
+  flex-shrink: 0;
+  border-radius: 3rem;
+  border: none;
+  background: #3a7dff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.375rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+}
+
+/* Find Password page styles */
+
+.findPW_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#findPW_arrow {
+  width: 2.1875rem;
+  height: 1.36719rem;
+  flex-shrink: 0;
+}
+
+.findPW_header p {
+  color: #434343;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.bottom_findPW_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom_findPW_header img {
+  width: 12.5rem;
+  height: 12.5rem;
+  flex-shrink: 0;
+}
+
+.wrap_findPW_content {
+  margin-top: 1.12rem;
+}
+
+.findPW_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.inner_findPW_content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#certified_button {
+  position: absolute;
+  width: 6.44956rem;
+  height: 3.0625rem;
+  flex-shrink: 0;
+  border-radius: 0.9375rem;
+  border: none;
+  background: rgba(255, 0, 0, 0.5);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-left: 1.36rem;
+  cursor: pointer;
+}
+
+.id_content p,
+.certifiednum_content p {
+  color: #474747;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-left: 0.94rem;
+  margin-bottom: 0.44rem;
+}
+
+#findPW_id_input,
+#findPW_certifiednum_input {
+  width: 25rem;
+  height: 3.125rem;
+  flex-shrink: 0;
+  border-radius: 0.9375rem;
+  border: 1px solid #9b9b9b;
+  padding-left: 30px;
+}
+
+#findPW_id_input::placeholder,
+#findPW_certifiednum_input::placeholder {
+  color: #acacac;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.findPW_error {
+  display: flex;
+  margin-left: 0.94rem;
+}
+
+.findPW_error p {
+  color: #f00;
+  text-align: right;
+  font-family: Inter;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.findPW_button {
+  display: flex;
+  justify-content: space-between;
+}
+
+#findPW_button {
+  width: 26.81025rem;
+  height: 4.0625rem;
+  flex-shrink: 0;
+  border-radius: 3rem;
+  border: none;
+  background: #3a7dff;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.375rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  cursor: pointer;
+}
+
+/* Shared styles for Find ID and Find Password */
+
+#findID_IDbox.active,
+#findID_pwbox.active {
+  background: #3a7dff;
+  color: #fff;
+}
+.wrap_findID_content,
+.wrap_findPW_content {
+  display: none;
+}
+
+.wrap_findID_content.show {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.wrap_findPW_content.show {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.findID_header_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 18.75rem;
+  height: 3.75rem;
+  border-radius: 3rem;
+  border: 1px solid #000;
+}
+
+.findID_header_box label {
+  cursor: pointer;
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.findID_header_box label:hover {
+  background: #f0f0f0;
+}
+
+.findID_header_box input[type="radio"] {
+  display: none;
+}
+
+#findID_radio:checked + label {
+  width: 9.375rem;
+  height: 3.75rem;
+  border-radius: 3rem;
+  border: 1px solid #000;
+  background: #3a7dff;
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+#findPW_radio:checked + label {
+  display: flex;
+  width: 9.375rem;
+  height: 3.75rem;
+  border-radius: 3rem;
+  border: 1px solid #000;
+  background: #3a7dff;
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}

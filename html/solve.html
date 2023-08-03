@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/request.css" />
-    <title>도움 요청페이지</title>
+    <link rel="stylesheet" href="../css/solve.css" />
+    <title>도움 해결페이지</title>
   </head>
   <body>
     <nav class="nav_bar">
@@ -39,35 +39,40 @@
       </div>
     </nav>
     <hr />
-    <div class="wrap_request">
-      <div class="request_header">
-        <a href="#" id="request_box">도움 요청하기</a>
+    <div class="wrap_solve">
+      <div class="solve_header">
+        <a href="#" id="solve_box">도움 해결하기</a>
         <div class="region_name">
           <img src="../img/pin.png" />
           <a href="#">지역이름</a>
         </div>
-        <p>*지역이 맞는지 확인해주세요</p>
       </div>
-      <div class="request_container">
-        <div class="title_container">
-          <p>제목</p>
-          <input type="text" placeholder="제목을 입력해주세요" />
+      <div class="solve_container">
+        <div class="title_container">제목</div>
+        <div class="detail_container">
+          <div class="detail_left">
+            <div class="detail_point">
+              <img src="../img/stamp.png" />
+              <div class="pointnum">2000P</div>
+            </div>
+            <div class="detail_chat">
+              <img src="../img/chat.png" />
+              <div class="chatnum">5명</div>
+            </div>
+            <div class="detail_time">
+              <div>2023.07.21 23:00</div>
+            </div>
+          </div>
+          <div class="detail_right">
+            <a onclick="reportCheck();">신고하기</a>
+          </div>
         </div>
-        <div class="content_container">
-          <p>요청 내용</p>
-          <input
-            type="text"
-            placeholder="도움을 요청할 내용에 대해 자세히 작성해주세요"
-          />
-        </div>
-        <div class="point_container">
-          <p>거래 포인트</p>
-          <input type="text" placeholder="0" />
-        </div>
+        <div class="content_container">내용</div>
       </div>
-      <div class="request_button">
-        <a href="#"><button id="request_button">도움 요청하기</button></a>
+      <div class="solve_button">
+        <a href="#"><button id="solve_button">채팅하기</button></a>
       </div>
     </div>
   </body>
+  <script src="../js/solve.js"></script>
 </html>
