@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/findIDPW.css" />
+    <title>아이디/비밀번호 찾기</title>
+  </head>
+  <body>
+    <hr />
+    <div class="findID_header">
+      <a href="./login.html" id="findID_arrow">
+        <img src="../img/arrow.png" />
+      </a>
+      <p>아이디/비밀번호 찾기</p>
+      <p></p>
+    </div>
+    <hr />
+    <div class="bottom_findID_header">
+      <a href="./homeLogout.html">
+        <img src="../img/logo.png" />
+      </a>
+      <div class="findID_header_box">
+        <label for="findID_radio">아이디 찾기</label>
+        <input type="radio" id="findID_radio" name="findOption" checked />
+        <label for="findPW_radio">비밀번호 찾기</label>
+        <input type="radio" id="findPW_radio" name="findOption" />
+      </div>
+    </div>
+    <!-- 아이디찾기 -->
+    <div class="wrap_findID_content">
+      <div class="findID_content">
+        <div class="inner_findID_content">
+          <div class="name_content">
+            <p>이름</p>
+            <input id="findID_name_input" type="text" placeholder="이름" />
+          </div>
+          <div class="birth_content">
+            <p>생년월일</p>
+            <input
+              id="findID_birth_input"
+              type="text"
+              placeholder="(19990807)"
+            />
+          </div>
+          <div class="findID_error">
+            <p>이름/생년월일을 확인해주세요</p>
+          </div>
+        </div>
+      </div>
+      <div class="findID_button">
+        <button id="findID_button"><a href="#"></a>아이디 찾기</button>
+      </div>
+    </div>
+
+    <!-- 비밀번호 찾기 -->
+    <div class="wrap_findPW_content" style="display: none">
+      <div class="findPW_content">
+        <div class="inner_findPW_content">
+          <div class="id_content">
+            <p>아이디</p>
+            <input id="findPW_id_input" type="text" placeholder="아이디" />
+            <button id="certified_button">인증받기</button>
+          </div>
+          <div class="certifiednum_content">
+            <p>인증번호</p>
+            <input
+              id="findPW_certifiednum_input"
+              type="text"
+              placeholder="인증번호"
+            />
+          </div>
+
+          <div class="findPW_error">
+            <p>인증번호가 일치하지 않습니다</p>
+          </div>
+          <div class="findPW_button">
+            <button id="findPW_button">
+              <a href="#"></a>비밀번호 재설정하기
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../js/findIDPW.js"></script>
+</html>

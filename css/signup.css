@@ -1,5 +1,6 @@
 body {
   margin-top: 4.56rem;
+  min-width: 85rem;
 }
 
 .signup_header {

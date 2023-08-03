@@ -1,6 +1,7 @@
 body {
   margin-top: 6.63rem;
   margin-bottom: 9.25rem;
+  min-width: 85rem;
 }
 
 .login_header {
