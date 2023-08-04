@@ -4,31 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/login.css" />
+    <meta
+      name="google-signin-client_id"
+      content="585677872563-jpvdm785k2s1tvir2htuubj4mif1qiga.apps.googleusercontent.com"
+    />
     <title>로그인</title>
   </head>
   <body>
     <div class="login_header">
-      <a href="./homeLogout.html">
+      <a href="./home_logout.html">
         <img src="../img/logo.png" />
       </a>
       <p>로그인</p>
     </div>
 
-    <a href="./homeLogout.html" id="bottom_header">
+    <a href="./home_logout.html" id="bottom_header">
       <img src="../img/arrow.png" />
     </a>
     <div class="wrap_login_content">
       <div class="login_content">
         <div class="id_content">
           <p>아이디</p>
-          <input id="id_input" type="text" placeholder="이메일" />
+          <input id="id_input" type="text" placeholder="이메일" required />
         </div>
         <div class="pw_content">
           <p>비밀번호</p>
-          <input id="pw_input" type="password" placeholder="비밀번호" />
+          <input
+            id="pw_input"
+            type="password"
+            placeholder="비밀번호"
+            required
+          />
         </div>
         <div class="login_error">
-          <p>아이디/비밀번호를 확인해주세요</p>
+          <p id="login_error">아이디/비밀번호를 확인해주세요</p>
         </div>
       </div>
       <div class="wrap_login_button">
@@ -46,8 +55,14 @@
       <div class="login_footer">
         <a href="./signup.html">회원가입&nbsp; </a>
         <a href="#">|&nbsp; </a>
-        <a href="./findID.html">이메일/비밀번호 찾기</a>
+        <a href="./find_id_pw.html">이메일/비밀번호 찾기</a>
       </div>
     </div>
   </body>
+  <script
+    src="https://apis.google.com/js/platform.js?onload=init"
+    async
+    defer
+  ></script>
+  <script src="../js/login.js"></script>
 </html>

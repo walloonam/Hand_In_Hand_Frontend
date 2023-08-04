@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/pw_reset.css" />
+    <title>비밀번호 재설정</title>
+  </head>
+  <body>
+    <hr />
+    <div class="pw_reset_header">
+      <a href="./findPW.html" id="pw_reset_arrow"
+        ><img src="../img/arrow.png" />
+      </a>
+      <p>비밀번호 재설정</p>
+      <p></p>
+    </div>
+    <hr />
+    <div class="bottom_pw_reset_header">
+      <img src="../img/logo.png" />
+      <div class="find_container">
+        <input
+          type="radio"
+          id="find_id"
+          name="switchFind"
+          value="id"
+          disabled
+        />
+        <input
+          type="radio"
+          id="find_pw"
+          name="switchFind"
+          value="pw"
+          checked="checked"
+        />
+        <label for="find_id">아이디 찾기</label>
+        <label for="find_pw">비밀번호 찾기</label>
+        <div class="switch-wrapper">
+          <div class="switch">
+            <div>아이디 찾기</div>
+            <div>비밀번호 찾기</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap_pw_reset_content">
+      <div class="pw_reset_content">
+        <div class="pw_content">
+          <p>비밀번호</p>
+          <input id="pw_reset_input" type="text" placeholder="비밀번호" />
+        </div>
+        <div class="pwcheck_content">
+          <p>비밀번호 확인</p>
+          <input
+            id="pw_reset_pwcheck_input"
+            type="text"
+            placeholder="비밀번호 확인"
+          />
+        </div>
+        <div class="pw_reset_error">
+          <p id="pw_reset_error">비밀번호가 일치하지 않습니다</p>
+        </div>
+        <div class="pw_reset_button">
+          <button id="pw_reset_button">
+            <a href="#"></a>비밀번호 재설정하기
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../js/pw_reset.js"></script>
+</html>

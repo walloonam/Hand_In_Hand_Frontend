@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/solve.css" />
-    <title>도움 해결페이지</title>
+    <link rel="stylesheet" href="../css/solve_self.css" />
+    <title>도움 해결페이지(본인)</title>
   </head>
   <body>
     <nav class="nav_bar">
@@ -22,7 +22,7 @@
             <a href="./request.html" class="help_req_a">도움 요청하기</a>
           </li>
           <li class="help_sol_btn">
-            <a href="./request_list.html" class="help_sol_a">도움 해결하기</a>
+            <a href="./requestList.html" class="help_sol_a">도움 해결하기</a>
           </li>
         </ul>
       </div>
@@ -41,7 +41,7 @@
     <hr />
     <div class="wrap_solve">
       <div class="solve_header">
-        <a href="#" id="solve_box">도움 해결하기</a>
+        <a href="#" id="solve_box2">도움 해결하기</a>
         <div class="region_name">
           <img src="../img/pin.png" />
           <a href="#">지역이름</a>
@@ -64,15 +64,15 @@
             </div>
           </div>
           <div class="detail_right">
-            <a onclick="reportCheck();">신고하기</a>
+            <a onclick="deleteCheck();">삭제하기</a>
           </div>
         </div>
         <div class="content_container">내용</div>
       </div>
-      <div class="solve_button">
-        <a href="#"><button id="solve_button">채팅하기</button></a>
+      <div class="modify_button">
+        <a href="#"><button id="modify_button">수정하기</button></a>
       </div>
     </div>
   </body>
-  <script src="../js/solve.js"></script>
+  <script src="../js/solve_self.js"></script>
 </html>
