@@ -176,7 +176,7 @@ hr {
   margin-bottom: 0;
 }
 
-#solve_box {
+#solve_box2 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -385,12 +385,12 @@ hr {
   padding-left: 1.03rem;
 }
 
-.solve_button {
+.modify_button {
   display: flex;
   margin-top: 2.19rem;
 }
 
-#solve_button {
+#modify_button {
   width: 24.9375rem;
   height: 4.0625rem;
   flex-shrink: 0;

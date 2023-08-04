@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/findIDPW.css" />
+    <link rel="stylesheet" href="../css/find_id_pw.css" />
     <title>아이디/비밀번호 찾기</title>
   </head>
   <body>
@@ -17,16 +17,29 @@
     </div>
     <hr />
     <div class="bottom_findID_header">
-      <a href="./homeLogout.html">
+      <a href="./home_logout.html">
         <img src="../img/logo.png" />
       </a>
-      <div class="findID_header_box">
-        <label for="findID_radio">아이디 찾기</label>
-        <input type="radio" id="findID_radio" name="findOption" checked />
-        <label for="findPW_radio">비밀번호 찾기</label>
-        <input type="radio" id="findPW_radio" name="findOption" />
+      <div class="find_container">
+        <input
+          type="radio"
+          id="find_id"
+          name="switchFind"
+          value="id"
+          checked="checked"
+        />
+        <input type="radio" id="find_pw" name="switchFind" value="pw" />
+        <label for="find_id">아이디 찾기</label>
+        <label for="find_pw">비밀번호 찾기</label>
+        <div class="switch-wrapper">
+          <div class="switch">
+            <div>아이디 찾기</div>
+            <div>비밀번호 찾기</div>
+          </div>
+        </div>
       </div>
     </div>
+
     <!-- 아이디찾기 -->
     <div class="wrap_findID_content">
       <div class="findID_content">
@@ -44,7 +57,7 @@
             />
           </div>
           <div class="findID_error">
-            <p>이름/생년월일을 확인해주세요</p>
+            <p id="findID_error">이름/생년월일을 확인해주세요</p>
           </div>
         </div>
       </div>
@@ -72,7 +85,7 @@
           </div>
 
           <div class="findPW_error">
-            <p>인증번호가 일치하지 않습니다</p>
+            <p id="findPW_error">인증번호가 일치하지 않습니다</p>
           </div>
           <div class="findPW_button">
             <button id="findPW_button">
@@ -83,5 +96,5 @@
       </div>
     </div>
   </body>
-  <script src="../js/findIDPW.js"></script>
+  <script src="../js/find_id_pw.js"></script>
 </html>

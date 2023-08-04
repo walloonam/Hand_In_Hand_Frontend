@@ -1,21 +1,20 @@
 body {
   margin-top: 4.56rem;
-  min-width: 85rem;
 }
 
-.findID_header {
+.pw_reset_header {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-#findID_arrow {
+#pw_reset_arrow {
   width: 2.1875rem;
   height: 1.36719rem;
   flex-shrink: 0;
 }
 
-.findID_header p {
+.pw_reset_header p {
   color: #434343;
   text-align: center;
   font-family: Inter;
@@ -25,57 +24,37 @@ body {
   line-height: normal;
 }
 
-.bottom_findID_header {
+.bottom_pw_reset_header {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.bottom_findID_header img {
+.bottom_pw_reset_header img {
   width: 12.5rem;
   height: 12.5rem;
   flex-shrink: 0;
 }
 
-.findID_header_box {
-  position: relative;
-}
+/* switch */
 
-#findID_IDbox {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 9.375rem;
-  height: 3.75rem;
-  flex-shrink: 0;
-  border-radius: 3rem;
-  border: 1px solid #000;
-  background: #3a7dff;
-  color: #fff;
-  text-align: center;
-  font-family: Inter;
-  font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  text-decoration: none;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#findID_pwbox {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+.find_container {
   width: 18.75rem;
   height: 3.75rem;
-  flex-shrink: 0;
   border-radius: 3rem;
   border: 1px solid #000;
+  position: relative;
+  display: flex;
+}
+
+.find_container input {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+}
+
+.find_container label {
   color: #000;
   text-align: center;
   font-family: Inter;
@@ -83,19 +62,86 @@ body {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  text-decoration: none;
-  padding-right: 30px;
+  width: 50%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.wrap_findID_content {
+/* 첫 번째 입력이 선택되었을 때 첫 번째 라벨을 스타일링합니다. */
+.find_container input:nth-of-type(1):checked ~ .switch-wrapper {
+  transform: translateX(0%);
+}
+
+/* 두 번째 입력이 선택되었을 때 두 번째 라벨을 스타일링합니다. */
+.find_container input:nth-of-type(2):checked ~ .switch-wrapper {
+  transform: translateX(100%);
+}
+
+/* 해당 입력이 선택되었을 때 스위치 내용의 텍스트를 스타일링합니다. */
+.find_container
+  input:nth-of-type(1):checked
+  ~ .switch-wrapper
+  .switch
+  div:nth-of-type(1) {
+  opacity: 1;
+}
+
+.find_container
+  input:nth-of-type(2):checked
+  ~ .switch-wrapper
+  .switch
+  div:nth-of-type(2) {
+  opacity: 1;
+}
+
+/* 스위치 래퍼를 위한 스타일을 추가합니다. */
+.switch-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  z-index: 3;
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.switch {
+  border-radius: 3rem;
+  background: #3a7dff;
+  height: 100%;
+  display: flex;
+}
+
+.switch div {
+  width: 9.375rem;
+  opacity: 0;
+  display: block;
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.2s cubic-bezier(0.77, 0, 0.175, 1) 0.125s;
+  margin-top: 1.16rem;
+}
+
+/* content */
+.wrap_pw_reset_content {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 1.12rem;
 }
 
-.name_content p,
-.birth_content p {
+.pw_content p,
+.pwcheck_content p {
   color: #474747;
   font-family: Inter;
   font-size: 1.125rem;
@@ -106,8 +152,8 @@ body {
   margin-bottom: 0.44rem;
 }
 
-#findID_name_input,
-#findID_birth_input {
+#pw_reset_input,
+#pw_reset_pwcheck_input {
   width: 25rem;
   height: 3.125rem;
   flex-shrink: 0;
@@ -116,8 +162,8 @@ body {
   padding-left: 30px;
 }
 
-#findID_name_input::placeholder,
-#findID_birth_input::placeholder {
+#pw_reset_input::placeholder,
+#pw_reset_pwcheck_input::placeholder {
   color: #acacac;
   font-family: Inter;
   font-size: 1.125rem;
@@ -126,12 +172,12 @@ body {
   line-height: normal;
 }
 
-.findID_error {
+.pw_reset_error {
   display: flex;
   margin-left: 0.94rem;
 }
 
-.findID_error p {
+#pw_reset_error {
   color: #f00;
   text-align: right;
   font-family: Inter;
@@ -139,15 +185,16 @@ body {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  visibility: hidden;
 }
 
-.findID_button {
+.pw_reset_button {
   display: flex;
   justify-content: center;
 }
 
-#findID_button {
-  width: 24.9375rem;
+#pw_reset_button {
+  width: 26.81025rem;
   height: 4.0625rem;
   flex-shrink: 0;
   border-radius: 3rem;

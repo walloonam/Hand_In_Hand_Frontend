@@ -1,20 +1,21 @@
 body {
   margin-top: 4.56rem;
+  min-width: 85rem;
 }
 
-.resultFindID_header {
+.find_id_result_header {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-#resultFindID_arrow {
+#find_id_result_arrow {
   width: 2.1875rem;
   height: 1.36719rem;
   flex-shrink: 0;
 }
 
-.resultFindID_header p {
+.find_id_result_header p {
   color: #434343;
   text-align: center;
   font-family: Inter;
@@ -24,21 +25,21 @@ body {
   line-height: normal;
 }
 
-.bottom_resultFindID_header {
+.bottom_find_id_result_header {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.bottom_resultFindID_header img {
+.bottom_find_id_result_header img {
   width: 12.5rem;
   height: 12.5rem;
   flex-shrink: 0;
   margin-bottom: 1.7rem;
 }
 
-.wrap_resultFindID_content {
+.wrap_find_id_result_content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,7 +53,7 @@ body {
   border: 1px solid #000;
 }
 
-#resultFindID_login_button {
+#find_id_result_login_button {
   width: 24.9375rem;
   height: 4.0625rem;
   flex-shrink: 0;
@@ -68,9 +69,10 @@ body {
   font-weight: 700;
   line-height: normal;
   margin: 1rem;
+  cursor: pointer;
 }
 
-#resultFindID_back_button {
+#find_id_result_back_button {
   width: 24.9375rem;
   height: 4.0625rem;
   flex-shrink: 0;
@@ -84,4 +86,5 @@ body {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  cursor: pointer;
 }
