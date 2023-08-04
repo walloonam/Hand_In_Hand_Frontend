@@ -48,7 +48,7 @@ function onSignIn(googleUser) {
     // key에 자신의 API 키를 넣습니다.
     data: {
       personFields: "birthdays",
-      key: "AIzaSyAUDMRbM0LF796sm2GYSElrgxyHBV5bCmM",
+      key: "api키넣기",
       access_token: access_token,
     },
     method: "GET",
