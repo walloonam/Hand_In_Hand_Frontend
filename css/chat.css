@@ -11,8 +11,8 @@ body {
 
 * {
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-    letter-spacing: -0.1rem;
+    font-family: "Inter", sans-serif;
+    /* letter-spacing: -0.1rem; */
 }
 
 ul {
@@ -23,63 +23,71 @@ a {
     text-decoration: none;
 }
 
-
-/********** nav **********/
-
 .nav_bar {
-    /* position: relative; */
-    width: 67.1875rem;
-    height: 10.7625rem;
-    margin: 0 auto;
     display: flex;
-    border-bottom: solid 0.0625rem #B2B2B2;
+    justify-content: center;
+    min-width: 100rem;
 }
 
 .back_btn {
-    width: 2.1875rem;
-    height: 1.36719rem;
-    margin-top: 5.99rem;
-}
-
-.logo_btn {
-    /* position: absolute; */
-    width: 5rem;
-    height: 3.5165rem;
-    margin-top: 5.99rem;
-    margin-left: 2.51rem;
+    display: flex;
+    margin-left: 6.94rem;
+    margin-top: 6.5rem;
+    margin-right: 4rem;
 }
 
 .logo_btn img {
-    width: 5rem;
-    height: 3.5165rem;
+    width: 9.375rem;
+    height: 9.375rem;
+    margin-top: 2.56rem;
 }
 
 .nav_menu {
-    /* position: absolute; */
-    flex: 2;
-    margin-top: 6.5rem;
-    margin-left: 1.69rem;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 1.7rem;
 }
 
 .nav_menu ul {
-    justify-content: space-around;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    flex-direction: row;
+    margin-top: 6.5rem;
 }
 
-.nav_menu ul li {
+.post_li {
+    color: #3a7dff;
+    text-align: center;
+    font-family: Inter;
     font-size: 1.875rem;
+    font-style: normal;
     font-weight: 700;
+    line-height: normal;
+    margin-right: 3.56rem;
 }
 
-.chatting_a {
-    color: #3A7DFF;
+.post_li:hover {
+    cursor: default;
+}
+
+.opacity_li {
+    color: #939393;
+    text-align: center;
+    font-family: Inter;
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    opacity: 0;
+}
+
+.opacity_li:hover {
+    cursor: default;
 }
 
 .nav_chat {
-    margin-top: 6.94rem;
-    margin-left: 5.62rem;
-    margin-right: 1.94rem;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 0.94rem;
 }
 
 .chat_btn {
@@ -90,7 +98,9 @@ a {
     background-color: #727272;
     font-size: 1.25rem;
     font-weight: 700;
-    color: #FFF;
+    color: #fff;
+    margin-left: 5.63rem;
+    margin-top: 6.94rem;
 }
 
 .chat_btn:hover {
@@ -99,18 +109,22 @@ a {
 
 .nav_logout {
     display: flex;
-    margin-top: 7.63rem;
+    align-items: center;
+    margin-left: 1.94rem;
     margin-right: 1.37rem;
+    margin-top: 7.62rem;
 }
 
 .nav_logout a {
-    margin: 0;
-    margin-top: 0.25rem;
+    width: 4.1875rem;
     height: 1.375rem;
-    font-size: 0.9375rem;
-    font-weight: 500;
-    white-space: nowrap;
+    flex-shrink: 0;
     color: #000;
+    font-family: Inter;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .nav_logout img {
@@ -124,8 +138,9 @@ a {
 
 .nav_mypage {
     display: flex;
-    margin-top: 7.63rem;
-    margin-right: 0.94rem;
+    align-items: center;
+    margin-top: 7.62rem;
+    margin-right: 6.81rem;
 }
 
 .nav_mypage img {
@@ -138,13 +153,20 @@ a {
 }
 
 .nav_mypage a {
-    margin: 0;
-    margin-top: 0.25rem;
+    width: 4.75rem;
     height: 1.375rem;
-    font-size: 0.9375rem;
-    font-weight: 500;
-    white-space: nowrap;
+    flex-shrink: 0;
     color: #000;
+    font-family: Inter;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+hr {
+    margin: 0 6.94rem;
+    min-width: 85rem;
 }
 
 
@@ -153,7 +175,7 @@ a {
 .container {
     /* background-color: #B2B2B2; */
     margin: 0 auto;
-    width: 67.1875rem;
+    min-width: 100rem;
 }
 
 
