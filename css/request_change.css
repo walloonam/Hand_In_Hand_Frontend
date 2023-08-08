@@ -207,7 +207,7 @@ hr {
   flex-shrink: 0;
   margin-right: 0.25rem;
 }
-.region_name a {
+.region_choose {
   color: #757575;
   text-align: right;
   font-family: Inter;
@@ -216,6 +216,7 @@ hr {
   font-weight: 700;
   line-height: normal;
   text-decoration-line: underline;
+  cursor: pointer;
 }
 
 .request_header p {

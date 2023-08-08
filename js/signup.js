@@ -4,14 +4,27 @@ function showEmailCheckMessage() {
   var checkMessage = document.querySelector(".check_message");
 
   if (emailInput.value === "") {
-    checkMessage.style.visibility = "hidden";
+    checkMessage.style.display = "none";
   } else {
-    checkMessage.style.visibility = "visible";
+    checkMessage.style.display = "block";
   }
 }
-
 var emailCheckButton = document.querySelector("#email_check_button");
 emailCheckButton.addEventListener("click", showEmailCheckMessage);
+
+// 인증번호
+function showCertifyMessage() {
+  var certifiedNumInput = document.querySelector("#certifiednum_input");
+  var certifyMessage = document.querySelector(".certify_message");
+
+  if (certifiedNumInput.value === "") {
+    certifyMessage.style.display = "none";
+  } else {
+    certifyMessage.style.display = "block";
+  }
+}
+var certifyButton = document.querySelector("#certify_button");
+certifyButton.addEventListener("click", showCertifyMessage);
 
 // 주소입력
 function openAddressPopup() {
@@ -33,7 +46,7 @@ function openAddressPopup() {
         extraRoadAddr = "(" + extraRoadAddr + ")";
       }
 
-      document.getElementById("address_input").value = roadAddr + extraRoadAddr;
+      document.querySelector("#address_input").value = roadAddr + extraRoadAddr;
     },
   }).open();
 }
