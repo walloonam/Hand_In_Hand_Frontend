@@ -33,18 +33,18 @@ body {
 .bottom_signup_header img {
   width: 12.5rem;
   height: 12.5rem;
-  flex-shrink: 0;
+  margin: 20px;
 }
 
 .wrap_signup_content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 1.12rem;
+  /* margin-top: 1.12rem; */
 }
 
 .id_content p,
-.certifiednum_content,
+.certifiednum_content p,
 .pw_content p,
 .pw_check_content p,
 .name_content p,
@@ -101,6 +101,7 @@ body {
 }
 
 .bottom_id_content button,
+.certifiednum_content button,
 .bottom_nickname_content button,
 .bottom_address_content button {
   width: 6.44956rem;
@@ -122,13 +123,23 @@ body {
 }
 
 .check_message {
-  display: flex;
-  visibility: hidden;
+  display: none;
+}
+.certify_message {
+  display: none;
 }
 
 #email_check_message {
   color: #3a7dff;
-  text-align: right;
+  font-family: Inter;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+#certify_message {
+  color: #3a7dff;
   font-family: Inter;
   font-size: 0.75rem;
   font-style: normal;

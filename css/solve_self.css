@@ -207,7 +207,7 @@ hr {
   flex-shrink: 0;
   margin-right: 0.25rem;
 }
-.region_name a {
+.region_choose {
   color: #757575;
   text-align: right;
   font-family: Inter;
@@ -216,6 +216,7 @@ hr {
   font-weight: 700;
   line-height: normal;
   text-decoration-line: underline;
+  cursor: pointer;
 }
 
 .request_container {
@@ -283,6 +284,7 @@ hr {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   width: 8.5rem;
   height: 2.875rem;
   flex-shrink: 0;
@@ -291,9 +293,9 @@ hr {
   background: #fff;
 }
 .detail_point img {
-  width: 4.375rem;
-  height: 4.375rem;
-  flex-shrink: 0;
+  width: 2.0625rem;
+  height: 1.78381rem;
+  margin-right: 0.94rem;
 }
 .pointnum {
   color: #242424;
@@ -321,7 +323,6 @@ hr {
 .detail_chat img {
   width: 2.0625rem;
   height: 1.78381rem;
-  flex-shrink: 0;
   margin-right: 0.94rem;
 }
 .chatnum {

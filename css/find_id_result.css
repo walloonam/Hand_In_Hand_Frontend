@@ -35,8 +35,8 @@ body {
 .bottom_find_id_result_header img {
   width: 12.5rem;
   height: 12.5rem;
-  flex-shrink: 0;
-  margin-bottom: 1.7rem;
+  margin: 20px;
+  /* margin-bottom: 1.7rem; */
 }
 
 .wrap_find_id_result_content {

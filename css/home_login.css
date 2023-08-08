@@ -112,7 +112,7 @@ body {
   margin-right: 0.5rem;
 }
 
-.region_name a {
+.region_choose {
   color: #757575;
   text-align: right;
   font-family: Inter;
@@ -121,6 +121,7 @@ body {
   font-weight: 700;
   line-height: normal;
   text-decoration-line: underline;
+  cursor: pointer;
 }
 
 #chat_button {

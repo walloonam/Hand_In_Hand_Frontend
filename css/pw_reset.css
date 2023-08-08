@@ -34,7 +34,7 @@ body {
 .bottom_pw_reset_header img {
   width: 12.5rem;
   height: 12.5rem;
-  flex-shrink: 0;
+  margin: 20px;
 }
 
 /* switch */

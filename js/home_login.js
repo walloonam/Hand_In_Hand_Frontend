@@ -1,12 +1,3 @@
-//신고하기
-function reportCheck() {
-  if (confirm("신고하시겠습니까?") == true) {
-    document.reportfrm.submit();
-  } else {
-    return false;
-  }
-}
-
 //지역이름
 $(document).ready(function () {
   $(".region_choose").on("click", function () {
