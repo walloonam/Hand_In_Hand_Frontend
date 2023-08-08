@@ -44,25 +44,30 @@
         <a href="#" id="request_box">도움 요청하기</a>
         <div class="region_name">
           <img src="../img/pin.png" />
-          <a href="#">지역이름</a>
+          <a href="#" id="addressLink">지역이름</a>
         </div>
         <p>*지역이 맞는지 확인해주세요</p>
       </div>
       <div class="request_container">
         <div class="title_container">
           <p>제목</p>
-          <input type="text" placeholder="제목을 입력해주세요" />
+          <input
+            type="text"
+            id="titleInput"
+            placeholder="제목을 입력해주세요"
+          />
         </div>
         <div class="content_container">
           <p>요청 내용</p>
           <input
             type="text"
+            id="contentInput"
             placeholder="도움을 요청할 내용에 대해 자세히 작성해주세요"
           />
         </div>
         <div class="point_container">
           <p>거래 포인트</p>
-          <input type="text" placeholder="0" />
+          <input type="text" id="pointInput" placeholder="0" />
         </div>
       </div>
       <div class="request_button">
@@ -70,4 +75,5 @@
       </div>
     </div>
   </body>
+  <script src="../js/request.js"></script>
 </html>

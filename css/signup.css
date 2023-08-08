@@ -44,6 +44,7 @@ body {
 }
 
 .id_content p,
+.certifiednum_content,
 .pw_content p,
 .pw_check_content p,
 .name_content p,
@@ -68,6 +69,7 @@ body {
 }
 
 #email_input,
+#certifiednum_input,
 #password_input,
 #pw_check_input,
 #name_input,
@@ -83,6 +85,7 @@ body {
 }
 
 #email_input::placeholder,
+#certifiednum_input::placeholder,
 #password_input::placeholder,
 #pw_check_input::placeholder,
 #name_input::placeholder,
@@ -115,6 +118,22 @@ body {
   font-weight: 700;
   line-height: normal;
   margin-left: 1.27rem;
+  cursor: pointer;
+}
+
+.check_message {
+  display: flex;
+  visibility: hidden;
+}
+
+#email_check_message {
+  color: #3a7dff;
+  text-align: right;
+  font-family: Inter;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 .sigup_button {
