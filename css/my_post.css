@@ -1,0 +1,298 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    /* letter-spacing: -0.1rem; */
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav_bar {
+    display: flex;
+    justify-content: center;
+    min-width: 100rem;
+}
+
+.back_btn {
+    display: flex;
+    margin-left: 6.94rem;
+    margin-top: 6.5rem;
+    margin-right: 4rem;
+}
+
+.logo_btn img {
+    width: 9.375rem;
+    height: 9.375rem;
+    margin-top: 2.56rem;
+}
+
+.nav_menu {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 1.7rem;
+}
+
+.nav_menu ul {
+    display: flex;
+    flex-direction: row;
+    margin-top: 6.5rem;
+}
+
+.post_li {
+    color: #3a7dff;
+    text-align: center;
+    font-family: Inter;
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-right: 3.56rem;
+}
+
+.post_li:hover {
+    cursor: default;
+}
+
+.opacity_li {
+    color: #939393;
+    text-align: center;
+    font-family: Inter;
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    opacity: 0;
+}
+
+.opacity_li:hover {
+    cursor: default;
+}
+
+.nav_chat {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 0.94rem;
+}
+
+.chat_btn {
+    width: 9.4375rem;
+    height: 2.8125rem;
+    border: 2px solid #727272;
+    border-radius: 1.25rem;
+    background-color: #727272;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin-left: 5.63rem;
+    margin-top: 6.94rem;
+}
+
+.chat_btn:hover {
+    cursor: pointer;
+}
+
+.nav_logout {
+    display: flex;
+    align-items: center;
+    margin-left: 1.94rem;
+    margin-right: 1.37rem;
+    margin-top: 7.62rem;
+}
+
+.nav_logout a {
+    width: 4.1875rem;
+    height: 1.375rem;
+    flex-shrink: 0;
+    color: #000;
+    font-family: Inter;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.nav_logout img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.nav_logout img:hover {
+    cursor: pointer;
+}
+
+.nav_mypage {
+    display: flex;
+    align-items: center;
+    margin-top: 7.62rem;
+    margin-right: 6.81rem;
+}
+
+.nav_mypage img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.nav_mypage img:hover {
+    cursor: pointer;
+}
+
+.nav_mypage a {
+    width: 4.75rem;
+    height: 1.375rem;
+    flex-shrink: 0;
+    color: #000;
+    font-family: Inter;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+hr {
+    margin: 0 6.94rem;
+    min-width: 85rem;
+}
+
+
+/********** container **********/
+
+.container {
+    position: relative;
+    margin: 0 auto;
+    height: 75rem;
+    min-width: 100rem;
+    overflow: hidden;
+}
+
+.wrap_post {
+    width: 60.875rem;
+    height: 69.30056rem;
+    border-radius: 1.25rem;
+    border: 1px solid #C8C8C8;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+    margin-top: 4.37rem;
+}
+
+.post {
+    width: 57.5625rem;
+    height: 14.9375rem;
+    border-radius: 0.9375rem;
+    border: 3px solid #C2D3F5;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+    margin-top: 1.8rem;
+}
+
+.post_title {
+    width: 55.125rem;
+    height: 2.875rem;
+    display: flex;
+    margin-left: 1.25rem;
+    margin-top: 1.25rem;
+}
+
+.post_name {
+    width: 37.25rem;
+    height: 2.875rem;
+    border-radius: 0.9375rem;
+    border: 1px solid #C2D3F5;
+    background: #FFF;
+    margin-right: 0.5rem;
+}
+
+.post_name p {
+    color: #242424;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0;
+    margin-left: 1.03rem;
+    margin-top: 0.4rem;
+}
+
+.post_point {
+    width: 8.5rem;
+    height: 2.875rem;
+    border-radius: 0.9375rem;
+    border: 1px solid #C2D3F5;
+    background: #FFF;
+    margin-right: 0.44rem;
+    display: flex;
+}
+
+.post_point img {
+    width: 2.3rem;
+    height: 2.3rem;
+    margin-top: 0.2rem;
+    margin-left: 1rem;
+    margin-right: 0.6rem;
+}
+
+.post_point p {
+    color: #242424;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0;
+    margin-top: 0.4rem;
+}
+
+.post_chat {
+    width: 8.4375rem;
+    height: 2.875rem;
+    border-radius: 0.9375rem;
+    border: 1px solid #C2D3F5;
+    background: #FFF;
+    display: flex;
+}
+
+.post_chat img {
+    width: 2.3125rem;
+    height: 2rem;
+    margin-top: 0.4rem;
+    margin-left: 1rem;
+    margin-right: 0.6rem;
+}
+
+.post_chat p {
+    color: #242424;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0;
+    margin-top: 0.4rem;
+}
+
+.post_content {
+    width: 55.125rem;
+    height: 8.625rem;
+    border-radius: 0.9375rem;
+    border: 1px solid #C2D3F5;
+    background: #FFF;
+    margin-left: 1.25rem;
+    margin-top: 0.81rem;
+}
+
+.post_content p {
+    color: #242424;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0;
+    margin-left: 1.03rem;
+    margin-top: 1.19rem;
+}
