@@ -1,3 +1,19 @@
+// 이메일 중복확인
+function showEmailCheckMessage() {
+  var emailInput = document.querySelector("#email_input");
+  var checkMessage = document.querySelector(".check_message");
+
+  if (emailInput.value === "") {
+    checkMessage.style.visibility = "hidden";
+  } else {
+    checkMessage.style.visibility = "visible";
+  }
+}
+
+var emailCheckButton = document.querySelector("#email_check_button");
+emailCheckButton.addEventListener("click", showEmailCheckMessage);
+
+// 주소입력
 function openAddressPopup() {
   new daum.Postcode({
     oncomplete: function (data) {
