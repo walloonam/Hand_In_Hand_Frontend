@@ -25,3 +25,10 @@ $(document).ready(function () {
     }).open();
   }
 });
+
+//페이지 이동
+$(document).ready(function () {
+  $(".request_container").click(function () {
+    window.location.href = "./solve.html"; // 실제 경로로 변경하기
+  });
+});

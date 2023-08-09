@@ -17,7 +17,7 @@ document
     }
   });
 
-// // 구글아이디로 로그인
+// 구글 로그인
 // function init() {
 //   gapi.load("auth2", function () {
 //     gapi.auth2.init();
@@ -48,7 +48,7 @@ document
 //     // key에 자신의 API 키를 넣습니다.
 //     data: {
 //       personFields: "birthdays",
-//       key: "api키넣기",
+//       key: "AIzaSyAUDMRbM0LF796sm2GYSElrgxyHBV5bCmM",
 //       access_token: access_token,
 //     },
 //     method: "GET",
@@ -70,5 +70,19 @@ document
 //   .querySelector("#google_login_button")
 //   .addEventListener("click", function (event) {
 //     event.preventDefault();
-//     init(); // 구글 로그인 기능 실행
+
+//     window.location.href =
+//       "https://accounts.google.com/o/oauth2/auth?" +
+//       "client_id=585677872563-jpvdm785k2s1tvir2htuubj4mif1qiga.apps.googleusercontent.com&" +
+//       "redirect_uri=http://127.0.0.1:5500/html/login.html&" +
+//       "response_type=token&" +
+//       "scope=https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile";
 //   });
+
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log("ID: " + profile.getId());
+  console.log("Name: " + profile.getName());
+  console.log("Image URL: " + profile.getImageUrl());
+  console.log("Email: " + profile.getEmail());
+}
