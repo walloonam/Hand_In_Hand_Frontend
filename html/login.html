@@ -44,7 +44,7 @@
         <button id="email_login_button">
           <a href="#">이메일로 로그인하기</a>
         </button>
-        <button id="google_login_button">
+        <button id="google_login_button" data-onsuccess="onSignIn">
           <div>
             <img src="../img/google.png" />
             <a href="#">구글 아이디로 로그인</a>
@@ -59,10 +59,6 @@
       </div>
     </div>
   </body>
-  <script
-    src="https://apis.google.com/js/platform.js?onload=init"
-    async
-    defer
-  ></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
   <script src="../js/login.js"></script>
 </html>

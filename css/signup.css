@@ -43,14 +43,7 @@ body {
   /* margin-top: 1.12rem; */
 }
 
-.id_content p,
-.certifiednum_content p,
-.pw_content p,
-.pw_check_content p,
-.name_content p,
-.nickname_content p,
-.birth_content p,
-.address_content p {
+.signup_content p {
   color: #474747;
   font-family: Inter;
   font-size: 1.125rem;
@@ -61,9 +54,7 @@ body {
   margin-bottom: 0.44rem;
 }
 
-.bottom_id_content,
-.bottom_nickname_content,
-.bottom_address_content {
+.bottom_signup_content {
   display: flex;
   flex-direction: row;
 }
@@ -78,7 +69,6 @@ body {
 #address_input {
   width: 25rem;
   height: 3.125rem;
-  flex-shrink: 0;
   border-radius: 0.9375rem;
   border: 1px solid #9b9b9b;
   padding-left: 30px;
@@ -100,10 +90,7 @@ body {
   line-height: normal;
 }
 
-.bottom_id_content button,
-.certifiednum_content button,
-.bottom_nickname_content button,
-.bottom_address_content button {
+.bottom_signup_content button {
   width: 6.44956rem;
   height: 3.0625rem;
   flex-shrink: 0;
@@ -122,10 +109,10 @@ body {
   cursor: pointer;
 }
 
-.check_message {
-  display: none;
-}
-.certify_message {
+.check_message,
+.certify_message,
+.pw_message,
+.nickname_message {
   display: none;
 }
 
@@ -140,6 +127,17 @@ body {
 
 #certify_message {
   color: #3a7dff;
+  font-family: Inter;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+#email_duplicate_message,
+#pw_message,
+#nickname_message {
+  color: #f00;
   font-family: Inter;
   font-size: 0.75rem;
   font-style: normal;
@@ -168,4 +166,5 @@ body {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  cursor: pointer;
 }
