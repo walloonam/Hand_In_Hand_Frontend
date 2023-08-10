@@ -4,10 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/login.css" />
+    <!-- <meta name="google-signin-scope" content="profile email" />
     <meta
       name="google-signin-client_id"
-      content="585677872563-jpvdm785k2s1tvir2htuubj4mif1qiga.apps.googleusercontent.com"
-    />
+      content="604551010190-le65f4l8v56l9emnmfb3cntcqnnctc5a.apps.googleusercontent.com"
+    /> -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <title>로그인</title>
   </head>
   <body>
@@ -44,13 +46,30 @@
         <button id="email_login_button">
           <a href="#">이메일로 로그인하기</a>
         </button>
-        <button id="google_login_button" data-onsuccess="onSignIn">
+        <button id="google_login_button">
           <div>
             <img src="../img/google.png" />
-            <a href="#">구글 아이디로 로그인</a>
+            <a>구글 아이디로 로그인</a>
             <div></div>
           </div>
         </button>
+        <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> -->
+        <div
+          id="g_id_onload"
+          data-client_id="604551010190-le65f4l8v56l9emnmfb3cntcqnnctc5a.apps.googleusercontent.com"
+          data-login_uri="https://your.domain/your_login_endpoint"
+          data-auto_prompt="false"
+        ></div>
+        <div
+          class="g_id_signin"
+          data-type="standard"
+          data
+          size="large"
+          data-theme="outline"
+          data-text="sign_in_with"
+          data-shape="pill"
+          data-logo_alignment="left"
+        ></div>
       </div>
       <div class="login_footer">
         <a href="./signup.html">회원가입&nbsp; </a>
@@ -59,6 +78,5 @@
       </div>
     </div>
   </body>
-  <script src="https://apis.google.com/js/platform.js" async defer></script>
   <script src="../js/login.js"></script>
 </html>
