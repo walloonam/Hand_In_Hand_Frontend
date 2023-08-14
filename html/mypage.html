@@ -36,15 +36,14 @@
             </ul>
         </div>
         <div class="nav_chat">
-            <a href="#"><button class="chat_btn">채팅하기</button></a>
+            <a href="../html/chat.html"><button class="chat_btn">채팅하기</button></a>
         </div>
         <div class="nav_logout">
             <img src="../img/logout.png" alt="" />
             <a href="./home_logout.html">로그아웃</a>
         </div>
         <div class="nav_mypage">
-            <img src="../img/mypage.png" alt="" />
-            <a href="#">마이페이지</a>
+            <img src="../img/mypage.png" alt="" /> 마이페이지
         </div>
     </nav>
     <hr />
@@ -57,13 +56,41 @@
                     <button class="attend_btn">출석하기</button>
                 </div>
                 <div class="attend_area">
+                    <div class="attend_day"></div>
+                    <div class="attend_day"></div>
+                    <div class="attend_day"></div>
+                    <div class="attend_day"></div>
+                    <div class="attend_day"></div>
 
+                    <div class="attend_day"></div>
+                    <div class="attend_day"></div>
+                    <div class="attend_day"></div>
+                    <div class="attend_day"></div>
+                    <div class="attend_day"></div>
+
+                    <div class="attend_day"></div>
+                    <div class="attend_day"></div>
+                    <div class="attend_day"></div>
+                    <div class="attend_day"></div>
+                    <div class="attend_day"></div>
+
+                    <div class="attend_day"></div>
+                    <div class="attend_day"></div>
+                    <div class="attend_day"></div>
+                    <div class="attend_day"></div>
+                    <div class="attend_day"></div>
+
+                    <div class="attend_day"></div>
+                    <div class="attend_day"></div>
+                    <div class="attend_day"></div>
+                    <div class="attend_day"></div>
+                    <div class="attend_day"></div>
                 </div>
             </div>
             <div class="user_infor">
                 <div class="infor_basic">
-                    <p class="infor_nick">[나의 닉네임] 님,</p>
-                    <p class="infor_point">000000 포인트</p>
+                    <p class="infor_nick" id="content_nickname"></p>
+                    <p class="infor_point" id="content_point"></p>
                 </div>
                 <div class="infor_plus">
                     <div class="list_area">
@@ -72,30 +99,33 @@
                         <p>주　　소 :</p>
                     </div>
                     <div class="content_area">
-                        <p>김멋사</p>
-                        <p>2002-03-22</p>
-                        <p>어쩌구동</p>
+                        <p id="content_name">김멋사</p>
+                        <p id="content_birth">2002-03-22</p>
+                        <p id="content_area">어쩌구동</p>
                     </div>
                 </div>
                 <div class="infor_func">
                     <div class="region_area">
                         <img src="../img/pin.png" alt="">
-                        <p>지역이름</p>
+                        <p id="func_area">지역이름</p>
                     </div>
                     <div class="post_area">
                         <div class="adopt">
                             <p class="adopt_times">채택횟수 : </p>
                             <p class="adopt_num">00회</p>
                         </div>
-                        <a href="#">
+                        <a href="../html/my_post.html">
                             <button class="post_btn">내가 쓴 게시물</button>
                         </a>
                     </div>
                 </div>
-                <a href="#"><button class="mod_btn">개인정보 수정하기</button></a>
+                <a href="../html/modify.html"><button class="mod_btn">개인정보 수정하기</button></a>
             </div>
         </div>
     </section>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="../js/mypage.js"></script>
 
 </body>
 

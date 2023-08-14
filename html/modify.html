@@ -41,8 +41,9 @@
     <section class="container">
         <div class="wrap_content">
             <div class="wrap_img">
-                <img src="" alt="프로필 사진">
-                <button>사진 변경하기</button>
+                <img id="profile" src="" alt="프로필 사진">
+                <button id="img_btn">사진 변경하기</button>
+                <input type="file" id="img_input">
             </div>
             <div class="wrap_infor">
                 <div class="id">
@@ -52,7 +53,7 @@
                 <div class="pw">
                     <p>비밀번호: </p>
                     <p>*********</p>
-                    <button>변경하기</button>
+                    <a href="../html/pw_change.html"><button>변경하기</button></a>
                 </div>
                 <div class="name">
                     <p>이름: </p>
@@ -65,14 +66,16 @@
             </div>
             <div class="wrap_change">
                 <div class="wrap_nick">
-                    <p>닉네임</p>
-                    <input type="text" placeholder="닉네임">
-                    <button>중복확인</button>
+                    <p class="guide">닉네임</p>
+                    <input type="text" id="nickname_input" placeholder="닉네임">
+                    <button class="checkNick_btn">중복확인</button>
+                    <p class="nick_possible">사용 가능한 닉네임입니다.</p>
+                    <p class="nick_impossible">이미 존재하는 닉네임입니다</p>
                 </div>
                 <div class="wrap_add">
-                    <p>주소</p>
-                    <input type="text" placeholder="주소">
-                    <button>주소입력</button>
+                    <p class="guide">주소</p>
+                    <input type="text" id="address_input" placeholder="주소">
+                    <button onclick="openAddressPopup()">주소입력</button>
                 </div>
             </div>
             <div class="wrap_btn">
@@ -81,6 +84,10 @@
             </div>
         </div>
     </section>
+
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="../js/modify.js"></script>
 </body>
 
 </html>

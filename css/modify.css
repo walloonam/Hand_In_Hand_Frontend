@@ -166,7 +166,7 @@ hr {
 .container {
     position: relative;
     margin: 0 auto;
-    height: 75rem;
+    height: 60rem;
     min-width: 100rem;
     overflow: hidden;
 }
@@ -180,6 +180,7 @@ hr {
     margin-top: 0.85rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .wrap_img img {
@@ -202,6 +203,11 @@ hr {
     color: #fff;
     font-size: 0.9375rem;
     font-weight: 700;
+}
+
+#img_input {
+    position: absolute;
+    display: none;
 }
 
 .wrap_infor {
@@ -247,12 +253,13 @@ hr {
 
 .wrap_change div {
     width: 41rem;
-    height: 5.5rem;
+    /* height: 5.5rem; */
     margin: 0 auto;
+    margin-bottom: 1rem;
     padding-left: 7.78rem;
 }
 
-.wrap_change p {
+.guide {
     margin: 0;
     margin-bottom: 0.31rem;
     margin-left: 0.94rem;
@@ -281,6 +288,26 @@ hr {
     font-size: 1.125rem;
     font-weight: 700;
     float: right;
+}
+
+.nick_possible {
+    color: #3a7dff;
+    margin: 0;
+    margin-top: 0.5rem;
+    margin-left: 0.94rem;
+    font-size: 1rem;
+    font-weight: 600;
+    display: none;
+}
+
+.nick_impossible {
+    color: #F00;
+    margin: 0;
+    margin-top: 0.5rem;
+    margin-left: 0.94rem;
+    font-size: 1rem;
+    font-weight: 600;
+    display: none;
 }
 
 .wrap_btn {
