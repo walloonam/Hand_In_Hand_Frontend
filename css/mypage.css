@@ -141,15 +141,13 @@ a {
     align-items: center;
     margin-top: 7.62rem;
     margin-right: 6.81rem;
+    cursor: default;
+    opacity: 0;
 }
 
 .nav_mypage img {
     width: 1.5rem;
     height: 1.5rem;
-}
-
-.nav_mypage img:hover {
-    cursor: pointer;
 }
 
 .nav_mypage a {
@@ -239,6 +237,26 @@ hr {
     cursor: pointer;
 }
 
+.attend_area {
+    margin-left: 3.04rem;
+    margin-top: 1rem;
+    width: 22.045rem;
+    width: 22.045rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.6rem;
+}
+
+.attend_day {
+    width: 3.125rem;
+    height: 3.125rem;
+    border: 1px solid #6D6D6D;
+    background-color: #E6EEFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .user_infor {
     width: 24.45151rem;
     height: 100%;
@@ -290,6 +308,10 @@ hr {
     line-height: normal;
 }
 
+.content_area p {
+    line-height: 1.7rem;
+}
+
 .list_area {
     margin-left: 0.66rem;
     margin-right: 1rem;
@@ -307,26 +329,23 @@ hr {
     border-radius: 1.875rem;
     width: 9.6875rem;
     height: 9.6875rem;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .region_area img {
-    position: absolute;
     width: 1.6875rem;
     height: 2.375rem;
-    margin-left: 1.19rem;
-    margin-top: 3.66rem;
 }
 
 .region_area p {
-    position: absolute;
     display: inline-block;
     margin: 0;
     color: #757575;
     font-size: 1.25rem;
     font-weight: 700;
-    margin-left: 3.87rem;
-    margin-top: 4.09rem;
+    margin-left: 1rem;
 }
 
 .post_area {
