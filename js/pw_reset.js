@@ -33,3 +33,37 @@ document
       console.log("비밀번호 재설정 실패");
     }
   });
+
+// ajax
+function pw_reset() {
+  var email = $("#pw_reset_input").val();
+  var new_password = $("#pw_reset_pwcheck_input").val();
+
+  $.ajax({
+    type: "POST",
+    url: "/user/password_reset/",
+    contentType: "application/json",
+
+    data: JSON.stringify({
+      email: email,
+      new_password: new_password,
+    }),
+    success: function (response) {
+      if (response.result === "success") {
+        alert("비밀번호 재설정에 성공했습니다.");
+      }
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      if (jqXHR.status === 400) {
+        console.error("Bad Request:", jqXHR.responseText);
+        alert("올바르지 않은 형식의 입력입니다.");
+      } else if (jqXHR.status === 401) {
+        console.error("Unauthorized:", jqXHR.responseText);
+        alert("권한이 없는 사용자입니다.");
+      } else {
+        console.error("Error:", jqXHR.status, errorThrown);
+        alert("서버 에러");
+      }
+    },
+  });
+}

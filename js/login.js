@@ -3,19 +3,45 @@ document.addEventListener("DOMContentLoaded", function () {
     .querySelector("#email_login_button")
     .addEventListener("click", function (event) {
       event.preventDefault();
-      // 실제 로그인 검증 로직으로 교체하십시오.
 
-      var id_input = document.querySelector("#id_input").value;
-      var pw_input = document.querySelector("#pw_input").value;
+      var email = document.querySelector("#id_input").value;
+      var password = document.querySelector("#pw_input").value;
 
-      if (id_input === "id" && pw_input === "pw") {
-        window.location.href = "./home_login.html";
-        console.log("로그인 성공");
-      } else {
-        var errorMessage = document.querySelector("#login_error");
-        errorMessage.style.visibility = "visible";
-        console.log("로그인 실패");
-      }
+      $.ajax({
+        type: "POST",
+        url: "http://43.202.43.176:8080/api/user/login/",
+        contentType: "application/json",
+
+        data: JSON.stringify({
+          email: email,
+          password: password,
+        }),
+        success: function (response) {
+          console.log(response);
+
+          sessionStorage.setItem("jwtToken", response.token);
+          alert("로그인이 성공적으로 완료되었습니다.");
+          window.location.href = "./home_login.html";
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          if (jqXHR.status === 400) {
+            console.error("Bad Request:", jqXHR.responseText);
+            alert("올바르지 않은 형식의 입력입니다.");
+          } else if (jqXHR.status === 401) {
+            console.error("Unauthorized:", jqXHR.responseText);
+            alert("로그인에 실패했습니다.");
+          } else if (jqXHR.status === 500) {
+            console.error("Too Many Requests:", jqXHR.responseText);
+            alert("일정 시간동안 잘못된 로그인을 너무 많이 요청했습니다.");
+          } else {
+            console.error("Error:", jqXHR.status, errorThrown);
+            alert("서버 에러");
+          }
+
+          var errorMessage = document.querySelector("#login_error");
+          errorMessage.style.visibility = "visible";
+        },
+      });
     });
 });
 
@@ -47,12 +73,12 @@ document.addEventListener("DOMContentLoaded", function () {
 //   google.accounts.id.prompt(); // also display the One Tap dialog
 // };
 
-google.accounts.id.renderButton(document.getElementById("signinDiv"), {
-  theme: "outline",
-  size: "large",
-  click_listener: onClickHandler,
-});
+// google.accounts.id.renderButton(document.getElementById("signinDiv"), {
+//   theme: "outline",
+//   size: "large",
+//   click_listener: onClickHandler,
+// });
 
-function onClickHandler() {
-  console.log("Sign in with Google button clicked...");
-}
+// function onClickHandler() {
+//   console.log("Sign in with Google button clicked...");
+// }
