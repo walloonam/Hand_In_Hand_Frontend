@@ -45,23 +45,28 @@
             </div>
             <div class="wrap_change">
                 <div class="wrap_present">
-                    <p>현재 비밀번호</p>
-                    <input type="text" placeholder="비밀번호">
+                    <p class="pp">현재 비밀번호</p>
+                    <input id="present" type="text" placeholder="비밀번호">
+                    <p class="not_present">올바른 비밀번호를 입력해주세요</p>
                 </div>
                 <div class="wrap_new">
-                    <p>새로운 비밀번호</p>
-                    <input type="text" placeholder="비밀번호">
+                    <p class="pp">새로운 비밀번호</p>
+                    <input id="new" type="text" placeholder="비밀번호">
                 </div>
                 <div class="wrap_newCheck">
-                    <p>새로운 비밀번호 확인</p>
-                    <input type="text" placeholder="비밀번호">
+                    <p class="pp">새로운 비밀번호 확인</p>
+                    <input id="newCheck" type="text" placeholder="비밀번호">
+                    <p class="not_match">비밀번호가 일치하지 않습니다</p>
                 </div>
             </div>
             <div class="wrap_btn">
-                <button class="mod_btn">비밀번호 재설정하기</button>
+                <button class="mod_btn" onclick="submit()">비밀번호 재설정하기</button>
             </div>
         </div>
     </section>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="../js/pw_change.js"></script>
 </body>
 
 </html>

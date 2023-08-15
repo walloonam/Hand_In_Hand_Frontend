@@ -186,7 +186,7 @@ hr {
 .wrap_img img {
     width: 9.0625rem;
     height: 9.0625rem;
-    background-color: #D9D9D9;
+    /* background-color: #D9D9D9; */
     margin: 0 auto;
     display: flex;
 }
@@ -203,6 +203,7 @@ hr {
     color: #fff;
     font-size: 0.9375rem;
     font-weight: 700;
+    display: none;
 }
 
 #img_input {
@@ -277,6 +278,19 @@ hr {
     padding: 1rem;
 }
 
+#address_input {
+    display: inline-block;
+    width: 25rem;
+    height: 3.125rem;
+    border-radius: 0.9375rem;
+    border: 1px solid #9B9B9B;
+    font-size: 1.125rem;
+    padding: 0.7rem;
+    padding-left: 0.8rem;
+    margin: 0;
+    cursor: default;
+}
+
 .wrap_change button {
     width: 6.44956rem;
     height: 3.0625rem;
@@ -290,7 +304,8 @@ hr {
     float: right;
 }
 
-.nick_possible {
+.nick_possible,
+.nick_present {
     color: #3a7dff;
     margin: 0;
     margin-top: 0.5rem;

@@ -71,81 +71,48 @@
                         <p class="nick">나의 닉네임</p>
                     </div>
                     <div class="wrap_list">
-                        <div class="entity">
-                            <div class="profile_img">
-                                <img src="../img/logo.png" alt="">
-                            </div>
-                            <div class="infor">
-                                <p class="other_nick">대화상대 닉네임</p>
-                                <p class="post">도움 주는 게시물 제목</p>
-                            </div>
-                            <div class="func">
-                                <a href="#" class="elim_btn">
-                                   삭제하기
-                                </a>
-                                <a href="#" class="report_btn">
-                                    신고하기
-                                </a>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
                 <div class="chat">
                     <div class="wrap_post_infor">
                         <div class="post_infor">
-                            <p class="post_name">게시물 제목
-                            </p>
+                            <p class="post_name">게시물 제목</p>
                             <div class="point">
                                 <img src="../img/stamp.png" alt="">
                                 <p>:</p>
-                                <p>400</p>
+                                <p class="post_point"></p>
                             </div>
                         </div>
                         <div class="post_btn">
-                            <a href=""><button class="view_btn">게시물 보기</button></a>
+                            <button class="adopt_btn" data-room-id="0">채택하기</button>
+                            <a href="" class="post_a"><button class="view_btn" data-room-id="0">게시물 보기</button></a>
                         </div>
                     </div>
                     <div class="user_infor">
                         <div class="other_infor">
                             <div class="wrap_nickName">
-                                <p class="nickName">상대 닉네임</p>
+                                <p class="nickName" id="other_nick">상대 닉네임</p>
                             </div>
                             <div class="wrap_adop">
                                 <p>채택 횟수</p>
                                 <p>:</p>
-                                <p>5회</p>
+                                <p class="other_adop"></p>
                             </div>
                         </div>
                         <div class="my_infor">
                             <div class="wrap_nickName">
-                                <p class="nickName">나의 닉네임</p>
+                                <p class="nickName" id="my_nick">나의 닉네임</p>
                             </div>
                             <div class="wrap_adop">
                                 <p>채택 횟수</p>
                                 <p>:</p>
-                                <p>5회</p>
+                                <p class="my_adop"></p>
                             </div>
                         </div>
                     </div>
                     <div class="chat_area">
-                        <div class="other_chat">
-                            <p>어쩌구 저쩌구 이건 말풍선 안에 들어갈 채팅 내용 동해물과 백두산이 마르고 닳도록....</p>
-                        </div>
-                        <div class="my_chat">
-                            <p>하느님이 보우하사 우리나라 만세... 무궁화 삼천리</p>
-                        </div>
-                        <div class="other_chat">
-                            <p>화려강산 대한사람 대한으로</p>
-                        </div>
-                        <div class="my_chat">
-                            <p>길이 보전하세...</p>
-                        </div>
-                        <div class="other_chat">
-                            <p>당근이세요?</p>
-                        </div>
-                        <div class="my_chat">
-                            <p>사람인데요...</p>
-                        </div>
+
                     </div>
                     <div class="input_area">
                         <div class="input_chat">
@@ -169,6 +136,7 @@
     </section>
 
     <!-- js -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="../js/chat.js"></script>
 
 </body>

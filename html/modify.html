@@ -41,14 +41,14 @@
     <section class="container">
         <div class="wrap_content">
             <div class="wrap_img">
-                <img id="profile" src="" alt="프로필 사진">
+                <img id="profile" src="../img/logo.png" alt="프로필 사진">
                 <button id="img_btn">사진 변경하기</button>
                 <input type="file" id="img_input">
             </div>
             <div class="wrap_infor">
                 <div class="id">
                     <p>아이디: </p>
-                    <p>hellosy76@naver.com</p>
+                    <p id="user_id"></p>
                 </div>
                 <div class="pw">
                     <p>비밀번호: </p>
@@ -57,11 +57,11 @@
                 </div>
                 <div class="name">
                     <p>이름: </p>
-                    <p>박세영</p>
+                    <p id="user_name"></p>
                 </div>
                 <div class="birth">
                     <p>생년월일</p>
-                    <p>20000706</p>
+                    <p id="user_birth"></p>
                 </div>
             </div>
             <div class="wrap_change">
@@ -69,17 +69,18 @@
                     <p class="guide">닉네임</p>
                     <input type="text" id="nickname_input" placeholder="닉네임">
                     <button class="checkNick_btn">중복확인</button>
+                    <p class="nick_present">현재 닉네임입니다.</p>
                     <p class="nick_possible">사용 가능한 닉네임입니다.</p>
                     <p class="nick_impossible">이미 존재하는 닉네임입니다</p>
                 </div>
                 <div class="wrap_add">
                     <p class="guide">주소</p>
-                    <input type="text" id="address_input" placeholder="주소">
+                    <p onclick="openAddressPopup()" id="address_input">주소</p>
                     <button onclick="openAddressPopup()">주소입력</button>
                 </div>
             </div>
             <div class="wrap_btn">
-                <button class="mod_btn">개인정보 수정하기</button>
+                <button class="mod_btn" onclick="submit()">개인정보 수정하기</button>
                 <button class="withdraw_btn">계정 탈퇴하기</button>
             </div>
         </div>
