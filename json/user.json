@@ -1,11 +1,16 @@
 {
-    "name": "ted",
-    "email": "jh37016@naber.com",
-    "password": "hufdshfh",
-    "nickname": "hi",
-    "date_of_birth": "22-44-22",
-    "address": "주소",
-    "point": "2222",
-    "adopt_count": "2",
-    "area": "동작구"
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "image": "/media/simple.png",
+        "name": "jaehoon",
+        "email": "jh37106@naver.com",
+        "password": "wogns0605@@",
+        "nickname": "jay",
+        "date_of_birth": "1999-06-05",
+        "address": "경기도 시흥시 목감남서로 35",
+        "point": 1000,
+        "adopt_count": 0,
+        "area": "장충동"
+    }
 }

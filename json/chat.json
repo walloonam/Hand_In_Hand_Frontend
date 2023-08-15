@@ -1,0 +1,161 @@
+{
+    "user": "jay",
+    "main": {
+        "main": [{
+                "owner": 2,
+                "custom": 3,
+                "customN": "jay2",
+                "ownerN": "jay",
+                "point": 500,
+                "room_id": 1,
+                "title": "키오스크 도와주세요",
+                "chat": [{
+                        "pk": 1,
+                        "fields": {
+                            "content": "안녕하세요 게시물보고 연락드려요~",
+                            "user": "jay2",
+                            "room": 1
+                        }
+                    },
+                    {
+                        "pk": 2,
+                        "fields": {
+                            "content": "아 안녕하세여~",
+                            "user": "jay",
+                            "room": 1
+                        }
+                    },
+                    {
+                        "pk": 3,
+                        "fields": {
+                            "content": "잘하시나요?",
+                            "user": "jay",
+                            "room": 1
+                        }
+                    }
+                ]
+            },
+            {
+                "owner": 4,
+                "custom": 5,
+                "customN": "jay3",
+                "ownerN": "jay",
+                "point": 600,
+                "room_id": 2,
+                "title": "어쩌구 도와주세요",
+                "chat": [{
+                        "pk": 1,
+                        "fields": {
+                            "content": "안녕하세요 게시물보고 연락드려요~",
+                            "user": "jay3",
+                            "room": 1
+                        }
+                    },
+                    {
+                        "pk": 2,
+                        "fields": {
+                            "content": "아 안녕하세여~",
+                            "user": "jay",
+                            "room": 1
+                        }
+                    },
+                    {
+                        "pk": 3,
+                        "fields": {
+                            "content": "잘하시나요?",
+                            "user": "jay",
+                            "room": 1
+                        }
+                    },
+                    {
+                        "pk": 4,
+                        "fields": {
+                            "content": "완전요~",
+                            "user": "jay3",
+                            "room": 1
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "sub": {
+        "sub": [{
+                "owner": 5,
+                "custom": 14,
+                "customN": "jay4",
+                "ownerN": "jay",
+                "point": 500,
+                "room_id": 1,
+                "title": "도와주세요",
+                "chat": [{
+                        "pk": 1,
+                        "fields": {
+                            "content": "안녕하세요 게시물보고 연락드려요~",
+                            "user": "jay4",
+                            "room": 1
+                        }
+                    },
+                    {
+                        "pk": 2,
+                        "fields": {
+                            "content": "아 안녕하세여~",
+                            "user": "jay",
+                            "room": 1
+                        }
+                    },
+                    {
+                        "pk": 3,
+                        "fields": {
+                            "content": "잘하시나요?",
+                            "user": "jay",
+                            "room": 1
+                        }
+                    }
+                ]
+            },
+            {
+                "owner": 46,
+                "custom": 51,
+                "customN": "jay5",
+                "ownerN": "jay",
+                "point": 600,
+                "room_id": 2,
+                "title": "도움 바랍니다",
+                "chat": [{
+                        "pk": 1,
+                        "fields": {
+                            "content": "안녕하세요 게시물보고 연락드려요~",
+                            "user": "jay5",
+                            "room": 1
+                        }
+                    },
+                    {
+                        "pk": 2,
+                        "fields": {
+                            "content": "아 안녕하세여~",
+                            "user": "jay",
+                            "room": 1
+                        }
+                    },
+                    {
+                        "pk": 3,
+                        "fields": {
+                            "content": "잘하시나요?",
+                            "user": "jay",
+                            "room": 1
+                        }
+                    },
+                    {
+                        "pk": 4,
+                        "fields": {
+                            "content": "완전요~",
+                            "user": "jay5",
+                            "room": 1
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

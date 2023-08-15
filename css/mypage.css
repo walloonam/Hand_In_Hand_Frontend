@@ -247,6 +247,11 @@ hr {
     gap: 1.6rem;
 }
 
+.attend_area img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
 .attend_day {
     width: 3.125rem;
     height: 3.125rem;
@@ -255,6 +260,10 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.attend_day.checked {
+    background-color: #9ABCFF;
 }
 
 .user_infor {
@@ -306,6 +315,8 @@ hr {
     margin: 0;
     margin-bottom: 0.81rem;
     line-height: normal;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .content_area p {
@@ -360,6 +371,9 @@ hr {
     width: 13.39631rem;
     height: 4.42919rem;
     margin-bottom: 0.83rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .adopt p {
@@ -371,14 +385,10 @@ hr {
 
 .adopt_times {
     margin: 0;
-    margin-left: 2.89rem;
-    margin-top: 1.6rem;
 }
 
 .adopt_num {
     margin: 0;
-    margin-left: 0.3rem;
-    margin-top: 1.6rem;
 }
 
 .post_btn {

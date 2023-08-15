@@ -313,6 +313,7 @@ hr {
     overflow: auto;
     height: 27rem;
     white-space: nowrap;
+    overflow-x: hidden;
 }
 
 .wrap_list::-webkit-scrollbar {
@@ -326,6 +327,7 @@ hr {
 
 .entity {
     /* background-color: blueviolet; */
+    width: 16.10956rem;
     height: 3.48rem;
     border-bottom: solid 0.0625rem #DDD;
     display: flex;
@@ -344,7 +346,7 @@ hr {
 .profile_img {
     height: 2.3125rem;
     margin-top: 0.58rem;
-    margin-left: 1.86rem;
+    margin-left: 1.5rem;
 }
 
 .profile_img img {
@@ -354,11 +356,16 @@ hr {
 }
 
 .infor {
+    /* background-color: #3A7DFF; */
+    width: 6.4rem;
     margin-top: 0.58rem;
-    margin-left: 0.3rem;
-    margin-right: 1.91rem;
+    margin-left: 0.5rem;
+    margin-right: 1.3rem;
     display: flex;
     flex-direction: column;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .other_nick {
@@ -371,6 +378,10 @@ hr {
     color: #929292;
     font-size: 0.625rem;
     font-weight: 700;
+    flex-direction: column;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .func {
@@ -379,7 +390,7 @@ hr {
     margin-top: 0.57rem;
 }
 
-.func a {
+.func p {
     color: #929292;
     font-size: 0.625rem;
     font-weight: 700;
@@ -389,7 +400,7 @@ hr {
 }
 
 .elim_btn {
-    padding-bottom: 0.2rem;
+    padding-bottom: 0.4rem;
 }
 
 
@@ -421,10 +432,14 @@ hr {
 }
 
 .post_name {
+    width: 15rem;
     font-size: 0.9375rem;
     font-weight: 700;
     padding-top: 1.76rem;
     padding-left: 1.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .point {
@@ -445,6 +460,10 @@ hr {
     margin-top: 1.6rem;
 }
 
+.post_btn {
+    display: flex;
+}
+
 .view_btn {
     float: right;
     width: 5.85938rem;
@@ -459,6 +478,24 @@ hr {
 }
 
 .view_btn:hover {
+    cursor: pointer;
+}
+
+.adopt_btn {
+    float: right;
+    width: 5.85938rem;
+    height: 2.22344rem;
+    border-radius: 1.875rem;
+    background: #C2D3F5;
+    border: 1px solid black;
+    margin-top: 1.23rem;
+    margin-right: 0.93rem;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    display: none;
+}
+
+.adopt_btn:hover {
     cursor: pointer;
 }
 
@@ -547,8 +584,6 @@ hr {
     margin-top: 1.25rem;
     overflow: hidden;
 }
-
-.input_chat {}
 
 .text_content {
     overflow: scroll;
