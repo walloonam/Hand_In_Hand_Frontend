@@ -26,12 +26,6 @@ $(document).ready(function () {
   }
 });
 
-$(document).ready(function () {
-  $(".request_container").click(function () {
-    window.location.href = "./solve.html"; // 실제 경로로 변경하기
-  });
-});
-
 const jwtToken = sessionStorage.getItem("jwtToken");
 $.ajax({
   type: "POST",
@@ -129,6 +123,7 @@ function showPage(pageNumber) {
   bestparentbox.innerHTML = ""; // 이전에 생성된 요소들 삭제
 
   itemsToDisplay.forEach((element) => {
+    const pk = element.pk;
     const elements = element.fields;
     const requestContainer = createRequestContainer(
       elements.title,
@@ -221,29 +216,6 @@ function createPaginationButtons(totalPages) {
   updatePageColor();
 }
 
-// $.ajax({
-//   type: "GET",
-//   url: "http://43.202.43.176:8080/api/post/",
-//   contentType: "application/json",
-//   dataType: "json",
-//   success: function (secondResponse) {
-//     console.log(secondResponse);
-//     alert("두 번째 요청이 정상적으로 처리되었습니다.");
-//   },
-//   error: function (jqXHR, textStatus, errorThrown) {
-//     if (jqXHR.status === 400) {
-//       console.error("Bad Request:", jqXHR.responseText);
-//       alert("올바르지 않은 형식의 입력입니다.");
-//     } else if (jqXHR.status === 401) {
-//       console.error("Unauthorized:", jqXHR.responseText);
-//       alert("권한이 없는 사용자입니다.");
-//     } else {
-//       console.error("Error:", jqXHR.status, errorThrown);
-//       alert("서버 에러");
-//     }
-//   },
-// });
-
 function boxItem(element) {
   createRequestContainer(
     element.title,
@@ -300,6 +272,11 @@ function createRequestContainer(title, point, numChat, content) {
   requestContainer.appendChild(topContainer);
   requestContainer.appendChild(contentContainer);
 
-  const bestparentbox = document.createElement("wrap_request_container");
-  return bestparentbox.appendChild(requestContainer);
+  requestContainer.addEventListener("click", function () {
+    // 필요한 데이터(id)를 세션 스토리지에 저장
+    sessionStorage.setItem("requestId", id);
+    window.location.href = "./solve.html";
+  });
+
+  return requestContainer;
 }
