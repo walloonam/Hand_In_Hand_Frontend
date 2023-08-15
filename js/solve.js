@@ -35,7 +35,49 @@ $(document).ready(function () {
   }
 });
 
-// ajax
+// 데이터 불러오기
+$(document).ready(function () {
+  // 세션 스토리지에서 데이터 불러오기
+  const requestId = sessionStorage.getItem("requestId");
+
+  // 데이터가 존재하면 두 번째 요청을 보냅니다.
+  if (requestId) {
+    $.ajax({
+      type: "GET",
+      url: "http://43.202.43.176:8080/api/post/" + requestId + "/",
+      contentType: "application/json",
+      dataType: "json",
+      success: function (secondResponse) {
+        console.log(secondResponse);
+        alert("두 번째 요청이 정상적으로 처리되었습니다.");
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        if (jqXHR.status === 400) {
+          console.error("Bad Request:", jqXHR.responseText);
+          alert("올바르지 않은 형식의 입력입니다.");
+        } else if (jqXHR.status === 401) {
+          console.error("Unauthorized:", jqXHR.responseText);
+          alert("권한이 없는 사용자입니다.");
+        } else {
+          console.error("Error:", jqXHR.status, errorThrown);
+          alert("서버 에러");
+        }
+      },
+    });
+  }
+  // 세션 스토리지에서 데이터 불러오기
+  const requestTitle = sessionStorage.getItem("requestTitle");
+  const requestPoint = sessionStorage.getItem("requestPoint");
+  const requestChat = sessionStorage.getItem("requestChat");
+  const requestContent = sessionStorage.getItem("requestContent");
+
+  // 불러온 데이터를 화면에 표시
+  $("#title").text(requestTitle);
+  $("#point").text(requestPoint + "P");
+  $("#chat").text(requestChat + "명");
+  $("#content").text(requestContent);
+});
+
 const jwtToken = sessionStorage.getItem("jwtToken");
 $.ajax({
   type: "POST",
@@ -81,7 +123,7 @@ $.ajax({
 });
 
 $.ajax({
-  url: "/post/declare_post/<int:pk>/",
+  url: "http://43.202.43.176:8080/api/post/declare_post/" + pk + "/",
   method: "POST",
   dataType: "json",
   success: function (response) {
