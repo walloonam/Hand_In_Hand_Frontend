@@ -1,44 +1,87 @@
-// 아이디 중복확인+인증번호
-function checkEmailAvailability() {
-  var emailInput = document.querySelector("#email_input");
-  var emailCheckMessage = document.querySelector("#email_check_message");
-  var emailDuplicateMessage = document.querySelector(
-    "#email_duplicate_message"
-  );
-  var certifiednumInput = document.querySelector("#certifiednum_input");
-  var certifyButton = document.querySelector("#certify_button");
+$(document).ready(function () {
+  // 아이디 중복 확인 버튼 클릭 시
+  $("#email_check_button").click(function () {
+    var emailInputValue = $("#email_input").val();
+    checkEmailAvailability(emailInputValue);
+  });
+});
 
-  // 예시: 여기에 실제로 아이디 중복 확인 로직을 구현해야 합니다.
-  var isEmailAvailable = checkEmailDuplicate(emailInput.value);
+// 닉네임 중복 확인 버튼 클릭 시
+$("#nickname_check_button").click(function () {
+  var nicknameInputValue = $("#nickname_input").val();
+  checkNicknameAvailability(nicknameInputValue);
+});
 
-  if (isEmailAvailable) {
-    emailCheckMessage.style.display = "block"; // 중복 없을 경우 메시지 표시
-    emailDuplicateMessage.style.display = "none"; // 이미 존재하는 아이디 메시지 숨김
-    certifiednumInput.disabled = false; // 인증번호 입력 활성화
-    certifyButton.disabled = false; // 인증하기 버튼 활성화
-  } else {
-    emailCheckMessage.style.display = "none"; // 중복 있을 경우 메시지 숨김
-    emailDuplicateMessage.style.display = "block"; // 이미 존재하는 아이디 메시지 표시
-    certifiednumInput.disabled = true; // 인증번호 입력 비활성화
-    certifyButton.disabled = true; // 인증하기 버튼 비활성화
-  }
+function checkEmailAvailability(email) {
+  $.ajax({
+    type: "POST",
+    url: "http://43.202.43.176:8080/api/user/check_email",
+    contentType: "application/json",
+
+    data: JSON.stringify({
+      email: email,
+    }),
+    success: function (data) {
+      if (data.message === "success") {
+        // 중복 없을 경우
+        $("#email_check_message").css("display", "block");
+        $("#email_duplicate_message").css("display", "none");
+        $("#certifiednum_input").prop("disabled", false);
+        $("#certify_button").prop("disabled", false);
+      } else if (data.message === "fail") {
+        // 중복 있을 경우
+        $("#email_check_message").css("display", "none");
+        $("#email_duplicate_message").css("display", "block");
+        $("#certifiednum_input").prop("disabled", true);
+        $("#certify_button").prop("disabled", true);
+      }
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      if (jqXHR.status === 400) {
+        console.error("Bad Request:", jqXHR.responseText);
+        alert("올바르지 않은 형식의 입력입니다.");
+      } else if (jqXHR.status === 401) {
+        console.error("Unauthorized:", jqXHR.responseText);
+        alert("권한이 없는 사용자입니다.");
+      } else {
+        console.error("Error:", jqXHR.status, errorThrown);
+        alert("서버 에러");
+      }
+    },
+  });
 }
 
-function showCertifyMessage() {
-  var certifyMessage = document.querySelector("#certify_message");
-
-  // 인증번호 검증 로직을 여기에 추가해야 합니다.
-  // 예시로 항상 인증 성공으로 가정하고 메시지를 표시하도록 작성되어 있습니다.
-  certifyMessage.style.display = "block";
-}
-
-// 예시: 아이디 중복 확인 함수 (실제로는 서버 요청 등으로 구현해야 함)
-function checkEmailDuplicate(email) {
-  // 여기에 실제로 아이디 중복 확인 로직을 구현해야 합니다.
-  // 서버 요청 등을 통해 아이디의 중복 여부를 확인하고 결과를 반환합니다.
-  // 이 함수는 중복되지 않으면 true를 반환하고, 중복되면 false를 반환해야 합니다.
-  // 예시로 항상 true를 반환하도록 작성되어 있습니다.
-  return true;
+function checkNicknameAvailability(nickname) {
+  $.ajax({
+    type: "POST",
+    url: "/user/check_nickname", // 실제 서버 경로로 수정해야 함
+    contentType: "application/json",
+    data: JSON.stringify({
+      nickname: nickname,
+    }),
+    success: function (data) {
+      var nicknameMessage = document.querySelector("#nickname_message");
+      if (data.message === "success") {
+        // 중복 없을 경우
+        nicknameMessage.style.display = "none";
+      } else if (data.message === "fail") {
+        // 중복 있을 경우
+        nicknameMessage.style.display = "block";
+      }
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      if (jqXHR.status === 400) {
+        console.error("Bad Request:", jqXHR.responseText);
+        alert("올바르지 않은 형식의 입력입니다.");
+      } else if (jqXHR.status === 401) {
+        console.error("Unauthorized:", jqXHR.responseText);
+        alert("권한이 없는 사용자입니다.");
+      } else {
+        console.error("Error:", jqXHR.status, errorThrown);
+        alert("서버 에러");
+      }
+    },
+  });
 }
 
 // 비밀번호
@@ -52,29 +95,6 @@ function checkPasswordMatch() {
   } else {
     pwMessage.style.display = "block"; // 불일치하면 메시지를 보이게 함
   }
-}
-
-// 닉네임
-function checkNicknameAvailability() {
-  var nicknameInput = document.querySelector("#nickname_input").value;
-  var nicknameMessage = document.querySelector("#nickname_message");
-
-  // 예시: 여기에 실제로 닉네임 중복 확인 로직을 구현해야 합니다.
-  var isNicknameAvailable = checkNicknameDuplicate(nicknameInput);
-
-  if (isNicknameAvailable) {
-    nicknameMessage.style.display = "none";
-  } else {
-    nicknameMessage.style.display = "block";
-  }
-}
-
-// 예시: 닉네임 중복 확인 함수 (실제로는 서버 요청 등으로 구현해야 함)
-function checkNicknameDuplicate(nickname) {
-  // 여기에 실제로 닉네임 중복 확인 로직을 구현해야 합니다.
-  // 서버 요청 등을 통해 닉네임의 중복 여부를 확인하고 결과를 반환합니다.
-  // 예시로 항상 false를 반환하도록 작성되어 있습니다.
-  return false;
 }
 
 // 주소입력
@@ -97,7 +117,58 @@ function openAddressPopup() {
         extraRoadAddr = "(" + extraRoadAddr + ")";
       }
 
-      document.querySelector("#address_input").value = roadAddr + extraRoadAddr;
+      var fullAddress = roadAddr + extraRoadAddr;
+      document.querySelector("#address_input").value = fullAddress;
+
+      var matches = fullAddress.match(/(\S+동)/);
+      var area = matches ? matches[1] : "";
+
+      signup(area);
     },
   }).open();
+}
+
+function signup() {
+  var email = $("#email_input").val();
+  var password = $("#password_input").val();
+  var name = $("#name_input").val();
+  var nickname = $("#nickname_input").val();
+  var dateOfBirth = parseInt($("#birth_input").val());
+  var address = $("#address_input").val();
+
+  $.ajax({
+    type: "POST",
+    url: "/user",
+    contentType: "application/json",
+
+    data: JSON.stringify({
+      email: email,
+      password: password,
+      name: name,
+      nickname: nickname,
+      date_of_birth: dateOfBirth,
+      address: address,
+      area: area,
+    }),
+    success: function (response) {
+      if (response.status === 201) {
+        alert("회원가입에 성공했습니다.");
+      }
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      if (jqXHR.status === 400) {
+        console.error("Bad Request:", jqXHR.responseText);
+        alert("올바르지 않은 형식의 입력입니다.");
+      } else if (jqXHR.status === 401) {
+        console.error("Unauthorized:", jqXHR.responseText);
+        alert("이메일 인증코드가 올바르지 않습니다.");
+      } else if (jqXHR.status === 409) {
+        console.error("Conflict:", jqXHR.responseText);
+        alert("중복된 리소스가 존재합니다.");
+      } else {
+        console.error("Error:", jqXHR.status, errorThrown);
+        alert("서버 에러");
+      }
+    },
+  });
 }
