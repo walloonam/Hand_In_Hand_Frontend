@@ -247,7 +247,7 @@ document.querySelector('.post_btn').addEventListener('click', function(event) {
         // const post_id = event.target.getAttribute("post_id");
 
         // link.addEventListener("click", function(event) {
-        //     localStorage.setItem("post_id", post_id);
+        //     sessionStorage.setItem("post_id", post_id);
         // });
 
         // console.log(post_id);
