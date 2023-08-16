@@ -67,5 +67,559 @@
             "numChat": 0,
             "declare": 0
         }
+    },
+    {
+        "model": "post.post",
+        "pk": 1,
+        "fields": {
+            "title": "키오스크 도와주세요",
+            "content": "키오스크가 너무어려워요",
+            "created_at": "2023-08-14T15:40:44.349Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 1
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 3,
+        "fields": {
+            "title": "키오스크 도와주세요12",
+            "content": "키오스크가 너무어려워요12",
+            "created_at": "2023-08-14T17:10:40.208Z",
+            "point": 200,
+            "user": "jay",
+            "area": "신당동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 4,
+        "fields": {
+            "title": "키오스크 도와주세요124",
+            "content": "키오스크가 너무어려워요124",
+            "created_at": "2023-08-14T17:10:50.321Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 5,
+        "fields": {
+            "title": "키오스크 도와주세",
+            "content": "키오스크가 너무어려워4",
+            "created_at": "2023-08-14T17:10:50.321Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 6,
+        "fields": {
+            "title": "키오스크 도와세",
+            "content": "키오스크가 려워4",
+            "created_at": "2023-08-14T17:10:50.321Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 1,
+        "fields": {
+            "title": "키오스크 도와주세요",
+            "content": "키오스크가 너무어려워요",
+            "created_at": "2023-08-14T15:40:44.349Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 1
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 3,
+        "fields": {
+            "title": "키오스크 도와주세요12",
+            "content": "키오스크가 너무어려워요12",
+            "created_at": "2023-08-14T17:10:40.208Z",
+            "point": 200,
+            "user": "jay",
+            "area": "신당동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 4,
+        "fields": {
+            "title": "키오스크 도와주세요124",
+            "content": "키오스크가 너무어려워요124",
+            "created_at": "2023-08-14T17:10:50.321Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 5,
+        "fields": {
+            "title": "키오스크 도와주세",
+            "content": "키오스크가 너무어려워4",
+            "created_at": "2023-08-14T17:10:50.321Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 6,
+        "fields": {
+            "title": "키오스크 도와세",
+            "content": "키오스크가 려워4",
+            "created_at": "2023-08-14T17:10:50.321Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 0
+        }
+    }, {
+        "model": "post.post",
+        "pk": 1,
+        "fields": {
+            "title": "키오스크 도와주세요",
+            "content": "키오스크가 너무어려워요",
+            "created_at": "2023-08-14T15:40:44.349Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 1
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 3,
+        "fields": {
+            "title": "키오스크 도와주세요12",
+            "content": "키오스크가 너무어려워요12",
+            "created_at": "2023-08-14T17:10:40.208Z",
+            "point": 200,
+            "user": "jay",
+            "area": "신당동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 4,
+        "fields": {
+            "title": "키오스크 도와주세요124",
+            "content": "키오스크가 너무어려워요124",
+            "created_at": "2023-08-14T17:10:50.321Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 5,
+        "fields": {
+            "title": "키오스크 도와주세",
+            "content": "키오스크가 너무어려워4",
+            "created_at": "2023-08-14T17:10:50.321Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 6,
+        "fields": {
+            "title": "키오스크 도와세",
+            "content": "키오스크가 려워4",
+            "created_at": "2023-08-14T17:10:50.321Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 0
+        }
+    }, {
+        "model": "post.post",
+        "pk": 1,
+        "fields": {
+            "title": "키오스크 도와주세요",
+            "content": "키오스크가 너무어려워요",
+            "created_at": "2023-08-14T15:40:44.349Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 1
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 3,
+        "fields": {
+            "title": "키오스크 도와주세요12",
+            "content": "키오스크가 너무어려워요12",
+            "created_at": "2023-08-14T17:10:40.208Z",
+            "point": 200,
+            "user": "jay",
+            "area": "신당동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 4,
+        "fields": {
+            "title": "키오스크 도와주세요124",
+            "content": "키오스크가 너무어려워요124",
+            "created_at": "2023-08-14T17:10:50.321Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 5,
+        "fields": {
+            "title": "키오스크 도와주세",
+            "content": "키오스크가 너무어려워4",
+            "created_at": "2023-08-14T17:10:50.321Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 6,
+        "fields": {
+            "title": "키오스크 도와세",
+            "content": "키오스크가 려워4",
+            "created_at": "2023-08-14T17:10:50.321Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 0
+        }
+    }, {
+        "model": "post.post",
+        "pk": 1,
+        "fields": {
+            "title": "키오스크 도와주세요",
+            "content": "키오스크가 너무어려워요",
+            "created_at": "2023-08-14T15:40:44.349Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 1
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 3,
+        "fields": {
+            "title": "키오스크 도와주세요12",
+            "content": "키오스크가 너무어려워요12",
+            "created_at": "2023-08-14T17:10:40.208Z",
+            "point": 200,
+            "user": "jay",
+            "area": "신당동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 4,
+        "fields": {
+            "title": "키오스크 도와주세요124",
+            "content": "키오스크가 너무어려워요124",
+            "created_at": "2023-08-14T17:10:50.321Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 5,
+        "fields": {
+            "title": "키오스크 도와주세",
+            "content": "키오스크가 너무어려워4",
+            "created_at": "2023-08-14T17:10:50.321Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 6,
+        "fields": {
+            "title": "키오스크 도와세",
+            "content": "키오스크가 려워4",
+            "created_at": "2023-08-14T17:10:50.321Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 0
+        }
+    }, {
+        "model": "post.post",
+        "pk": 1,
+        "fields": {
+            "title": "키오스크 도와주세요",
+            "content": "키오스크가 너무어려워요",
+            "created_at": "2023-08-14T15:40:44.349Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 1
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 3,
+        "fields": {
+            "title": "키오스크 도와주세요12",
+            "content": "키오스크가 너무어려워요12",
+            "created_at": "2023-08-14T17:10:40.208Z",
+            "point": 200,
+            "user": "jay",
+            "area": "신당동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 4,
+        "fields": {
+            "title": "키오스크 도와주세요124",
+            "content": "키오스크가 너무어려워요124",
+            "created_at": "2023-08-14T17:10:50.321Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 5,
+        "fields": {
+            "title": "키오스크 도와주세",
+            "content": "키오스크가 너무어려워4",
+            "created_at": "2023-08-14T17:10:50.321Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 6,
+        "fields": {
+            "title": "키오스크 도와세",
+            "content": "키오스크가 려워4",
+            "created_at": "2023-08-14T17:10:50.321Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 0
+        }
+    }, {
+        "model": "post.post",
+        "pk": 1,
+        "fields": {
+            "title": "키오스크 도와주세요",
+            "content": "키오스크가 너무어려워요",
+            "created_at": "2023-08-14T15:40:44.349Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 1
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 3,
+        "fields": {
+            "title": "키오스크 도와주세요12",
+            "content": "키오스크가 너무어려워요12",
+            "created_at": "2023-08-14T17:10:40.208Z",
+            "point": 200,
+            "user": "jay",
+            "area": "신당동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 4,
+        "fields": {
+            "title": "키오스크 도와주세요124",
+            "content": "키오스크가 너무어려워요124",
+            "created_at": "2023-08-14T17:10:50.321Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 5,
+        "fields": {
+            "title": "키오스크 도와주세",
+            "content": "키오스크가 너무어려워4",
+            "created_at": "2023-08-14T17:10:50.321Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 6,
+        "fields": {
+            "title": "키오스크 도와세",
+            "content": "키오스크가 려워4",
+            "created_at": "2023-08-14T17:10:50.321Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 0
+        }
+    }, {
+        "model": "post.post",
+        "pk": 1,
+        "fields": {
+            "title": "키오스크 도와주세요",
+            "content": "키오스크가 너무어려워요",
+            "created_at": "2023-08-14T15:40:44.349Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 1
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 3,
+        "fields": {
+            "title": "키오스크 도와주세요12",
+            "content": "키오스크가 너무어려워요12",
+            "created_at": "2023-08-14T17:10:40.208Z",
+            "point": 200,
+            "user": "jay",
+            "area": "신당동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 4,
+        "fields": {
+            "title": "키오스크 도와주세요124",
+            "content": "키오스크가 너무어려워요124",
+            "created_at": "2023-08-14T17:10:50.321Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 5,
+        "fields": {
+            "title": "키오스크 도와주세",
+            "content": "키오스크가 너무어려워4",
+            "created_at": "2023-08-14T17:10:50.321Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 0
+        }
+    },
+    {
+        "model": "post.post",
+        "pk": 6,
+        "fields": {
+            "title": "키오스크 도와세",
+            "content": "키오스크가 려워4",
+            "created_at": "2023-08-14T17:10:50.321Z",
+            "point": 200,
+            "user": "jay",
+            "area": "장충동",
+            "numChat": 0,
+            "declare": 0
+        }
     }
 ]
