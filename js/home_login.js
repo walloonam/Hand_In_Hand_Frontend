@@ -26,12 +26,13 @@ $(document).ready(function () {
   }
 });
 
+// 전체 정보 불러오기
 document.addEventListener("DOMContentLoaded", function () {
   const jwtToken = sessionStorage.getItem("jwtToken");
 
   $.ajax({
     type: "POST",
-    url: "http://43.202.43.176:8080/api/user/info/",
+    url: "http://3.36.130.108:8080/api/user/info/",
     contentType: "application/json",
     data: JSON.stringify({
       token: jwtToken,
@@ -70,5 +71,38 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("서버 에러");
       }
     },
+  });
+});
+
+// 로그아웃
+$(document).ready(function () {
+  $(".logout").click(function (event) {
+    event.preventDefault(); // 기본 동작을 중단합니다.
+    const jwtToken = sessionStorage.getItem("jwtToken");
+
+    $.ajax({
+      type: "POST",
+      url: "http://3.36.130.108:8080/api/user/logout/",
+      data: JSON.stringify({
+        token: jwtToken,
+      }),
+      success: function (response) {
+        localStorage.removeItem("token");
+        alert("로그아웃 되었습니다.");
+        window.location.href = "./home_logout.html";
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        if (jqXHR.status === 400) {
+          console.error("Bad Request:", jqXHR.responseText);
+          alert("올바르지 않은 형식의 입력입니다.");
+        } else if (jqXHR.status === 401) {
+          console.error("Unauthorized:", jqXHR.responseText);
+          alert("권한이 없는 사용자입니다.");
+        } else {
+          console.error("Error:", jqXHR.status, errorThrown);
+          alert("서버 에러");
+        }
+      },
+    });
   });
 });

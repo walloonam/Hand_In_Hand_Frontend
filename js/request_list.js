@@ -29,7 +29,7 @@ $(document).ready(function () {
 const jwtToken = sessionStorage.getItem("jwtToken");
 $.ajax({
   type: "POST",
-  url: "http://43.202.43.176:8080/api/user/info/",
+  url: "http://3.36.130.108:8080/api/user/info/",
   contentType: "application/json",
   data: JSON.stringify({
     token: jwtToken,
@@ -84,7 +84,7 @@ function request_list() {
   console.log(area);
   $.ajax({
     type: "POST",
-    url: "http://43.202.43.176:8080/api/post/post/",
+    url: "http://3.36.130.108:8080/api/post/post/",
     contentType: "application/json",
     data: JSON.stringify({
       area: area,
@@ -125,11 +125,14 @@ function showPage(pageNumber) {
   itemsToDisplay.forEach((element) => {
     const pk = element.pk;
     const elements = element.fields;
+    // 'id' 값을 사용하여 요소 생성
     const requestContainer = createRequestContainer(
+      pk,
       elements.title,
       elements.point,
       elements.numChat,
-      elements.content
+      elements.content,
+      elements.userId
     );
     bestparentbox.appendChild(requestContainer);
   });
@@ -225,7 +228,7 @@ function boxItem(element) {
   );
 }
 
-function createRequestContainer(title, point, numChat, content) {
+function createRequestContainer(id, title, point, numChat, content, userId) {
   let requestContainer = document.createElement("div");
   requestContainer.className = "request_container";
 
@@ -273,10 +276,50 @@ function createRequestContainer(title, point, numChat, content) {
   requestContainer.appendChild(contentContainer);
 
   requestContainer.addEventListener("click", function () {
+    const responseId = sessionStorage.getItem("user_id");
+    console.log(responseId);
+    console.log(userId);
     // 필요한 데이터(id)를 세션 스토리지에 저장
     sessionStorage.setItem("requestId", id);
-    window.location.href = "./solve.html";
+    if (responseId == userId) {
+      window.location.href = "./solve_self.html"; //삭제하기
+    } else {
+      window.location.href = "./solve.html"; //신고하기
+    }
   });
 
   return requestContainer;
 }
+
+// 로그아웃
+$(document).ready(function () {
+  $(".logout").click(function (event) {
+    event.preventDefault(); // 기본 동작을 중단합니다.
+    const jwtToken = sessionStorage.getItem("jwtToken");
+
+    $.ajax({
+      type: "POST",
+      url: "http://3.36.130.108:8080/api/user/logout/",
+      data: JSON.stringify({
+        token: jwtToken,
+      }),
+      success: function (response) {
+        localStorage.removeItem("token");
+        alert("로그아웃 되었습니다.");
+        window.location.href = "./home_logout.html";
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        if (jqXHR.status === 400) {
+          console.error("Bad Request:", jqXHR.responseText);
+          alert("올바르지 않은 형식의 입력입니다.");
+        } else if (jqXHR.status === 401) {
+          console.error("Unauthorized:", jqXHR.responseText);
+          alert("권한이 없는 사용자입니다.");
+        } else {
+          console.error("Error:", jqXHR.status, errorThrown);
+          alert("서버 에러");
+        }
+      },
+    });
+  });
+});

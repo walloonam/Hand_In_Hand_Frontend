@@ -25,25 +25,14 @@
               <p>아이디</p>
               <div class="bottom_signup_content">
                 <input id="email_input" type="text" placeholder="이메일" />
-                <button id="email_check_button" onclick="checkEmailAvailability()">중복확인</button>
+                <button id="email_check_button" onclick="checkEmailAvailability($('#email_input').val())">중복확인</button>
               </div>
               <div class="check_message">
                 <p id="email_check_message">중복 확인이 완료되었습니다. 인증을 완료해주세요.</p>
                 <p id="email_duplicate_message">이미 존재하는 아이디입니다</p>
+                <p id="certified_check_message">인증번호가 확인되었습니다.</p>
               </div>
             </div>
-
-            <div class="signup_content">
-              <p>인증번호</p>
-              <div class="bottom_signup_content">
-                <input id="certifiednum_input" type="text" placeholder="인증번호" />
-                <button id="certify_button" onclick="showCertifyMessage()">인증하기</button>
-              </div>
-              <div class="certify_message">
-                <p id="certify_message">인증번호가 확인되었습니다.</p>
-              </div>
-            </div>
-
 
             <div class="signup_content">
               <p>비밀번호</p>
@@ -74,7 +63,7 @@
               <p>닉네임</p>
               <div class="bottom_signup_content">
                 <input id="nickname_input" type="text" placeholder="닉네임" />
-                <button>중복확인</button>
+                <button id="email_check_button" onclick="checkEmailAvailability()">중복확인</button>
               </div>
               <div class="nickname_message">
                 <p id="nickname_message">이미 존재하는 닉네임입니다</p>

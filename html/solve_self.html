@@ -22,7 +22,7 @@
             <a href="./request.html" class="help_req_a">도움 요청하기</a>
           </li>
           <li class="help_sol_btn">
-            <a href="./requestList.html" class="help_sol_a">도움 해결하기</a>
+            <a href="./request_list.html" class="help_sol_a">도움 해결하기</a>
           </li>
         </ul>
       </div>
@@ -48,31 +48,32 @@
         </div>
       </div>
       <div class="solve_container">
-        <div class="title_container">제목</div>
+        <!-- <div class="title_container">제목</div> -->
+        <input type="text" class="title_container" />
         <div class="detail_container">
           <div class="detail_left">
             <div class="detail_point">
               <img src="../img/stamp.png" />
-              <div class="pointnum">2000P</div>
+              <!-- <div class="pointnum">2000P</div> -->
+              <input type="text" class="pointnum" />
             </div>
             <div class="detail_chat">
               <img src="../img/chat.png" />
               <div class="chatnum">5명</div>
             </div>
             <div class="detail_time">
-              <div>2023.07.21 23:00</div>
+              <div class="created_at">2023.07.21 23:00</div>
             </div>
           </div>
           <div class="detail_right">
             <a onclick="deleteCheck();">삭제하기</a>
           </div>
         </div>
-        <div class="content_container">내용</div>
+        <!-- <div class="content_container">내용</div> -->
+        <input type="text" class="content_container" />
       </div>
       <div class="modify_button">
-        <a href="./request_change.html"
-          ><button id="modify_button">수정하기</button></a
-        >
+        <a href="#"><button id="modify_button">수정하기</button></a>
       </div>
     </div>
   </body>
