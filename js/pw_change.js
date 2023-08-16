@@ -8,7 +8,7 @@ var password = "";
 const jwtToken = "6QjIlPiXHs13LLbvA2ufdlubYp3MtQxxzsDYvbJraccTZVpckiE6VSyqAwCmbFlZJKtuATon6bexCoxkDYxycHdxnLEkTAblqK0D";
 $.ajax({
     type: 'POST',
-    url: 'http://43.202.43.176:8080/api/user/info/',
+    url: 'http://3.36.130.108:8080/api/user/info/',
     contentType: 'application/json',
     data: JSON.stringify({ "token": jwtToken }),
     success: function(response) {
@@ -71,7 +71,7 @@ const submit = () => {
 const sendUpdateRequest = (updatedDate) => {
     $.ajax({
         type: 'POST',
-        url: 'http://43.202.43.176:8080/api/user/password_reset/',
+        url: 'http://3.36.130.108:8080/api/user/password_reset/',
         contentType: 'application/json',
         data: JSON.stringify(updatedDate),
         success: function() {
