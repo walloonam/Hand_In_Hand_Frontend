@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       $.ajax({
         type: "POST",
-        url: "http://43.202.43.176:8080/api/user/login/",
+        url: "http://3.36.130.108:8080/api/user/login/",
         contentType: "application/json",
 
         data: JSON.stringify({
@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
           console.log(response);
 
           sessionStorage.setItem("jwtToken", response.token);
+          sessionStorage.setItem("user_id", response.id);
           alert("로그인이 성공적으로 완료되었습니다.");
           window.location.href = "./home_login.html";
         },

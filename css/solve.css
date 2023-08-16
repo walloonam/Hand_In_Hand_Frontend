@@ -323,7 +323,7 @@ hr {
   line-height: normal;
 }
 
-.detail_time {
+.created_at {
   display: flex;
   flex-direction: row;
   align-items: center;

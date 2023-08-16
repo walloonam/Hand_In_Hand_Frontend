@@ -36,7 +36,7 @@ document
 
     $.ajax({
       type: "POST",
-      url: "http://43.202.43.176:8080/api/user/find_email/",
+      url: "http://3.36.130.108:8080/api/user/find_email/",
       contentType: "application/json",
       data: JSON.stringify({
         name: name_input,
