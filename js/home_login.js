@@ -9,18 +9,21 @@ $(document).ready(function () {
       oncomplete: function (data) {
         var roadAddr = data.roadAddress; // 전체 도로명 주소
         var extraRoadAddr = ""; // 추가 주소 정보
+        console.log(data.sigungu);
+        // if (data.bname !== "" && /[동|로|가]$/g.test(data.bname)) {
+        //   extraRoadAddr = data.bname;
+        // } else {
+        //   // 동 이름이 없는 경우, 구 이름을 사용
+        //   extraRoadAddr = data.sigungu;
+        // }
 
-        if (data.bname !== "" && /[동|로|가]$/g.test(data.bname)) {
-          extraRoadAddr = data.bname;
-        }
-
-        if (data.buildingName !== "" && data.apartment === "Y") {
-          extraRoadAddr +=
-            extraRoadAddr !== "" ? ", " + data.buildingName : data.buildingName;
-        }
+        // if (data.buildingName !== "" && data.apartment === "Y") {
+        //   extraRoadAddr +=
+        //     extraRoadAddr !== "" ? ", " + data.buildingName : data.buildingName;
+        // }
 
         var regionChoose = document.querySelector(".region_choose");
-        regionChoose.textContent = extraRoadAddr;
+        regionChoose.textContent = data.sigungu;
       },
     }).open();
   }
