@@ -25,7 +25,7 @@
               <p>아이디</p>
               <div class="bottom_signup_content">
                 <input id="email_input" type="text" placeholder="이메일" />
-                <button id="email_check_button" onclick="checkEmailAvailability($('#email_input').val())">중복확인</button>
+                <button id="email_check_button" onclick="checkEmailAvailability()">중복확인</button>
               </div>
               <div class="check_message">
                 <p id="email_check_message">중복 확인이 완료되었습니다. 인증을 완료해주세요.</p>
@@ -63,16 +63,17 @@
               <p>닉네임</p>
               <div class="bottom_signup_content">
                 <input id="nickname_input" type="text" placeholder="닉네임" />
-                <button id="email_check_button" onclick="checkEmailAvailability()">중복확인</button>
+                <button id="nickname_check_button" onclick="checkNicknameAvailability()">중복확인</button>
               </div>
               <div class="nickname_message">
-                <p id="nickname_message">이미 존재하는 닉네임입니다</p>
+                <p id="nickname_message">닉네임 중복확인이 완료되었습니다.</p>
+                <p id="nickname_error_message">이미 존재하는 닉네임입니다</p>
               </div>
             </div>
 
             <div class="signup_content">
               <p>생년월일</p>
-              <input id="birth_input" type="text" placeholder="(19990807)" />
+              <input id="birth_input" type="text" placeholder="990807" />
             </div>
 
             <div class="signup_content">
