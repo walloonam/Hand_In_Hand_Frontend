@@ -1,0 +1,82 @@
+body {
+    margin-top: 4.56rem;
+    min-width: 85rem;
+}
+
+.find_id_result_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.find_id_result_header p {
+    color: #434343;
+    text-align: center;
+    font-family: Inter;
+    font-size: 1.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.bottom_find_id_result_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom_find_id_result_header img {
+    width: 12.5rem;
+    height: 12.5rem;
+    margin: 20px;
+    /* margin-bottom: 1.7rem; */
+}
+
+.wrap_find_id_result_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.email_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    width: 24.9375rem;
+    height: 8.57738rem;
+    flex-shrink: 0;
+    border-radius: 3rem;
+    border: 1px solid #000;
+    color: #000;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.email_box p {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+#find_id_result_login_button {
+    width: 24.9375rem;
+    height: 4.0625rem;
+    flex-shrink: 0;
+    border-radius: 3rem;
+    border: none;
+    background: #3a7dff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #fff;
+    text-align: center;
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 1rem;
+    cursor: pointer;
+}
