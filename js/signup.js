@@ -1,11 +1,8 @@
+var area1 = "";
+
 // 아이디 중복 확인
 $(document).ready(function () {
   let isEmailVerified = false; // 이메일 인증 상태 초기에는 false
-
-  $("#email_check_button").click(function () {
-    var emailInputValue = $("#email_input").val();
-    checkEmailAvailability(emailInputValue);
-  });
 
   $("#email_check_button").on("click", function () {
     if (isEmailVerified) {
@@ -13,6 +10,9 @@ $(document).ready(function () {
       $("#certified_check_message").css("display", "block");
       $("#email_check_message").css("display", "none");
       $("#email_check_button").text("인증하기");
+
+      var emailInputValue = $("#email_input").val();
+      emailvalidation(emailInputValue);
     } else {
       // 이메일 중복 확인
       var emailInputValue = $("#email_input").val();
@@ -31,9 +31,9 @@ $(document).ready(function () {
       success: function (response) {
         console.log(response.message);
         if (response.message === "success") {
-          $("#email_check_message").css("display", "none");
+          $("#email_check_message").css("display", "block");
           $("#email_duplicate_message").css("display", "none");
-          $("#certified_check_message").css("display", "block");
+          $("#certified_check_message").css("display", "none");
           $("#email_check_button").text("인증하기");
           isEmailVerified = true;
         } else if (response.message === "fail") {
@@ -60,6 +60,37 @@ $(document).ready(function () {
   }
 });
 
+// 이메일 인증
+function emailvalidation(email) {
+  $.ajax({
+    type: "POST",
+    url: "http://3.36.130.108:8080/api/user/emailvalidation/",
+    contentType: "application/json",
+    data: JSON.stringify({
+      email: email,
+    }),
+    success: function (response) {
+      console.log("이메일 인증 보냄");
+      // $("#certified_check_message").css("display", "block");
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      if (jqXHR.status === 400) {
+        console.error("Bad Request:", jqXHR.responseText);
+        alert("올바르지 않은 형식의 입력입니다.");
+      } else if (jqXHR.status === 409) {
+        console.error("Too Many Requests:", jqXHR.responseText);
+        alert("짧은 시간동안 너무 많은 인증 요청을 보냈습니다.");
+      } else if (jqXHR.status === 500) {
+        console.error("Internal Server Error:", jqXHR.responseText);
+        alert("서버측에서 오류가 발생했습니다.");
+      } else {
+        console.error("Error:", jqXHR.status, errorThrown);
+        alert("서버 에러");
+      }
+    },
+  });
+}
+
 // 비밀번호
 function checkPasswordMatch() {
   var password = document.querySelector("#password_input").value;
@@ -82,19 +113,21 @@ $("#nickname_check_button").click(function () {
 function checkNicknameAvailability(nickname) {
   $.ajax({
     type: "POST",
-    url: "http://3.36.130.108:8080/api/user/check_nickname", // 실제 서버 경로로 수정해야 함
+    url: "http://3.36.130.108:8080/api/user/check_nickname/",
     contentType: "application/json",
     data: JSON.stringify({
       nickname: nickname,
     }),
-    success: function (data) {
-      var nicknameMessage = document.querySelector("#nickname_message");
-      if (data.message === "success") {
+    success: function (response) {
+      if (response.message === "success") {
+        console.log(response);
         // 중복 없을 경우
-        nicknameMessage.style.display = "none";
-      } else if (data.message === "fail") {
+        $("#nickname_message").css("display", "block");
+        $("#nickname_error_message").css("display", "none");
+      } else if (response.message === "fail") {
         // 중복 있을 경우
-        nicknameMessage.style.display = "block";
+        $("#nickname_message").css("display", "none");
+        $("#nickname_error_message").css("display", "block");
       }
     },
     error: function (jqXHR, textStatus, errorThrown) {
@@ -138,7 +171,9 @@ function openAddressPopup() {
       var matches = fullAddress.match(/(\S+동)/);
       var area = matches ? matches[1] : "";
 
-      signup(area);
+      // signup(area);
+      console.log(data.sigungu);
+      area1 = data.sigungu;
     },
   }).open();
 }
@@ -154,13 +189,14 @@ $(document).ready(function () {
     var password = $("#password_input").val();
     var name = $("#name_input").val();
     var nickname = $("#nickname_input").val();
-    var dateOfBirth = parseInt($("#birth_input").val());
+    var dateOfBirth = $("#birth_input").val();
     var address = $("#address_input").val();
-    var area = $("#area_input").val();
+    var area = area1;
+    console.log(area);
 
     $.ajax({
       type: "POST",
-      url: "http://3.36.130.108:8080/api/user",
+      url: "http://3.36.130.108:8080/api/user/",
       contentType: "application/json",
       data: JSON.stringify({
         email: email,
@@ -172,9 +208,8 @@ $(document).ready(function () {
         area: area,
       }),
       success: function (response) {
-        if (response.status === 201) {
-          alert("회원가입에 성공했습니다.");
-        }
+        alert("회원가입에 성공했습니다.");
+        window.location.href = "./login.html";
       },
       error: function (jqXHR, textStatus, errorThrown) {
         if (jqXHR.status === 400) {
