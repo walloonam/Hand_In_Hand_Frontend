@@ -45,6 +45,7 @@ document.querySelector('.wrap_list').addEventListener('click', function(event) {
 
                 document.querySelector('.adopt_btn').setAttribute("data-room-id", roomId);
                 document.querySelector('.view_btn').setAttribute("data-room-id", roomId);
+                document.querySelector('.view_btn').setAttribute("choice", choice);
 
 
                 if (choice === "main") {
@@ -244,13 +245,19 @@ document.querySelector('.post_btn').addEventListener('click', function(event) {
         let link = document.querySelector('.post_a');
         link.href = "../html/solve.html"
 
-        // const post_id = event.target.getAttribute("post_id");
+        const post_id = event.target.getAttribute("post_id");
+        const choice = event.target.getAttribute("choice");
 
-        // link.addEventListener("click", function(event) {
-        //     sessionStorage.setItem("post_id", post_id);
-        // });
+        if (choice === "main") {
+            link.href = "../html/solve.html"
+        } else if (choice === "sub") {
+            link.href = "../html/solve_self.html"
+        }
 
-        // console.log(post_id);
+        link.addEventListener("click", function(event) {
+            sessionStorage.setItem("requestId", post_id);
+        });
+
     }
 });
 

@@ -322,6 +322,7 @@ hr {
 
 .wrap_num button {
     color: #636363;
+    background-color: #FFF;
     line-height: 0;
     font-size: 1.25rem;
     font-weight: 500;

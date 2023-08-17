@@ -1,3 +1,5 @@
+/*
+
 var present_num = 1;
 var present_page = 1;
 
@@ -222,10 +224,10 @@ $.getJSON(jsonLocation, function(data) {
     showPost();
 });
 
-
+*/
 ///////////////////////////////////
 
-/*
+
 
 var present_num = 1;
 var present_page = 1;
@@ -249,12 +251,12 @@ $.ajax({
         if (num > 5) {
             page = Math.ceil(num / 5);
         }
-    
+
         // 밑에 숫자
         const showNumber = () => {
             if (num > 1) {
                 let wrap_num = document.querySelector('.wrap_num');
-    
+
                 // 화살표
                 let arrow = document.createElement("img");
                 arrow.setAttribute("class", "arrow_btn");
@@ -262,9 +264,9 @@ $.ajax({
                 let arrowR = document.createElement("img");
                 arrowR.setAttribute("class", "arrowR_btn");
                 arrowR.src = "../img/arrow_reverse.png";
-    
+
                 wrap_num.appendChild(arrow);
-    
+
                 // 숫자
                 var j = 5 * (present_page - 1);
                 var first = j;
@@ -286,11 +288,11 @@ $.ajax({
             }
         }
         showNumber();
-    
+
         const showNumberArrow = () => {
             if (num > 1) {
                 let wrap_num = document.querySelector('.wrap_num');
-    
+
                 // 화살표
                 let arrow = document.createElement("img");
                 arrow.setAttribute("class", "arrow_btn");
@@ -298,9 +300,9 @@ $.ajax({
                 let arrowR = document.createElement("img");
                 arrowR.setAttribute("class", "arrowR_btn");
                 arrowR.src = "../img/arrow_reverse.png";
-    
+
                 wrap_num.appendChild(arrow);
-    
+
                 // 숫자
                 var j = 5 * (present_page - 1);
                 var first = j;
@@ -321,7 +323,7 @@ $.ajax({
                 wrap_num.appendChild(arrowR);
             }
         }
-    
+
         // 버튼 클릭
         document.querySelector('.wrap_num').addEventListener('click', function(event) {
             if (event.target.classList.contains('num_btn')) {
@@ -331,7 +333,7 @@ $.ajax({
                 } catch {}
                 event.target.classList.add('checked');
                 present_num = event.target.innerHTML;
-    
+
                 var wrap_post = document.querySelector('.wrap_post');
                 while (wrap_post.firstChild) {
                     wrap_post.removeChild(wrap_post.firstChild)
@@ -375,83 +377,83 @@ $.ajax({
                 }
             }
         });
-    
+
         const showPost = () => {
             var i = 4 * (present_num - 1);
             var until = 4 * present_num;
-    
+
             if ((until > length)) {
                 until = length;
             }
             for (i; i < until; i++) {
                 const showData = () => {
-    
+
                     // 데이터 읽기
                     const pk = response[i].pk;
                     const title = response[i].fields.title;
                     const content = response[i].fields.content;
                     const point = response[i].fields.point;
                     const numChat = response[i].fields.numChat;
-    
+
                     // 데이터 넣기
                     let wrap_post = document.querySelector('.wrap_post');
-    
+
                     let link = document.createElement("a");
                     link.setAttribute("post_id", pk);
-    
+
                     let post = document.createElement("div");
                     post.setAttribute("class", "post");
-    
+
                     let post_title = document.createElement("div");
                     post_title.setAttribute("class", "post_title");
-    
+
                     let post_name = document.createElement("div");
                     post_name.setAttribute("class", "post_name");
                     let post_name_p = document.createElement("p");
                     post_name_p.innerHTML = title;
-    
+
                     let post_point = document.createElement("div");
                     post_point.setAttribute("class", "post_point");
                     let point_img = document.createElement("img");
                     point_img.src = "../img/stamp.png"
                     let post_point_p = document.createElement("p");
                     post_point_p.innerHTML = point + "p";
-    
+
                     let post_chat = document.createElement("div");
                     post_chat.setAttribute("class", "post_chat");
                     let chat_img = document.createElement("img");
                     chat_img.src = "../img/chat.png"
                     let post_chat_p = document.createElement("p");
                     post_chat_p.innerHTML = numChat + "명";
-    
+
                     let post_content = document.createElement("div");
                     post_content.setAttribute("class", "post_content");
-    
+
                     let post_content_p = document.createElement("p");
                     post_content_p.innerHTML = content;
-    
+
                     // 구조
                     wrap_post.appendChild(link);
                     link.appendChild(post);
-    
+
                     post.appendChild(post_title);
                     post.appendChild(post_content);
-    
+
                     post_title.appendChild(post_name);
                     post_name.appendChild(post_name_p);
-    
+
                     post_title.appendChild(post_point);
                     post_point.appendChild(point_img);
                     post_point.appendChild(post_point_p);
-    
+
                     post_title.appendChild(post_chat);
                     post_chat.appendChild(chat_img);
                     post_chat.appendChild(post_chat_p);
-    
+
                     post_content.appendChild(post_content_p);
-    
+
                     // 링크 - 보류
-                    link.href = "../html/solve.html"
+                    link.href = "../html/solve_self.html"
                     link.addEventListener("click", function(event) {
                         sessionStorage.setItem("requestId", pk);
                     });
@@ -467,6 +469,3 @@ $.ajax({
         console.log("error: " + error);
     }
 })
-
-
-*/
