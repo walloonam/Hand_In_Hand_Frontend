@@ -243,7 +243,6 @@ document.querySelector('.post_btn').addEventListener('click', function(event) {
         }
     } else if (event.target.classList.contains('view_btn')) {
         let link = document.querySelector('.post_a');
-        link.href = "../html/solve.html"
 
         const post_id = event.target.getAttribute("post_id");
         const choice = event.target.getAttribute("choice");
