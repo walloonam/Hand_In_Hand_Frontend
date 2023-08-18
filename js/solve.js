@@ -219,36 +219,3 @@ $(document).ready(function () {
     });
   });
 });
-
-// 사용자가 지역 선택을 했을 때 실행되는 함수
-function selectRegion(selectedArea) {
-  var area = selectedArea;
-
-  userinfo_change(area);
-}
-
-function userinfo_change() {
-  $.ajax({
-    url: "http://3.36.130.108:8080/api/user/update_info_area/",
-    method: "POST",
-    data: JSON.stringify({
-      email: email,
-      area: area,
-    }),
-    success: function (response) {
-      console.log("회원 정보 수정 성공");
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-      if (jqXHR.status === 400) {
-        console.error("Bad Request:", jqXHR.responseText);
-        alert("올바르지 않은 형식의 입력입니다.");
-      } else if (jqXHR.status === 401) {
-        console.error("Unauthorized:", jqXHR.responseText);
-        alert("권한이 없는 사용자입니다.");
-      } else {
-        console.error("Error:", jqXHR.status, errorThrown);
-        alert("서버 에러");
-      }
-    },
-  });
-}

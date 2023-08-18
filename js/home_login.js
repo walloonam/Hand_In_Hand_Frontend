@@ -51,6 +51,7 @@ function selectRegion(region) {
 // });
 
 // 전체 정보 불러오기
+
 document.addEventListener("DOMContentLoaded", function () {
   const jwtToken = sessionStorage.getItem("jwtToken");
 
@@ -66,6 +67,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const userInfo = response; // 전체 응답 객체
       const userFields = userInfo.fields; // 사용자 정보 객체
+
+      // 이메일 값을 세션 스토리지에 저장
+      const userEmail = userFields.email;
+      sessionStorage.setItem("userEmail", userEmail);
 
       // 지역 이름을 가져와서 지역 요소에 적용
       const areaName = userFields.area;
@@ -131,3 +136,86 @@ $(document).ready(function () {
     });
   });
 });
+
+// 사용자가 지역 선택을 했을 때 실행되는 함수
+function selectRegion(selectedArea) {
+  userinfo_change(selectedArea);
+}
+
+function userinfo_change(area) {
+  console.log(area);
+  const userEmail = sessionStorage.getItem("userEmail");
+  console.log("이메일:", userEmail); // 확인용 로그
+
+  $.ajax({
+    url: "http://3.36.130.108:8080/api/user/update_info_area/",
+    method: "POST",
+    data: JSON.stringify({
+      email: userEmail,
+      area: area,
+    }),
+    success: function (response) {
+      console.log("회원 정보 수정 성공");
+      const jwtToken = sessionStorage.getItem("jwtToken");
+
+      $.ajax({
+        type: "POST",
+        url: "http://3.36.130.108:8080/api/user/info/",
+        contentType: "application/json",
+        data: JSON.stringify({
+          token: jwtToken,
+        }),
+        success: function (response) {
+          console.log(response);
+
+          const userInfo = response; // 전체 응답 객체
+          const userFields = userInfo.fields; // 사용자 정보 객체
+
+          // 이메일 값을 세션 스토리지에 저장
+          const userEmail = userFields.email;
+          sessionStorage.setItem("userEmail", userEmail);
+
+          // 지역 이름을 가져와서 지역 요소에 적용
+          const areaName = userFields.area;
+          const regionChoose = document.querySelector(".region_choose");
+          regionChoose.innerHTML = areaName;
+
+          // 사용자 정보를 화면에 출력하는 로직
+          console.log("이미지:", userFields.image);
+          console.log("이름:", userFields.name);
+          console.log("이메일:", userFields.email);
+          console.log("닉네임:", userFields.nickname);
+          console.log("생년월일:", userFields.date_of_birth);
+          console.log("주소:", userFields.address);
+          console.log("포인트:", userFields.point);
+          console.log("입양 횟수:", userFields.adopt_count);
+          console.log("지역:", userFields.area);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          if (jqXHR.status === 400) {
+            console.error("Bad Request:", jqXHR.responseText);
+            alert("올바르지 않은 형식의 입력입니다.");
+          } else if (jqXHR.status === 401) {
+            console.error("Unauthorized:", jqXHR.responseText);
+            alert("권한이 없는 사용자입니다.");
+          } else {
+            console.error("Error:", jqXHR.status, errorThrown);
+            alert("서버 에러");
+          }
+        },
+      });
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      if (jqXHR.status === 400) {
+        console.error("Bad Request:", jqXHR.responseText);
+        alert("올바르지 않은 형식의 입력입니다.");
+      } else if (jqXHR.status === 401) {
+        console.error("Unauthorized:", jqXHR.responseText);
+        alert("권한이 없는 사용자입니다.");
+      } else {
+        console.error("Error:", jqXHR.status, errorThrown);
+        alert("서버 에러");
+      }
+    },
+  });
+}
