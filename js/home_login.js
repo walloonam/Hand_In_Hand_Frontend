@@ -1,33 +1,54 @@
 //지역이름
-$(document).ready(function () {
-  $(".region_choose").on("click", function () {
-    openAddressPopup();
-  });
+var dropdownVisible = false;
 
-  function openAddressPopup() {
-    new daum.Postcode({
-      oncomplete: function (data) {
-        var roadAddr = data.roadAddress; // 전체 도로명 주소
-        var extraRoadAddr = ""; // 추가 주소 정보
-        console.log(data.sigungu);
-        // if (data.bname !== "" && /[동|로|가]$/g.test(data.bname)) {
-        //   extraRoadAddr = data.bname;
-        // } else {
-        //   // 동 이름이 없는 경우, 구 이름을 사용
-        //   extraRoadAddr = data.sigungu;
-        // }
-
-        // if (data.buildingName !== "" && data.apartment === "Y") {
-        //   extraRoadAddr +=
-        //     extraRoadAddr !== "" ? ", " + data.buildingName : data.buildingName;
-        // }
-
-        var regionChoose = document.querySelector(".region_choose");
-        regionChoose.textContent = data.sigungu;
-      },
-    }).open();
-  }
+document.addEventListener("DOMContentLoaded", function () {
+  var dropdown = document.getElementById("dropdown");
+  dropdown.style.display = "none"; // 처음에 드롭다운을 숨김
 });
+
+function toggleDropdown() {
+  var dropdown = document.getElementById("dropdown");
+  dropdownVisible = !dropdownVisible;
+  if (dropdownVisible) {
+    dropdown.style.display = "block";
+  } else {
+    dropdown.style.display = "none";
+  }
+}
+function selectRegion(region) {
+  var regionChoose = document.querySelector(".region_choose");
+  regionChoose.textContent = region;
+  toggleDropdown();
+}
+// $(document).ready(function () {
+//   $(".region_choose").on("click", function () {
+//     openAddressPopup();
+//   });
+
+//   function openAddressPopup() {
+//     new daum.Postcode({
+//       oncomplete: function (data) {
+//         var roadAddr = data.roadAddress; // 전체 도로명 주소
+//         var extraRoadAddr = ""; // 추가 주소 정보
+//         console.log(data.sigungu);
+//         // if (data.bname !== "" && /[동|로|가]$/g.test(data.bname)) {
+//         //   extraRoadAddr = data.bname;
+//         // } else {
+//         //   // 동 이름이 없는 경우, 구 이름을 사용
+//         //   extraRoadAddr = data.sigungu;
+//         // }
+
+//         // if (data.buildingName !== "" && data.apartment === "Y") {
+//         //   extraRoadAddr +=
+//         //     extraRoadAddr !== "" ? ", " + data.buildingName : data.buildingName;
+//         // }
+
+//         var regionChoose = document.querySelector(".region_choose");
+//         regionChoose.textContent = data.sigungu;
+//       },
+//     }).open();
+//   }
+// });
 
 // 전체 정보 불러오기
 document.addEventListener("DOMContentLoaded", function () {
@@ -92,7 +113,7 @@ $(document).ready(function () {
       success: function (response) {
         sessionStorage.removeItem("user_id");
         sessionStorage.removeItem("jwtToken");
-        alert("로그아웃 되었습니다.");
+        // alert("로그아웃 되었습니다.");
         window.location.href = "./home_logout.html";
       },
       error: function (jqXHR, textStatus, errorThrown) {

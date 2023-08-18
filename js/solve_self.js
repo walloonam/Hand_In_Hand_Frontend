@@ -1,30 +1,52 @@
 //지역이름
-$(document).ready(function () {
-  $(".region_choose").on("click", function () {
-    openAddressPopup();
-  });
+var dropdownVisible = false;
 
-  function openAddressPopup() {
-    new daum.Postcode({
-      oncomplete: function (data) {
-        var roadAddr = data.roadAddress; // 전체 도로명 주소
-        var extraRoadAddr = ""; // 추가 주소 정보
-
-        if (data.bname !== "" && /[동|로|가]$/g.test(data.bname)) {
-          extraRoadAddr = data.bname;
-        }
-
-        if (data.buildingName !== "" && data.apartment === "Y") {
-          extraRoadAddr +=
-            extraRoadAddr !== "" ? ", " + data.buildingName : data.buildingName;
-        }
-
-        var regionChoose = document.querySelector(".region_choose");
-        regionChoose.textContent = data.sigungu;
-      },
-    }).open();
-  }
+document.addEventListener("DOMContentLoaded", function () {
+  var dropdown = document.getElementById("dropdown");
+  dropdown.style.display = "none"; // 처음에 드롭다운을 숨김
 });
+
+function toggleDropdown() {
+  var dropdown = document.getElementById("dropdown");
+  dropdownVisible = !dropdownVisible;
+  if (dropdownVisible) {
+    dropdown.style.display = "block";
+  } else {
+    dropdown.style.display = "none";
+  }
+}
+function selectRegion(region) {
+  var regionChoose = document.querySelector(".region_choose");
+  regionChoose.textContent = region;
+  toggleDropdown();
+}
+
+// $(document).ready(function () {
+//   $(".region_choose").on("click", function () {
+//     openAddressPopup();
+//   });
+
+//   function openAddressPopup() {
+//     new daum.Postcode({
+//       oncomplete: function (data) {
+//         var roadAddr = data.roadAddress; // 전체 도로명 주소
+//         var extraRoadAddr = ""; // 추가 주소 정보
+
+//         if (data.bname !== "" && /[동|로|가]$/g.test(data.bname)) {
+//           extraRoadAddr = data.bname;
+//         }
+
+//         if (data.buildingName !== "" && data.apartment === "Y") {
+//           extraRoadAddr +=
+//             extraRoadAddr !== "" ? ", " + data.buildingName : data.buildingName;
+//         }
+
+//         var regionChoose = document.querySelector(".region_choose");
+//         regionChoose.textContent = data.sigungu;
+//       },
+//     }).open();
+//   }
+// });
 
 // 기본 데이터 불러오기
 function reportCheck() {
@@ -87,7 +109,7 @@ $(document).ready(function () {
       dataType: "json",
       success: function (secondResponse) {
         console.log(secondResponse);
-        alert("두 번째 요청이 정상적으로 처리되었습니다.");
+        // alert("두 번째 요청이 정상적으로 처리되었습니다.");
 
         // 세션 스토리지에서 데이터 불러오기
         const requestTitle = secondResponse.title;
@@ -145,7 +167,7 @@ function deleteCheck() {
       method: "DELETE",
       dataType: "json",
       success: function (response) {
-        alert("게시물이 성공적으로 삭제되었습니다.");
+        // alert("게시물이 성공적으로 삭제되었습니다.");
         window.location.href = "./request_list.html";
       },
       error: function (jqXHR, textStatus, errorThrown) {
@@ -196,7 +218,7 @@ function modifyPost() {
       token: jwtToken,
     }),
     success: function (response) {
-      alert("게시물이 수정되었습니다.");
+      // alert("게시물이 수정되었습니다.");
       window.location.href = "./request_list.html";
     },
     error: function (jqXHR, textStatus, errorThrown) {

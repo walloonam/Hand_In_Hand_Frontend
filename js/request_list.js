@@ -1,30 +1,51 @@
 //지역이름
-$(document).ready(function () {
-  $(".region_choose").on("click", function () {
-    openAddressPopup();
-  });
+var dropdownVisible = false;
 
-  function openAddressPopup() {
-    new daum.Postcode({
-      oncomplete: function (data) {
-        var roadAddr = data.roadAddress; // 전체 도로명 주소
-        var extraRoadAddr = ""; // 추가 주소 정보
-        console.log(data.sigungu);
-        if (data.bname !== "" && /[동|로|가]$/g.test(data.bname)) {
-          extraRoadAddr = data.bname;
-        }
-
-        if (data.buildingName !== "" && data.apartment === "Y") {
-          extraRoadAddr +=
-            extraRoadAddr !== "" ? ", " + data.buildingName : data.buildingName;
-        }
-
-        var regionChoose = document.querySelector(".region_choose");
-        regionChoose.textContent = data.sigungu;
-      },
-    }).open();
-  }
+document.addEventListener("DOMContentLoaded", function () {
+  var dropdown = document.getElementById("dropdown");
+  dropdown.style.display = "none"; // 처음에 드롭다운을 숨김
 });
+
+function toggleDropdown() {
+  var dropdown = document.getElementById("dropdown");
+  dropdownVisible = !dropdownVisible;
+  if (dropdownVisible) {
+    dropdown.style.display = "block";
+  } else {
+    dropdown.style.display = "none";
+  }
+}
+function selectRegion(region) {
+  var regionChoose = document.querySelector(".region_choose");
+  regionChoose.textContent = region;
+  toggleDropdown();
+}
+// $(document).ready(function () {
+//   $(".region_choose").on("click", function () {
+//     openAddressPopup();
+//   });
+
+//   function openAddressPopup() {
+//     new daum.Postcode({
+//       oncomplete: function (data) {
+//         var roadAddr = data.roadAddress; // 전체 도로명 주소
+//         var extraRoadAddr = ""; // 추가 주소 정보
+//         console.log(data.sigungu);
+//         if (data.bname !== "" && /[동|로|가]$/g.test(data.bname)) {
+//           extraRoadAddr = data.bname;
+//         }
+
+//         if (data.buildingName !== "" && data.apartment === "Y") {
+//           extraRoadAddr +=
+//             extraRoadAddr !== "" ? ", " + data.buildingName : data.buildingName;
+//         }
+
+//         var regionChoose = document.querySelector(".region_choose");
+//         regionChoose.textContent = data.sigungu;
+//       },
+//     }).open();
+//   }
+// });
 
 const jwtToken = sessionStorage.getItem("jwtToken");
 $.ajax({
@@ -97,7 +118,7 @@ function request_list() {
       showPage(currentPage);
 
       createPaginationButtons(totalPages);
-      alert("요청이 정상적으로 처리되었습니다.");
+      // alert("요청이 정상적으로 처리되었습니다.");
     },
     error: function (jqXHR, textStatus, errorThrown) {
       if (jqXHR.status === 400) {
@@ -305,7 +326,7 @@ $(document).ready(function () {
       }),
       success: function (response) {
         localStorage.removeItem("token");
-        alert("로그아웃 되었습니다.");
+        // alert("로그아웃 되었습니다.");
         window.location.href = "./home_logout.html";
       },
       error: function (jqXHR, textStatus, errorThrown) {
