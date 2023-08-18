@@ -1,6 +1,6 @@
-// const jwtToken = sessionStorage.getItem("jwtToken");
+const jwtToken = sessionStorage.getItem("jwtToken");
 
-const jwtToken = "6QjIlPiXHs13LLbvA2ufdlubYp3MtQxxzsDYvbJraccTZVpckiE6VSyqAwCmbFlZJKtuATon6bexCoxkDYxycHdxnLEkTAblqK0D";
+// const jwtToken = "6QjIlPiXHs13LLbvA2ufdlubYp3MtQxxzsDYvbJraccTZVpckiE6VSyqAwCmbFlZJKtuATon6bexCoxkDYxycHdxnLEkTAblqK0D";
 
 // 버튼들
 
@@ -382,7 +382,6 @@ switchMonthly.onclick = () => {
     deleteAll();
     showMain();
     adopt_btn.style.display = 'none';
-
 }
 
 // 받기 채팅 목록
@@ -477,6 +476,108 @@ switchYearly.onclick = () => {
     showSub();
     adopt_btn.style.display = 'block';
 }
+
+const emoticon_btn = document.querySelector('.emoticon_btn');
+
+emoticon_btn.onclick = () => {
+    var chat_area = document.querySelector('.chat_area');
+    var input_area = document.querySelector('.input_area');
+    var emoticon_area = document.querySelector('.emoticon_area');
+    var text_content = document.querySelector('.text_content');
+
+    var computedStyle = window.getComputedStyle(emoticon_area);
+    var displayValue = computedStyle.getPropertyValue("display");
+
+    if (displayValue === 'flex') {
+        emoticon_area.style.display = 'none';
+        text_content.style.display = 'block';
+        chat_area.classList.remove('checked');
+        input_area.classList.remove('checked');
+        try {
+            let checked = document.querySelector('.emoticon.checked');
+            checked.classList.remove('checked');
+        } catch {}
+    } else {
+        emoticon_area.style.display = 'flex';
+        text_content.style.display = 'none';
+        chat_area.classList.add('checked');
+        input_area.classList.add('checked');
+    }
+}
+
+document.querySelector('.emoticon_area').addEventListener('click', function(event) {
+    if (event.target.classList.contains('emoticon')) {
+        try {
+            let checked = document.querySelector('.emoticon.checked');
+            checked.classList.remove('checked');
+        } catch {}
+        event.target.classList.add('checked');
+    }
+});
+
+const submit = () => {
+
+    const roomName = JSON.parse(document.getElementById('room-name').textContent);
+
+    const chatSocket = new WebSocket(
+        'ws://' +
+        window.location.host +
+        '/ws/chat/' +
+        roomName +
+        '/'
+    );
+
+    chatSocket.onmessage = function(e) {
+        const data = JSON.parse(e.data);
+        document.querySelector('#chat-log').value += (data.message + '\n');
+    };
+
+    chatSocket.onclose = function(e) {
+        console.error('Chat socket closed unexpectedly');
+    };
+
+    document.querySelector('#chat-message-input').focus();
+    document.querySelector('#chat-message-input').onkeyup = function(e) {
+        if (e.key === 'Enter') { // enter, return
+            document.querySelector('#chat-message-submit').click();
+        }
+    };
+
+    document.querySelector('#chat-message-submit').onclick = function(e) {
+        const messageInputDom = document.querySelector('#chat-message-input');
+        const message = messageInputDom.value;
+        chatSocket.send(JSON.stringify({
+            'message': message
+        }));
+        messageInputDom.value = '';
+    };
+
+
+
+    /*
+
+    var text_content = document.querySelector('.text_content');
+    var emoticon_area = document.querySelector('.emoticon_area');
+    var computedStyle = window.getComputedStyle(emoticon_area);
+    var displayValue = computedStyle.getPropertyValue("display");
+
+    var content_value = null;
+
+    if (displayValue === 'flex') {
+        let checked = document.querySelector('.emoticon.checked');
+        content_value = checked.src;
+    } else {
+        content_value = text_content.value;
+
+    }
+
+    console.log(content_value);
+
+    */
+
+}
+
+
 
 
 ////////////////////////////////////

@@ -36,7 +36,7 @@
             </ul>
         </div>
         <div class="nav_chat">
-            <a href="#"><button class="chat_btn">채팅하기</button></a>
+            <button class="chat_btn">채팅하기</button>
         </div>
         <div class="nav_logout">
             <img src="../img/logout.png" alt="" />
@@ -112,22 +112,35 @@
                         </div>
                     </div>
                     <div class="chat_area">
-
                     </div>
                     <div class="input_area">
                         <div class="input_chat">
+                            <div class="emoticon_area">
+                                <img src="../img/emoticon1.png" alt="" class="emoticon">
+                                <img src="../img/emoticon2.png" alt="" class="emoticon">
+                                <img src="../img/emoticon3.png" alt="" class="emoticon">
+                                <img src="../img/emoticon4.png" alt="" class="emoticon">
+                                <img src="../img/emoticon5.png" alt="" class="emoticon">
+                                <img src="../img/emoticon6.png" alt="" class="emoticon">
+                                <img src="../img/emoticon7.png" alt="" class="emoticon">
+                                <img src="../img/emoticon8.png" alt="" class="emoticon">
+                                <img src="../img/emoticon9.png" alt="" class="emoticon">
+                                <img src="../img/emoticon10.png" alt="" class="emoticon">
+                            </div>
                             <input type="text" class="text_content" placeholder="채팅 내용을 입력해주세요">
                         </div>
                         <div class="chat_func">
                             <div class="wrap_send">
                                 <img src="../img/plus_btn.png" alt="">
-                                <img src="../img/emoticon_btn.png" alt="">
+                                <img src="../img/emoticon_btn.png" alt="" class="emoticon_btn">
                                 <div class="wrap_number">
                                     <p>0</p>
                                     <p class="char_num">/100</p>
                                 </div>
                             </div>
-                            <div class="wrap_send_btn"><button class="send_btn">보내기</button></div>
+                            <div class="wrap_send_btn">
+                                <button class="send_btn" onclick="submit()">보내기</button>
+                            </div>
                         </div>
                     </div>
                 </div>
