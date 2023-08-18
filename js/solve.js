@@ -1,30 +1,51 @@
 //지역이름
-$(document).ready(function () {
-  $(".region_choose").on("click", function () {
-    openAddressPopup();
-  });
+var dropdownVisible = false;
 
-  function openAddressPopup() {
-    new daum.Postcode({
-      oncomplete: function (data) {
-        var roadAddr = data.roadAddress; // 전체 도로명 주소
-        var extraRoadAddr = ""; // 추가 주소 정보
-
-        if (data.bname !== "" && /[동|로|가]$/g.test(data.bname)) {
-          extraRoadAddr = data.bname;
-        }
-
-        if (data.buildingName !== "" && data.apartment === "Y") {
-          extraRoadAddr +=
-            extraRoadAddr !== "" ? ", " + data.buildingName : data.buildingName;
-        }
-
-        var regionChoose = document.querySelector(".region_choose");
-        regionChoose.textContent = data.sigungu;
-      },
-    }).open();
-  }
+document.addEventListener("DOMContentLoaded", function () {
+  var dropdown = document.getElementById("dropdown");
+  dropdown.style.display = "none"; // 처음에 드롭다운을 숨김
 });
+
+function toggleDropdown() {
+  var dropdown = document.getElementById("dropdown");
+  dropdownVisible = !dropdownVisible;
+  if (dropdownVisible) {
+    dropdown.style.display = "block";
+  } else {
+    dropdown.style.display = "none";
+  }
+}
+function selectRegion(region) {
+  var regionChoose = document.querySelector(".region_choose");
+  regionChoose.textContent = region;
+  toggleDropdown();
+}
+// $(document).ready(function () {
+//   $(".region_choose").on("click", function () {
+//     openAddressPopup();
+//   });
+
+//   function openAddressPopup() {
+//     new daum.Postcode({
+//       oncomplete: function (data) {
+//         var roadAddr = data.roadAddress; // 전체 도로명 주소
+//         var extraRoadAddr = ""; // 추가 주소 정보
+
+//         if (data.bname !== "" && /[동|로|가]$/g.test(data.bname)) {
+//           extraRoadAddr = data.bname;
+//         }
+
+//         if (data.buildingName !== "" && data.apartment === "Y") {
+//           extraRoadAddr +=
+//             extraRoadAddr !== "" ? ", " + data.buildingName : data.buildingName;
+//         }
+
+//         var regionChoose = document.querySelector(".region_choose");
+//         regionChoose.textContent = data.sigungu;
+//       },
+//     }).open();
+//   }
+// });
 
 // 기본 데이터 불러오기
 function reportCheck() {
@@ -87,7 +108,7 @@ $(document).ready(function () {
       dataType: "json",
       success: function (secondResponse) {
         console.log(secondResponse);
-        alert("두 번째 요청이 정상적으로 처리되었습니다.");
+        // alert("두 번째 요청이 정상적으로 처리되었습니다.");
 
         // 세션 스토리지에서 데이터 불러오기
         const requestTitle = secondResponse.title;
@@ -142,11 +163,11 @@ function reportCheck() {
     const requestId = sessionStorage.getItem("requestId");
     $.ajax({
       url: "http://3.36.130.108:8080/api/post/declare_post/" + requestId + "/",
-      method: "POST",
+      method: "PUT",
       dataType: "json",
       success: function (response) {
         console.log("신고 횟수 +1 성공.");
-        alert("신고 완료되었습니다.");
+        // alert("신고 완료되었습니다.");
       },
       error: function (jqXHR, textStatus, errorThrown) {
         if (jqXHR.status === 400) {
@@ -180,7 +201,7 @@ $(document).ready(function () {
       }),
       success: function (response) {
         localStorage.removeItem("token");
-        alert("로그아웃 되었습니다.");
+        // alert("로그아웃 되었습니다.");
         window.location.href = "./home_logout.html";
       },
       error: function (jqXHR, textStatus, errorThrown) {
@@ -198,3 +219,36 @@ $(document).ready(function () {
     });
   });
 });
+
+// 사용자가 지역 선택을 했을 때 실행되는 함수
+function selectRegion(selectedArea) {
+  var area = selectedArea;
+
+  userinfo_change(area);
+}
+
+function userinfo_change() {
+  $.ajax({
+    url: "http://3.36.130.108:8080/api/user/update_info_area/",
+    method: "POST",
+    data: JSON.stringify({
+      email: email,
+      area: area,
+    }),
+    success: function (response) {
+      console.log("회원 정보 수정 성공");
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      if (jqXHR.status === 400) {
+        console.error("Bad Request:", jqXHR.responseText);
+        alert("올바르지 않은 형식의 입력입니다.");
+      } else if (jqXHR.status === 401) {
+        console.error("Unauthorized:", jqXHR.responseText);
+        alert("권한이 없는 사용자입니다.");
+      } else {
+        console.error("Error:", jqXHR.status, errorThrown);
+        alert("서버 에러");
+      }
+    },
+  });
+}

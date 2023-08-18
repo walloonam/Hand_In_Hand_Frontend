@@ -56,7 +56,7 @@ function pw_reset() {
     }),
     success: function (response) {
       if (response.result === "success") {
-        alert("비밀번호 재설정에 성공했습니다.");
+        // alert("비밀번호 재설정에 성공했습니다.");
       }
     },
     error: function (jqXHR, textStatus, errorThrown) {
