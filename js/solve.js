@@ -219,3 +219,36 @@ $(document).ready(function () {
     });
   });
 });
+
+// 채팅방 만들기
+$(document).ready(function () {
+  $("#solve_button").click(function (event) {
+    const jwtToken = sessionStorage.getItem("jwtToken");
+    const requestId = sessionStorage.getItem("requestId");
+    $.ajax({
+      type: "POST",
+      url: "http://3.36.130.108:8080/api/chatting/create/room/",
+      data: JSON.stringify({
+        token: jwtToken,
+        post_id: requestId,
+      }),
+      success: function (response) {
+        console.log(response);
+
+        window.location.href = "./chat.html";
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        if (jqXHR.status === 400) {
+          console.error("Bad Request:", jqXHR.responseText);
+          alert("올바르지 않은 형식의 입력입니다.");
+        } else if (jqXHR.status === 401) {
+          console.error("Unauthorized:", jqXHR.responseText);
+          alert("권한이 없는 사용자입니다.");
+        } else {
+          console.error("Error:", jqXHR.status, errorThrown);
+          alert("서버 에러");
+        }
+      },
+    });
+  });
+});
