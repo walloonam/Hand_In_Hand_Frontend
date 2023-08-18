@@ -1,6 +1,6 @@
-// const jwtToken = sessionStorage.getItem("jwtToken");
+const jwtToken = sessionStorage.getItem("jwtToken");
 
-const jwtToken = "6QjIlPiXHs13LLbvA2ufdlubYp3MtQxxzsDYvbJraccTZVpckiE6VSyqAwCmbFlZJKtuATon6bexCoxkDYxycHdxnLEkTAblqK0D";
+// const jwtToken = "6QjIlPiXHs13LLbvA2ufdlubYp3MtQxxzsDYvbJraccTZVpckiE6VSyqAwCmbFlZJKtuATon6bexCoxkDYxycHdxnLEkTAblqK0D";
 
 // 버튼들
 
@@ -22,6 +22,8 @@ const deleteAll = () => {
     document.querySelector('.my_adop').innerHTML = "";
 }
 
+var roomId = null;
+
 document.querySelector('.wrap_list').addEventListener('click', function(event) {
     if (event.target.classList.contains('profile_img') || event.target.classList.contains('infor') || event.target.classList.contains('image') || event.target.classList.contains('other_nick') || event.target.classList.contains('post')) {
         // 채팅창 선택
@@ -38,7 +40,7 @@ document.querySelector('.wrap_list').addEventListener('click', function(event) {
             data: JSON.stringify({ "token": jwtToken }),
             success: function(response) {
 
-                const roomId = event.target.getAttribute("data-room-id");
+                roomId = event.target.getAttribute("data-room-id");
                 const choice = event.target.getAttribute("choice");
 
                 let foundData = null;
@@ -243,7 +245,6 @@ document.querySelector('.post_btn').addEventListener('click', function(event) {
         }
     } else if (event.target.classList.contains('view_btn')) {
         let link = document.querySelector('.post_a');
-        link.href = "../html/solve.html"
 
         const post_id = event.target.getAttribute("post_id");
         const choice = event.target.getAttribute("choice");
@@ -383,7 +384,6 @@ switchMonthly.onclick = () => {
     deleteAll();
     showMain();
     adopt_btn.style.display = 'none';
-
 }
 
 // 받기 채팅 목록
@@ -479,6 +479,184 @@ switchYearly.onclick = () => {
     adopt_btn.style.display = 'block';
 }
 
+const emoticon_btn = document.querySelector('.emoticon_btn');
+
+emoticon_btn.onclick = () => {
+    var chat_area = document.querySelector('.chat_area');
+    var input_area = document.querySelector('.input_area');
+    var emoticon_area = document.querySelector('.emoticon_area');
+    var text_content = document.querySelector('.text_content');
+
+    var computedStyle = window.getComputedStyle(emoticon_area);
+    var displayValue = computedStyle.getPropertyValue("display");
+
+    if (displayValue === 'flex') {
+        emoticon_area.style.display = 'none';
+        text_content.style.display = 'block';
+        chat_area.classList.remove('checked');
+        input_area.classList.remove('checked');
+        try {
+            let checked = document.querySelector('.emoticon.checked');
+            checked.classList.remove('checked');
+        } catch {}
+    } else {
+        emoticon_area.style.display = 'flex';
+        text_content.style.display = 'none';
+        chat_area.classList.add('checked');
+        input_area.classList.add('checked');
+    }
+}
+
+document.querySelector('.emoticon_area').addEventListener('click', function(event) {
+    if (event.target.classList.contains('emoticon')) {
+        try {
+            let checked = document.querySelector('.emoticon.checked');
+            checked.classList.remove('checked');
+        } catch {}
+        event.target.classList.add('checked');
+    }
+});
+
+// 채팅 부분
+
+const my_id = sessionStorage.getItem("user_id");
+
+
+$(document).ready(function() {
+    var chatSocket = new WebSocket(
+        'ws://' + '3.36.130.108:8080' + '/ws/chat/');
+
+    console.log(chatSocket)
+
+    chatSocket.onopen = function(event) {
+        // 웹소켓 연결이 확립되면 여기서 메시지를 보내거나 다른 동작을 처리할 수 있습니다.
+
+        // 예시: 메시지 보내기
+
+        var message = "Hello, WebSocket!";
+        chatSocket.send(message);
+        console.log(message);
+
+
+    };
+
+
+    chatSocket.onerror = function(event) { 
+        console.log(event);
+
+    }
+    chatSocket.onmessage = function(e) {
+        var data = JSON.parse(e.data);
+        var content = data['content'];
+        var user_id = data['user_id'];
+        // var room_id = data['room_id']
+        console.log(data['content'])
+        console.log(roomId)
+        console.log(user_id)
+        if (data['user_id'] === my_id) {
+            var chat_area = document.querySelector('.chat_area');
+            let my_chat = document.createElement("div");
+            my_chat.setAttribute("class", "my_chat");
+            let my_p = document.createElement("p");
+            my_p.innerHTML = content;
+
+            chat_area.appendChild(my_chat);
+            my_chat.appendChild(my_p);
+
+            $.ajax({
+                url: 'http://3.36.130.108:8080/api/chatting/create/chat/', //request 보낼 서버의 경로
+                type: 'post', // 메소드(get, post, put 등)
+                data: JSON.stringify({
+                    "content": content,
+                    "user_id": my_id,
+                    "room_id": roomId
+                }), //보낼 데이터
+                success: function(data) {
+                    //서버로부터 정상적으로 응답이 왔을 때 실행
+                },
+                error: function(xhr, textStatus, thrownError) {
+                    alert(
+                        "Could not send URL to Django. Error: " +
+                        xhr.status +
+                        ": " +
+                        xhr.responseText
+                    );
+                },
+            });
+        } else {
+            var chat_area = document.querySelector('.chat_area');
+            let other_chat = document.createElement("div");
+            other_chat.setAttribute("class", "other_chat");
+            let other_p = document.createElement("p");
+            other_p.innerHTML = content;
+
+            chat_area.appendChild(other_chat);
+            other_chat.appendChild(other_p);
+        }
+    };
+
+    chatSocket.onclose = function(e) {
+        console.log(e)
+        console.error('Chat socket closed unexpectedly');
+    };
+
+    // document.querySelector('#writeChat').focus();
+    // document.querySelector('#writeChat').onkeyup = function(e) {
+    //     if (e.keyCode === 13) { // enter, return
+    //         document.querySelector('#chatGoBt').click();
+    //     }
+    // };
+
+    document.querySelector('.send_btn').onclick = function(e) {
+        var messageInputDom = document.querySelector('.text_content');
+        var content = messageInputDom.value;
+
+        console.log("my_id" + my_id);
+        console.log("content" + content);
+        console.log("roomId" + roomId);
+
+
+        chatSocket.send(JSON.stringify({
+            "user_id": my_id,
+            'content': content,
+            "room_id": roomId
+        }));
+
+        messageInputDom.value = '';
+
+    };
+})
+
+// var roomName = {
+//     room_name_json
+// };
+// console.log(roomName)
+
+
+
+
+
+
+/*
+
+   var text_content = document.querySelector('.text_content');
+   var emoticon_area = document.querySelector('.emoticon_area');
+   var computedStyle = window.getComputedStyle(emoticon_area);
+   var displayValue = computedStyle.getPropertyValue("display");
+
+   var content_value = null;
+
+   if (displayValue === 'flex') {
+       let checked = document.querySelector('.emoticon.checked');
+       content_value = checked.src;
+   } else {
+       content_value = text_content.value;
+
+   }
+
+   console.log(content_value);
+
+   */
 
 ////////////////////////////////////
 

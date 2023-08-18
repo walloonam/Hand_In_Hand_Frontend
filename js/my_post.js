@@ -1,5 +1,3 @@
-/*
-
 var present_num = 1;
 var present_page = 1;
 
@@ -224,10 +222,10 @@ $.getJSON(jsonLocation, function(data) {
     showPost();
 });
 
-*/
+
 ///////////////////////////////////
 
-
+/*
 
 var present_num = 1;
 var present_page = 1;
@@ -469,3 +467,5 @@ $.ajax({
         console.log("error: " + error);
     }
 })
+
+*/

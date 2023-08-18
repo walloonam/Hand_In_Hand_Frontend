@@ -223,6 +223,8 @@ hr {
     border: 1px solid #C2D3F5;
     background: #FFF;
     margin-right: 0.5rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .post_name p {
@@ -232,6 +234,8 @@ hr {
     margin: 0;
     margin-left: 1.03rem;
     margin-top: 0.4rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .post_point {

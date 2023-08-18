@@ -319,6 +319,14 @@ hr {
     overflow: hidden;
 }
 
+.content_area {
+    overflow: hidden;
+}
+
+#content_area {
+    text-overflow: ellipsis;
+}
+
 .content_area p {
     line-height: 1.7rem;
 }
