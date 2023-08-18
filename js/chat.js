@@ -23,6 +23,7 @@ const deleteAll = () => {
 }
 
 var roomId = null;
+var send_btn = document.querySelector('.send_btn');
 
 document.querySelector('.wrap_list').addEventListener('click', function(event) {
     if (event.target.classList.contains('profile_img') || event.target.classList.contains('infor') || event.target.classList.contains('image') || event.target.classList.contains('other_nick') || event.target.classList.contains('post')) {
@@ -44,6 +45,8 @@ document.querySelector('.wrap_list').addEventListener('click', function(event) {
                 const choice = event.target.getAttribute("choice");
 
                 let foundData = null;
+
+                send_btn.style.display = 'block';
 
                 document.querySelector('.adopt_btn').setAttribute("data-room-id", roomId);
                 document.querySelector('.view_btn').setAttribute("data-room-id", roomId);
@@ -97,8 +100,14 @@ document.querySelector('.wrap_list').addEventListener('click', function(event) {
                             if (chat === customN) {
                                 let other_chat = document.createElement("div");
                                 other_chat.setAttribute("class", "other_chat");
-                                let other_p = document.createElement("p");
-                                other_p.innerHTML = content;
+
+                                if (content.substring(content.lastIndexOf(".") + 1) === 'png') {
+                                    var other_p = document.createElement("img");
+                                    other_p.src = content;
+                                } else {
+                                    var other_p = document.createElement("p");
+                                    other_p.innerHTML = content;
+                                }
 
                                 chat_area.appendChild(other_chat);
                                 other_chat.appendChild(other_p);
@@ -106,8 +115,14 @@ document.querySelector('.wrap_list').addEventListener('click', function(event) {
                             } else {
                                 let my_chat = document.createElement("div");
                                 my_chat.setAttribute("class", "my_chat");
-                                let my_p = document.createElement("p");
-                                my_p.innerHTML = content;
+
+                                if (content.substring(content.lastIndexOf(".") + 1) === 'png') {
+                                    var my_p = document.createElement("img");
+                                    my_p.src = content;
+                                } else {
+                                    var my_p = document.createElement("p");
+                                    my_p.innerHTML = content;
+                                }
 
                                 chat_area.appendChild(my_chat);
                                 my_chat.appendChild(my_p);
@@ -118,6 +133,8 @@ document.querySelector('.wrap_list').addEventListener('click', function(event) {
                     showData(foundData);
                 } else if (choice === "sub") {
                     const showData = (foundData) => {
+                        adopt_btn.style.display = 'block';
+
                         console.log(foundData);
 
                         const title = foundData.title;
@@ -147,8 +164,14 @@ document.querySelector('.wrap_list').addEventListener('click', function(event) {
                             if (chat === ownerN) {
                                 let other_chat = document.createElement("div");
                                 other_chat.setAttribute("class", "other_chat");
-                                let other_p = document.createElement("p");
-                                other_p.innerHTML = content;
+
+                                if (content.substring(content.lastIndexOf(".") + 1) === 'png') {
+                                    var other_p = document.createElement("img");
+                                    other_p.src = content;
+                                } else {
+                                    var other_p = document.createElement("p");
+                                    other_p.innerHTML = content;
+                                }
 
                                 chat_area.appendChild(other_chat);
                                 other_chat.appendChild(other_p);
@@ -156,8 +179,14 @@ document.querySelector('.wrap_list').addEventListener('click', function(event) {
                             } else {
                                 let my_chat = document.createElement("div");
                                 my_chat.setAttribute("class", "my_chat");
-                                let my_p = document.createElement("p");
-                                my_p.innerHTML = content;
+
+                                if (content.substring(content.lastIndexOf(".") + 1) === 'png') {
+                                    var my_p = document.createElement("img");
+                                    my_p.src = content;
+                                } else {
+                                    var my_p = document.createElement("p");
+                                    my_p.innerHTML = content;
+                                }
 
                                 chat_area.appendChild(my_chat);
                                 my_chat.appendChild(my_p);
@@ -254,6 +283,7 @@ document.querySelector('.post_btn').addEventListener('click', function(event) {
         } else if (choice === "sub") {
             link.href = "../html/solve_self.html"
         }
+
 
         link.addEventListener("click", function(event) {
             sessionStorage.setItem("requestId", post_id);
@@ -384,6 +414,7 @@ switchMonthly.onclick = () => {
     deleteAll();
     showMain();
     adopt_btn.style.display = 'none';
+    send_btn.style.display = 'none';
 }
 
 // 받기 채팅 목록
@@ -476,7 +507,7 @@ var switchYearly = document.getElementById('switchYearly');
 switchYearly.onclick = () => {
     deleteAll();
     showSub();
-    adopt_btn.style.display = 'block';
+    send_btn.style.display = 'none';
 }
 
 const emoticon_btn = document.querySelector('.emoticon_btn');
@@ -557,8 +588,14 @@ $(document).ready(function() {
             var chat_area = document.querySelector('.chat_area');
             let my_chat = document.createElement("div");
             my_chat.setAttribute("class", "my_chat");
-            let my_p = document.createElement("p");
-            my_p.innerHTML = content;
+
+            if (content.substring(content.lastIndexOf(".") + 1) === 'png') {
+                var my_p = document.createElement("img");
+                my_p.src = content;
+            } else {
+                var my_p = document.createElement("p");
+                my_p.innerHTML = content;
+            }
 
             chat_area.appendChild(my_chat);
             my_chat.appendChild(my_p);
@@ -587,8 +624,14 @@ $(document).ready(function() {
             var chat_area = document.querySelector('.chat_area');
             let other_chat = document.createElement("div");
             other_chat.setAttribute("class", "other_chat");
-            let other_p = document.createElement("p");
-            other_p.innerHTML = content;
+
+            if (content.substring(content.lastIndexOf(".") + 1) === 'png') {
+                var other_p = document.createElement("img");
+                other_p.src = content;
+            } else {
+                var other_p = document.createElement("p");
+                other_p.innerHTML = content;
+            }
 
             chat_area.appendChild(other_chat);
             other_chat.appendChild(other_p);
@@ -608,12 +651,27 @@ $(document).ready(function() {
     // };
 
     document.querySelector('.send_btn').onclick = function(e) {
+
+
         var messageInputDom = document.querySelector('.text_content');
-        var content = messageInputDom.value;
+        // var content = messageInputDom.value;
 
         console.log("my_id" + my_id);
-        console.log("content" + content);
+        // console.log("content" + content);
         console.log("roomId" + roomId);
+
+        var emoticon_area = document.querySelector('.emoticon_area');
+        var computedStyle = window.getComputedStyle(emoticon_area);
+        var displayValue = computedStyle.getPropertyValue("display");
+
+        var content = null;
+
+        if (displayValue === 'flex') {
+            let checked = document.querySelector('.emoticon.checked');
+            content = checked.src;
+        } else {
+            content = messageInputDom.value;
+        }
 
 
         chatSocket.send(JSON.stringify({

@@ -1,6 +1,6 @@
-// const jwtToken = sessionStorage.getItem("jwtToken");
+const jwtToken = sessionStorage.getItem("jwtToken");
 
-const jwtToken = "6QjIlPiXHs13LLbvA2ufdlubYp3MtQxxzsDYvbJraccTZVpckiE6VSyqAwCmbFlZJKtuATon6bexCoxkDYxycHdxnLEkTAblqK0D";
+// const jwtToken = "6QjIlPiXHs13LLbvA2ufdlubYp3MtQxxzsDYvbJraccTZVpckiE6VSyqAwCmbFlZJKtuATon6bexCoxkDYxycHdxnLEkTAblqK0D";
 
 // 현재 정보
 var email = "";
@@ -151,6 +151,8 @@ $('.withdraw_btn').on('click', function() {
 
 //////////////////////////////////
 
+/*
+
 var jsonLocation = "../json/user.json";
 $.getJSON(jsonLocation, function(data) {
     const showData = () => {
@@ -250,12 +252,8 @@ const sendUpdateRequest = (updatedDate) => {
     });
 }
 
-
-
-/*
-
-
 */
+
 
 
 
