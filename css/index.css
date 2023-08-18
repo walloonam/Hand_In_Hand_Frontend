@@ -1,129 +1,129 @@
 body {
-  margin-top: 11.88rem;
-  margin-left: 9.94rem;
-  margin-right: 10.69rem;
-  margin-bottom: 7.31rem;
-  width: 100rem;
+    margin-top: 11.88rem;
+    margin-left: 9.94rem;
+    margin-right: 10.69rem;
+    margin-bottom: 7.31rem;
+    width: 75rem;
 }
 
 .home_header {
-  display: flex;
-  align-items: flex-end;
+    display: flex;
+    align-items: flex-end;
 }
 
 .home_header a {
-  color: #000;
-  text-align: center;
-  font-family: Inter;
-  font-size: 4.375rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  margin-bottom: 0;
-  text-decoration: none;
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 4.375rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 0;
+    text-decoration: none;
 }
 
 .home_header img {
-  width: 10rem;
-  height: 10rem;
-  flex-shrink: 0;
+    width: 10rem;
+    height: 10rem;
+    flex-shrink: 0;
 }
 
 .bottom_home_header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .bottom_home_header p {
-  color: #757575;
-  font-family: Inter;
-  font-size: 1.25rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  margin-top: 0;
+    color: #757575;
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 0;
 }
 
 #login_button {
-  width: 9.4375rem;
-  height: 2.8125rem;
-  flex-shrink: 0;
-  border-radius: 1.25rem;
-  border: 2px solid #6d6d6d;
-  background: #fff;
-  color: #464646;
-  text-align: center;
-  font-family: Inter;
-  font-size: 1.25rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  cursor: pointer;
+    width: 9.4375rem;
+    height: 2.8125rem;
+    flex-shrink: 0;
+    border-radius: 1.25rem;
+    border: 2px solid #6d6d6d;
+    background: #fff;
+    color: #464646;
+    text-align: center;
+    font-family: Inter;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    cursor: pointer;
 }
 
 .wrap_home_content {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2.19rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.19rem;
 }
 
 #left_rectangle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 27.6875rem;
-  height: 22.1875rem;
-  flex-shrink: 0;
-  border-radius: 0.625rem;
-  background: #578bf0;
-  text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 27.6875rem;
+    height: 22.1875rem;
+    flex-shrink: 0;
+    border-radius: 0.625rem;
+    background: #578bf0;
+    text-decoration: none;
 }
 
 #left_rectangle img {
-  width: 9.375rem;
-  height: 7.61719rem;
-  flex-shrink: 0;
+    width: 9.375rem;
+    height: 7.61719rem;
+    flex-shrink: 0;
 }
 
 #left_rectangle p {
-  color: #fff;
-  text-align: center;
-  font-family: Inter;
-  font-size: 2.5rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  margin-bottom: 0;
+    color: #fff;
+    text-align: center;
+    font-family: Inter;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 0;
 }
 
 #right_rectangle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 27.6875rem;
-  height: 22.1875rem;
-  flex-shrink: 0;
-  border-radius: 0.625rem;
-  background: #f48d8d;
-  text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 27.6875rem;
+    height: 22.1875rem;
+    flex-shrink: 0;
+    border-radius: 0.625rem;
+    background: #f48d8d;
+    text-decoration: none;
 }
 
 #right_rectangle img {
-  width: 9.375rem;
-  height: 9.075rem;
-  flex-shrink: 0;
+    width: 9.375rem;
+    height: 9.075rem;
+    flex-shrink: 0;
 }
 
 #right_rectangle p {
-  color: #fff;
-  text-align: center;
-  font-family: Inter;
-  font-size: 2.5rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  margin-bottom: 0;
+    color: #fff;
+    text-align: center;
+    font-family: Inter;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 0;
 }
