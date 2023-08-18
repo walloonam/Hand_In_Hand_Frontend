@@ -3,9 +3,10 @@
 var email = "";
 var password = "";
 
-// const jwtToken = sessionStorage.getItem("jwtToken");
+const jwtToken = sessionStorage.getItem("jwtToken");
 
-const jwtToken = "6QjIlPiXHs13LLbvA2ufdlubYp3MtQxxzsDYvbJraccTZVpckiE6VSyqAwCmbFlZJKtuATon6bexCoxkDYxycHdxnLEkTAblqK0D";
+// const jwtToken = "6QjIlPiXHs13LLbvA2ufdlubYp3MtQxxzsDYvbJraccTZVpckiE6VSyqAwCmbFlZJKtuATon6bexCoxkDYxycHdxnLEkTAblqK0D";
+
 $.ajax({
     type: 'POST',
     url: 'http://3.36.130.108:8080/api/user/info/',
