@@ -90,7 +90,8 @@ $(document).ready(function () {
         token: jwtToken,
       }),
       success: function (response) {
-        localStorage.removeItem("token");
+        sessionStorage.removeItem("user_id");
+        sessionStorage.removeItem("jwtToken");
         alert("로그아웃 되었습니다.");
         window.location.href = "./home_logout.html";
       },

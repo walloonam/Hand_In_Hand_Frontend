@@ -7,12 +7,9 @@ $(document).ready(function () {
   $("#email_check_button").on("click", function () {
     if (isEmailVerified) {
       // 이메일 인증이 완료된 경우
-      $("#certified_check_message").css("display", "block");
+      // $("#certified_check_message").css("display", "block");
       $("#email_check_message").css("display", "none");
-      $("#email_check_button").text("인증하기");
-
-      var emailInputValue = $("#email_input").val();
-      emailvalidation(emailInputValue);
+      // $("#email_check_button").text("인증하기");
     } else {
       // 이메일 중복 확인
       var emailInputValue = $("#email_input").val();
@@ -33,14 +30,14 @@ $(document).ready(function () {
         if (response.message === "success") {
           $("#email_check_message").css("display", "block");
           $("#email_duplicate_message").css("display", "none");
-          $("#certified_check_message").css("display", "none");
-          $("#email_check_button").text("인증하기");
-          isEmailVerified = true;
+          // $("#certified_check_message").css("display", "none");
+          // $("#email_check_button").text("인증하기");
+          // isEmailVerified = true;
         } else if (response.message === "fail") {
           $("#email_check_message").css("display", "none");
           $("#email_duplicate_message").css("display", "block");
           $("#certified_check_message").css("display", "none");
-          $("#email_check_button").text("중복확인");
+          // $("#email_check_button").text("중복확인");
           isEmailVerified = false;
         }
       },
@@ -61,35 +58,6 @@ $(document).ready(function () {
 });
 
 // 이메일 인증
-function emailvalidation(email) {
-  $.ajax({
-    type: "POST",
-    url: "http://3.36.130.108:8080/api/user/emailvalidation/",
-    contentType: "application/json",
-    data: JSON.stringify({
-      email: email,
-    }),
-    success: function (response) {
-      console.log("이메일 인증 보냄");
-      // $("#certified_check_message").css("display", "block");
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-      if (jqXHR.status === 400) {
-        console.error("Bad Request:", jqXHR.responseText);
-        alert("올바르지 않은 형식의 입력입니다.");
-      } else if (jqXHR.status === 409) {
-        console.error("Too Many Requests:", jqXHR.responseText);
-        alert("짧은 시간동안 너무 많은 인증 요청을 보냈습니다.");
-      } else if (jqXHR.status === 500) {
-        console.error("Internal Server Error:", jqXHR.responseText);
-        alert("서버측에서 오류가 발생했습니다.");
-      } else {
-        console.error("Error:", jqXHR.status, errorThrown);
-        alert("서버 에러");
-      }
-    },
-  });
-}
 
 // 비밀번호
 function checkPasswordMatch() {
@@ -194,6 +162,8 @@ $(document).ready(function () {
     var area = area1;
     console.log(area);
 
+    emailvalidation(email);
+
     $.ajax({
       type: "POST",
       url: "http://3.36.130.108:8080/api/user/",
@@ -208,8 +178,7 @@ $(document).ready(function () {
         area: area,
       }),
       success: function (response) {
-        alert("회원가입에 성공했습니다.");
-        window.location.href = "./login.html";
+        window.location.href = "./mail_check.html";
       },
       error: function (jqXHR, textStatus, errorThrown) {
         if (jqXHR.status === 400) {
@@ -221,6 +190,36 @@ $(document).ready(function () {
         } else if (jqXHR.status === 409) {
           console.error("Conflict:", jqXHR.responseText);
           alert("중복된 리소스가 존재합니다.");
+        } else {
+          console.error("Error:", jqXHR.status, errorThrown);
+          alert("서버 에러");
+        }
+      },
+    });
+  }
+
+  function emailvalidation(email) {
+    $.ajax({
+      type: "POST",
+      url: "http://3.36.130.108:8080/api/user/emailvalidation/",
+      contentType: "application/json",
+      data: JSON.stringify({
+        email: email,
+      }),
+      success: function (response) {
+        console.log("이메일 인증 보냄");
+        // $("#certified_check_message").css("display", "block");
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        if (jqXHR.status === 400) {
+          console.error("Bad Request:", jqXHR.responseText);
+          alert("올바르지 않은 형식의 입력입니다.");
+        } else if (jqXHR.status === 409) {
+          console.error("Too Many Requests:", jqXHR.responseText);
+          alert("짧은 시간동안 너무 많은 인증 요청을 보냈습니다.");
+        } else if (jqXHR.status === 500) {
+          console.error("Internal Server Error:", jqXHR.responseText);
+          alert("서버측에서 오류가 발생했습니다.");
         } else {
           console.error("Error:", jqXHR.status, errorThrown);
           alert("서버 에러");

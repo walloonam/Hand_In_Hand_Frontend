@@ -34,14 +34,20 @@ document
     }
   });
 
-// ajax
+// 비밀번호 재설정 버튼
+$(document).ready(function () {
+  $("#pw_reset_button").click(function () {
+    pw_reset();
+  });
+});
+
 function pw_reset() {
-  var email = $("#pw_reset_input").val();
+  var email = sessionStorage.getItem("find_id");
   var new_password = $("#pw_reset_pwcheck_input").val();
 
   $.ajax({
     type: "POST",
-    url: "/user/password_reset/",
+    url: "http://3.36.130.108:8080/api/user/password_reset/",
     contentType: "application/json",
 
     data: JSON.stringify({
