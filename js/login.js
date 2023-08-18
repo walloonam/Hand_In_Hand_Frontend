@@ -17,12 +17,14 @@ document.addEventListener("DOMContentLoaded", function () {
           password: password,
         }),
         success: function (response) {
-          console.log(response);
-
-          sessionStorage.setItem("jwtToken", response.token);
-          sessionStorage.setItem("user_id", response.id);
-          alert("로그인이 성공적으로 완료되었습니다.");
-          window.location.href = "./home_login.html";
+          if (response.message === "이메일 인증이 필요합니다") {
+            alert("이메일 인증이 필요합니다.");
+          } else {
+            sessionStorage.setItem("jwtToken", response.token);
+            sessionStorage.setItem("user_id", response.id);
+            console.log("로그인이 성공적으로 완료되었습니다.");
+            window.location.href = "./home_login.html";
+          }
         },
         error: function (jqXHR, textStatus, errorThrown) {
           if (jqXHR.status === 400) {
