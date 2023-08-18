@@ -58,6 +58,7 @@ body {
   display: flex;
   align-items: flex-end;
   margin-top: 6.13rem;
+  width: 85rem;
 }
 
 .home_header a {
@@ -82,6 +83,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 85rem;
 }
 
 .left_header p {
@@ -98,6 +100,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 .region_name {
@@ -123,6 +126,21 @@ body {
   text-decoration-line: underline;
   cursor: pointer;
 }
+.dropdown {
+  border: 1px solid #ccc;
+  background-color: white;
+  position: absolute;
+  max-height: 200px;
+  overflow-y: auto;
+  top: 12px;
+  left: 15px;
+  padding: 0px 15px;
+}
+.dropdown-option {
+  padding: 5px;
+  cursor: pointer;
+  list-style: none;
+}
 
 #chat_button {
   width: 9.4375rem;
@@ -145,7 +163,7 @@ body {
 .wrap_home_content {
   display: flex;
   justify-content: space-between;
-  margin-top: 2.19rem;
+  margin-top: 7rem;
 }
 
 #left_rectangle_2 {

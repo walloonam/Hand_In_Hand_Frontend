@@ -1,4 +1,25 @@
 //지역이름
+var dropdownVisible = false;
+
+document.addEventListener("DOMContentLoaded", function () {
+  var dropdown = document.getElementById("dropdown");
+  dropdown.style.display = "none"; // 처음에 드롭다운을 숨김
+});
+
+function toggleDropdown() {
+  var dropdown = document.getElementById("dropdown");
+  dropdownVisible = !dropdownVisible;
+  if (dropdownVisible) {
+    dropdown.style.display = "block";
+  } else {
+    dropdown.style.display = "none";
+  }
+}
+function selectRegion(region) {
+  var regionChoose = document.querySelector(".region_choose");
+  regionChoose.textContent = region;
+  toggleDropdown();
+}
 // $(document).ready(function () {
 //   $(".region_choose").on("click", function () {
 //     openAddressPopup();
@@ -119,7 +140,7 @@ function request() {
       token: jwtToken,
     }),
     success: function (response) {
-      alert("작성 성공");
+      // alert("작성 성공");
     },
     error: function (jqXHR, textStatus, errorThrown) {
       if (jqXHR.status === 400) {
@@ -150,7 +171,7 @@ $(document).ready(function () {
       }),
       success: function (response) {
         localStorage.removeItem("token");
-        alert("로그아웃 되었습니다.");
+        // alert("로그아웃 되었습니다.");
         window.location.href = "./home_logout.html";
       },
       error: function (jqXHR, textStatus, errorThrown) {
@@ -168,3 +189,5 @@ $(document).ready(function () {
     });
   });
 });
+
+// 회원정보 수정

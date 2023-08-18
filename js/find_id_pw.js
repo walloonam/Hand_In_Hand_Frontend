@@ -47,7 +47,7 @@ document
         // 세션 스토리지에 이메일 데이터 저장
         sessionStorage.setItem("foundEmail", response.email);
 
-        alert("아이디 찾기 성공");
+        // alert("아이디 찾기 성공");
         window.location.href = "./find_id_result.html";
       },
       error: function (jqXHR, textStatus, errorThrown) {
