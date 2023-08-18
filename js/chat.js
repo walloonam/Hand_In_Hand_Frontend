@@ -330,6 +330,7 @@ const showMain = () => {
         contentType: 'application/json',
         data: JSON.stringify({ "token": jwtToken }),
         success: function(response) {
+            console.log(response);
             var length = response.main.main.length;
 
             for (var i = 0; i < length; i++) {
