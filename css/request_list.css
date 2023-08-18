@@ -401,3 +401,18 @@ hr {
   width: 1.25rem;
   height: 0.78125rem;
 }
+
+.content {
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 550;
+  white-space: nowrap;
+  overflow: hidden; /* 너무 길 경우 넘치는 부분을 숨김 */
+  text-overflow: ellipsis; /* 너무 길 경우 생략 (...) 표시 */
+}
