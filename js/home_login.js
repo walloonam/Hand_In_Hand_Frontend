@@ -119,7 +119,7 @@ $(document).ready(function () {
         sessionStorage.removeItem("user_id");
         sessionStorage.removeItem("jwtToken");
         // alert("로그아웃 되었습니다.");
-        window.location.href = "./home_logout.html";
+        window.location.href = "./index.html";
       },
       error: function (jqXHR, textStatus, errorThrown) {
         if (jqXHR.status === 400) {

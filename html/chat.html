@@ -1,157 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- css -->
-    <link rel="stylesheet" href="../css/chat.css">
+    <link rel="stylesheet" href="../css/chat.css" />
 
     <title>손에 손 잡고</title>
 
     <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <nav class="nav_bar">
-        <div class="back_btn">
-            <a href="./home_login.html"><img src="../img/arrow.png" alt="" /></a>
-        </div>
-        <div class="logo_btn">
-            <a href="./home_login.html"><img src="../img/logo_2.png" alt="" class="logo_img" /></a>
-        </div>
-        <div class="nav_menu">
-            <ul>
-                <li class="post_li">
-                    채팅
-                </li>
-                <li class="opacity_li">
-                    도움 해결하　　　　　기
-                </li>
-            </ul>
-        </div>
-        <div class="nav_chat">
-            <button class="chat_btn">채팅하기</button>
-        </div>
-        <div class="nav_logout">
-            <img src="../img/logout.png" alt="" />
-            <a href="./home_logout.html">로그아웃</a>
-        </div>
-        <div class="nav_mypage">
-            <img src="../img/mypage.png" alt="" />
-            <a href="../html/mypage.html">마이페이지</a>
-        </div>
+      <div class="back_btn">
+        <a href="./home_login.html"><img src="../img/arrow.png" alt="" /></a>
+      </div>
+      <div class="logo_btn">
+        <a href="./home_login.html"
+          ><img src="../img/logo_2.png" alt="" class="logo_img"
+        /></a>
+      </div>
+      <div class="nav_menu">
+        <ul>
+          <li class="post_li">채팅</li>
+          <li class="opacity_li">도움 해결하　　　　　기</li>
+        </ul>
+      </div>
+      <div class="nav_chat">
+        <button class="chat_btn">채팅하기</button>
+      </div>
+      <div class="nav_logout">
+        <img src="../img/logout.png" alt="" />
+        <a href="./index.html">로그아웃</a>
+      </div>
+      <div class="nav_mypage">
+        <img src="../img/mypage.png" alt="" />
+        <a href="../html/mypage.html">마이페이지</a>
+      </div>
     </nav>
     <hr />
 
     <section class="container">
-        <div class="wrap_bar">
-            <div class="switches-container">
-                <input type="radio" id="switchMonthly" name="switchPlan" value="Monthly" checked="checked" />
-                <input type="radio" id="switchYearly" name="switchPlan" value="Yearly" />
-                <label for="switchMonthly">주기 채팅</label>
-                <label for="switchYearly">받기 채팅</label>
-                <div class="switch-wrapper">
-                    <div class="switch">
-                        <div>주기 채팅</div>
-                        <div>받기 채팅</div>
-                    </div>
-                </div>
+      <div class="wrap_bar">
+        <div class="switches-container">
+          <input
+            type="radio"
+            id="switchMonthly"
+            name="switchPlan"
+            value="Monthly"
+            checked="checked"
+          />
+          <input
+            type="radio"
+            id="switchYearly"
+            name="switchPlan"
+            value="Yearly"
+          />
+          <label for="switchMonthly">주기 채팅</label>
+          <label for="switchYearly">받기 채팅</label>
+          <div class="switch-wrapper">
+            <div class="switch">
+              <div>주기 채팅</div>
+              <div>받기 채팅</div>
             </div>
+          </div>
         </div>
-        <div class="wrap_content">
-            <div class="back">
-                <div class="list">
-                    <div class="wrap_name">
-                        <p class="nick">나의 닉네임</p>
-                    </div>
-                    <div class="wrap_list">
-
-                    </div>
+      </div>
+      <div class="wrap_content">
+        <div class="back">
+          <div class="list">
+            <div class="wrap_name">
+              <p class="nick">나의 닉네임</p>
+            </div>
+            <div class="wrap_list"></div>
+          </div>
+          <div class="chat">
+            <div class="wrap_post_infor">
+              <div class="post_infor">
+                <p class="post_name">게시물 제목</p>
+                <div class="point">
+                  <img src="../img/stamp.png" alt="" />
+                  <p>:</p>
+                  <p class="post_point"></p>
                 </div>
-                <div class="chat">
-                    <div class="wrap_post_infor">
-                        <div class="post_infor">
-                            <p class="post_name">게시물 제목</p>
-                            <div class="point">
-                                <img src="../img/stamp.png" alt="">
-                                <p>:</p>
-                                <p class="post_point"></p>
-                            </div>
-                        </div>
-                        <div class="post_btn">
-                            <button class="adopt_btn" data-room-id="0">채택하기</button>
-                            <a href="" class="post_a"><button class="view_btn" data-room-id="0">게시물 보기</button></a>
-                        </div>
-                    </div>
-                    <div class="user_infor">
-                        <div class="other_infor">
-                            <div class="wrap_nickName">
-                                <p class="nickName" id="other_nick">상대 닉네임</p>
-                            </div>
-                            <div class="wrap_adop">
-                                <p>채택 횟수</p>
-                                <p>:</p>
-                                <p class="other_adop"></p>
-                            </div>
-                        </div>
-                        <div class="my_infor">
-                            <div class="wrap_nickName">
-                                <p class="nickName" id="my_nick">나의 닉네임</p>
-                            </div>
-                            <div class="wrap_adop">
-                                <p>채택 횟수</p>
-                                <p>:</p>
-                                <p class="my_adop"></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="chat_area">
-                    </div>
-                    <div class="input_area">
-                        <div class="input_chat">
-                            <div class="emoticon_area">
-                                <img src="../img/emoticon1.png" alt="" class="emoticon">
-                                <img src="../img/emoticon2.png" alt="" class="emoticon">
-                                <img src="../img/emoticon3.png" alt="" class="emoticon">
-                                <img src="../img/emoticon4.png" alt="" class="emoticon">
-                                <img src="../img/emoticon5.png" alt="" class="emoticon">
-                                <img src="../img/emoticon6.png" alt="" class="emoticon">
-                                <img src="../img/emoticon7.png" alt="" class="emoticon">
-                                <img src="../img/emoticon8.png" alt="" class="emoticon">
-                                <img src="../img/emoticon9.png" alt="" class="emoticon">
-                                <img src="../img/emoticon10.png" alt="" class="emoticon">
-                            </div>
-                            <input type="text" class="text_content" placeholder="채팅 내용을 입력해주세요">
-                        </div>
-                        <div class="chat_func">
-                            <div class="wrap_send">
-                                <img src="../img/plus_btn.png" alt="">
-                                <img src="../img/emoticon_btn.png" alt="" class="emoticon_btn">
-                                <!-- <div class="wrap_number">
+              </div>
+              <div class="post_btn">
+                <button class="adopt_btn" data-room-id="0">채택하기</button>
+                <a href="" class="post_a"
+                  ><button class="view_btn" data-room-id="0">
+                    게시물 보기
+                  </button></a
+                >
+              </div>
+            </div>
+            <div class="user_infor">
+              <div class="other_infor">
+                <div class="wrap_nickName">
+                  <p class="nickName" id="other_nick">상대 닉네임</p>
+                </div>
+                <div class="wrap_adop">
+                  <p>채택 횟수</p>
+                  <p>:</p>
+                  <p class="other_adop"></p>
+                </div>
+              </div>
+              <div class="my_infor">
+                <div class="wrap_nickName">
+                  <p class="nickName" id="my_nick">나의 닉네임</p>
+                </div>
+                <div class="wrap_adop">
+                  <p>채택 횟수</p>
+                  <p>:</p>
+                  <p class="my_adop"></p>
+                </div>
+              </div>
+            </div>
+            <div class="chat_area"></div>
+            <div class="input_area">
+              <div class="input_chat">
+                <div class="emoticon_area">
+                  <img src="../img/emoticon1.png" alt="" class="emoticon" />
+                  <img src="../img/emoticon2.png" alt="" class="emoticon" />
+                  <img src="../img/emoticon3.png" alt="" class="emoticon" />
+                  <img src="../img/emoticon4.png" alt="" class="emoticon" />
+                  <img src="../img/emoticon5.png" alt="" class="emoticon" />
+                  <img src="../img/emoticon6.png" alt="" class="emoticon" />
+                  <img src="../img/emoticon7.png" alt="" class="emoticon" />
+                  <img src="../img/emoticon8.png" alt="" class="emoticon" />
+                  <img src="../img/emoticon9.png" alt="" class="emoticon" />
+                  <img src="../img/emoticon10.png" alt="" class="emoticon" />
+                </div>
+                <input
+                  type="text"
+                  class="text_content"
+                  placeholder="채팅 내용을 입력해주세요"
+                />
+              </div>
+              <div class="chat_func">
+                <div class="wrap_send">
+                  <img src="../img/plus_btn.png" alt="" />
+                  <img
+                    src="../img/emoticon_btn.png"
+                    alt=""
+                    class="emoticon_btn"
+                  />
+                  <!-- <div class="wrap_number">
                                     <p>0</p>
                                     <p class="char_num">/100</p>
                                 </div> -->
-                            </div>
-                            <div class="wrap_send_btn">
-                                <button class="send_btn">보내기</button>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+                <div class="wrap_send_btn">
+                  <button class="send_btn">보내기</button>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- js -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="../js/chat.js"></script>
-
-</body>
-
+  </body>
 </html>

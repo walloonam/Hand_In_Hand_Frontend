@@ -1,132 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- css -->
-    <link rel="stylesheet" href="../css/mypage.css">
+    <link rel="stylesheet" href="../css/mypage.css" />
 
     <title>손에 손 잡고</title>
 
     <!-- font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <nav class="nav_bar">
-        <div class="back_btn">
-            <a href="./home_login.html"><img src="../img/arrow.png" alt="" /></a>
-        </div>
-        <div class="logo_btn">
-            <a href="./home_login.html"><img src="../img/logo_2.png" alt="" class="logo_img" /></a>
-        </div>
-        <div class="nav_menu">
-            <ul>
-                <li class="mypage_li">
-                    마이 페이지
-                </li>
-                <li class="opacity_li">
-                    도움 해결하　기
-                </li>
-            </ul>
-        </div>
-        <div class="nav_chat">
-            <a href="../html/chat.html"><button class="chat_btn">채팅하기</button></a>
-        </div>
-        <div class="nav_logout">
-            <img src="../img/logout.png" alt="" />
-            <a href="./home_logout.html">로그아웃</a>
-        </div>
-        <div class="nav_mypage">
-            <img src="../img/mypage.png" alt="" /> 마이페이지
-        </div>
+      <div class="back_btn">
+        <a href="./home_login.html"><img src="../img/arrow.png" alt="" /></a>
+      </div>
+      <div class="logo_btn">
+        <a href="./home_login.html"
+          ><img src="../img/logo_2.png" alt="" class="logo_img"
+        /></a>
+      </div>
+      <div class="nav_menu">
+        <ul>
+          <li class="mypage_li">마이 페이지</li>
+          <li class="opacity_li">도움 해결하　기</li>
+        </ul>
+      </div>
+      <div class="nav_chat">
+        <a href="../html/chat.html"
+          ><button class="chat_btn">채팅하기</button></a
+        >
+      </div>
+      <div class="nav_logout">
+        <img src="../img/logout.png" alt="" />
+        <a href="./index.html">로그아웃</a>
+      </div>
+      <div class="nav_mypage">
+        <img src="../img/mypage.png" alt="" /> 마이페이지
+      </div>
     </nav>
     <hr />
 
     <section class="container">
-        <div class="back">
-            <div class="attend">
-                <div class="attend_text">
-                    <p>출석체크</p>
-                    <button class="attend_btn">출석하기</button>
-                </div>
-                <div class="attend_area">
-                    <div class="attend_day"></div>
-                    <div class="attend_day"></div>
-                    <div class="attend_day"></div>
-                    <div class="attend_day"></div>
-                    <div class="attend_day"></div>
+      <div class="back">
+        <div class="attend">
+          <div class="attend_text">
+            <p>출석체크</p>
+            <button class="attend_btn">출석하기</button>
+          </div>
+          <div class="attend_area">
+            <div class="attend_day"></div>
+            <div class="attend_day"></div>
+            <div class="attend_day"></div>
+            <div class="attend_day"></div>
+            <div class="attend_day"></div>
 
-                    <div class="attend_day"></div>
-                    <div class="attend_day"></div>
-                    <div class="attend_day"></div>
-                    <div class="attend_day"></div>
-                    <div class="attend_day"></div>
+            <div class="attend_day"></div>
+            <div class="attend_day"></div>
+            <div class="attend_day"></div>
+            <div class="attend_day"></div>
+            <div class="attend_day"></div>
 
-                    <div class="attend_day"></div>
-                    <div class="attend_day"></div>
-                    <div class="attend_day"></div>
-                    <div class="attend_day"></div>
-                    <div class="attend_day"></div>
+            <div class="attend_day"></div>
+            <div class="attend_day"></div>
+            <div class="attend_day"></div>
+            <div class="attend_day"></div>
+            <div class="attend_day"></div>
 
-                    <div class="attend_day"></div>
-                    <div class="attend_day"></div>
-                    <div class="attend_day"></div>
-                    <div class="attend_day"></div>
-                    <div class="attend_day"></div>
+            <div class="attend_day"></div>
+            <div class="attend_day"></div>
+            <div class="attend_day"></div>
+            <div class="attend_day"></div>
+            <div class="attend_day"></div>
 
-                    <div class="attend_day"></div>
-                    <div class="attend_day"></div>
-                    <div class="attend_day"></div>
-                    <div class="attend_day"></div>
-                    <div class="attend_day"></div>
-                </div>
-            </div>
-            <div class="user_infor">
-                <div class="infor_basic">
-                    <p class="infor_nick" id="content_nickname"></p>
-                    <p class="infor_point" id="content_point"></p>
-                </div>
-                <div class="infor_plus">
-                    <div class="list_area">
-                        <p>이　　름 :</p>
-                        <p>생년월일 :</p>
-                        <p>주　　소 :</p>
-                    </div>
-                    <div class="content_area">
-                        <p id="content_name">김멋사</p>
-                        <p id="content_birth">2002-03-22</p>
-                        <p id="content_area">어쩌구동</p>
-                    </div>
-                </div>
-                <div class="infor_func">
-                    <div class="region_area">
-                        <img src="../img/pin.png" alt="">
-                        <p id="func_area">지역이름</p>
-                    </div>
-                    <div class="post_area">
-                        <div class="adopt">
-                            <p class="adopt_times">채택횟수 :　</p>
-                            <p class="adopt_num">00회</p>
-                        </div>
-                        <a href="../html/my_post.html">
-                            <button class="post_btn">내가 쓴 게시물</button>
-                        </a>
-                    </div>
-                </div>
-                <a href="../html/modify.html"><button class="mod_btn">개인정보 수정하기</button></a>
-            </div>
+            <div class="attend_day"></div>
+            <div class="attend_day"></div>
+            <div class="attend_day"></div>
+            <div class="attend_day"></div>
+            <div class="attend_day"></div>
+          </div>
         </div>
+        <div class="user_infor">
+          <div class="infor_basic">
+            <p class="infor_nick" id="content_nickname"></p>
+            <p class="infor_point" id="content_point"></p>
+          </div>
+          <div class="infor_plus">
+            <div class="list_area">
+              <p>이　　름 :</p>
+              <p>생년월일 :</p>
+              <p>주　　소 :</p>
+            </div>
+            <div class="content_area">
+              <p id="content_name">김멋사</p>
+              <p id="content_birth">2002-03-22</p>
+              <p id="content_area">어쩌구동</p>
+            </div>
+          </div>
+          <div class="infor_func">
+            <div class="region_area">
+              <img src="../img/pin.png" alt="" />
+              <p id="func_area">지역이름</p>
+            </div>
+            <div class="post_area">
+              <div class="adopt">
+                <p class="adopt_times">채택횟수 :　</p>
+                <p class="adopt_num">00회</p>
+              </div>
+              <a href="../html/my_post.html">
+                <button class="post_btn">내가 쓴 게시물</button>
+              </a>
+            </div>
+          </div>
+          <a href="../html/modify.html"
+            ><button class="mod_btn">개인정보 수정하기</button></a
+          >
+        </div>
+      </div>
     </section>
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="../js/mypage.js"></script>
-
-</body>
-
+  </body>
 </html>
