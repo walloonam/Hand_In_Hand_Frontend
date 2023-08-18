@@ -1,3 +1,5 @@
+/*
+
 // const jwtToken = sessionStorage.getItem("jwtToken");
 
 const jwtToken = "6QjIlPiXHs13LLbvA2ufdlubYp3MtQxxzsDYvbJraccTZVpckiE6VSyqAwCmbFlZJKtuATon6bexCoxkDYxycHdxnLEkTAblqK0D";
@@ -106,14 +108,13 @@ $.ajax({
 })
 
 
-
+*/
 
 //////////////////////////////////
 
 
 
 
-/*
 // 출석체크
 
 const days = document.querySelectorAll('.attend_day');
@@ -185,6 +186,3 @@ $.getJSON(jsonLocation, function(data) {
     }
     showData();
 });
-
-
-*/

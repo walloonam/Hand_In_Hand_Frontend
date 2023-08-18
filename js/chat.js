@@ -22,6 +22,8 @@ const deleteAll = () => {
     document.querySelector('.my_adop').innerHTML = "";
 }
 
+var roomId = null;
+
 document.querySelector('.wrap_list').addEventListener('click', function(event) {
     if (event.target.classList.contains('profile_img') || event.target.classList.contains('infor') || event.target.classList.contains('image') || event.target.classList.contains('other_nick') || event.target.classList.contains('post')) {
         // 채팅창 선택
@@ -38,7 +40,7 @@ document.querySelector('.wrap_list').addEventListener('click', function(event) {
             data: JSON.stringify({ "token": jwtToken }),
             success: function(response) {
 
-                const roomId = event.target.getAttribute("data-room-id");
+                roomId = event.target.getAttribute("data-room-id");
                 const choice = event.target.getAttribute("choice");
 
                 let foundData = null;
@@ -515,70 +517,146 @@ document.querySelector('.emoticon_area').addEventListener('click', function(even
     }
 });
 
-const submit = () => {
+// 채팅 부분
 
-    const roomName = JSON.parse(document.getElementById('room-name').textContent);
+const my_id = sessionStorage.getItem("user_id");
 
-    const chatSocket = new WebSocket(
-        'ws://' +
-        window.location.host +
-        '/ws/chat/' +
-        roomName +
-        '/'
-    );
 
+$(document).ready(function() {
+    var chatSocket = new WebSocket(
+        'ws://' + '3.36.130.108:8080' + '/ws/chat/');
+
+    console.log(chatSocket)
+
+    chatSocket.onopen = function(event) {
+        // 웹소켓 연결이 확립되면 여기서 메시지를 보내거나 다른 동작을 처리할 수 있습니다.
+
+        // 예시: 메시지 보내기
+
+        var message = "Hello, WebSocket!";
+        chatSocket.send(message);
+        console.log(message);
+
+
+    };
+
+
+    chatSocket.onerror = function(event) { 
+        console.log(event);
+
+    }
     chatSocket.onmessage = function(e) {
-        const data = JSON.parse(e.data);
-        document.querySelector('#chat-log').value += (data.message + '\n');
-    };
+        var data = JSON.parse(e.data);
+        var content = data['content'];
+        var user_id = data['user_id'];
+        // var room_id = data['room_id']
+        console.log(data['content'])
+        console.log(roomId)
+        console.log(user_id)
+        if (data['user_id'] === my_id) {
+            var chat_area = document.querySelector('.chat_area');
+            let my_chat = document.createElement("div");
+            my_chat.setAttribute("class", "my_chat");
+            let my_p = document.createElement("p");
+            my_p.innerHTML = content;
 
-    chatSocket.onclose = function(e) {
-        console.error('Chat socket closed unexpectedly');
-    };
+            chat_area.appendChild(my_chat);
+            my_chat.appendChild(my_p);
 
-    document.querySelector('#chat-message-input').focus();
-    document.querySelector('#chat-message-input').onkeyup = function(e) {
-        if (e.key === 'Enter') { // enter, return
-            document.querySelector('#chat-message-submit').click();
+            $.ajax({
+                url: 'http://3.36.130.108:8080/api/chatting/create/chat/', //request 보낼 서버의 경로
+                type: 'post', // 메소드(get, post, put 등)
+                data: JSON.stringify({
+                    "content": content,
+                    "user_id": my_id,
+                    "room_id": roomId
+                }), //보낼 데이터
+                success: function(data) {
+                    //서버로부터 정상적으로 응답이 왔을 때 실행
+                },
+                error: function(xhr, textStatus, thrownError) {
+                    alert(
+                        "Could not send URL to Django. Error: " +
+                        xhr.status +
+                        ": " +
+                        xhr.responseText
+                    );
+                },
+            });
+        } else {
+            var chat_area = document.querySelector('.chat_area');
+            let other_chat = document.createElement("div");
+            other_chat.setAttribute("class", "other_chat");
+            let other_p = document.createElement("p");
+            other_p.innerHTML = content;
+
+            chat_area.appendChild(other_chat);
+            other_chat.appendChild(other_p);
         }
     };
 
-    document.querySelector('#chat-message-submit').onclick = function(e) {
-        const messageInputDom = document.querySelector('#chat-message-input');
-        const message = messageInputDom.value;
-        chatSocket.send(JSON.stringify({
-            'message': message
-        }));
-        messageInputDom.value = '';
+    chatSocket.onclose = function(e) {
+        console.log(e)
+        console.error('Chat socket closed unexpectedly');
     };
 
+    // document.querySelector('#writeChat').focus();
+    // document.querySelector('#writeChat').onkeyup = function(e) {
+    //     if (e.keyCode === 13) { // enter, return
+    //         document.querySelector('#chatGoBt').click();
+    //     }
+    // };
+
+    document.querySelector('.send_btn').onclick = function(e) {
+        var messageInputDom = document.querySelector('.text_content');
+        var content = messageInputDom.value;
+
+        console.log("my_id" + my_id);
+        console.log("content" + content);
+        console.log("roomId" + roomId);
 
 
-    /*
+        chatSocket.send(JSON.stringify({
+            "user_id": my_id,
+            'content': content,
+            "room_id": roomId
+        }));
 
-    var text_content = document.querySelector('.text_content');
-    var emoticon_area = document.querySelector('.emoticon_area');
-    var computedStyle = window.getComputedStyle(emoticon_area);
-    var displayValue = computedStyle.getPropertyValue("display");
+        messageInputDom.value = '';
 
-    var content_value = null;
+    };
+})
 
-    if (displayValue === 'flex') {
-        let checked = document.querySelector('.emoticon.checked');
-        content_value = checked.src;
-    } else {
-        content_value = text_content.value;
-
-    }
-
-    console.log(content_value);
-
-    */
-
-}
+// var roomName = {
+//     room_name_json
+// };
+// console.log(roomName)
 
 
 
+
+
+
+/*
+
+   var text_content = document.querySelector('.text_content');
+   var emoticon_area = document.querySelector('.emoticon_area');
+   var computedStyle = window.getComputedStyle(emoticon_area);
+   var displayValue = computedStyle.getPropertyValue("display");
+
+   var content_value = null;
+
+   if (displayValue === 'flex') {
+       let checked = document.querySelector('.emoticon.checked');
+       content_value = checked.src;
+   } else {
+       content_value = text_content.value;
+
+   }
+
+   console.log(content_value);
+
+   */
 
 ////////////////////////////////////
 
