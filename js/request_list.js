@@ -9,7 +9,7 @@ $(document).ready(function () {
       oncomplete: function (data) {
         var roadAddr = data.roadAddress; // 전체 도로명 주소
         var extraRoadAddr = ""; // 추가 주소 정보
-
+        console.log(data.sigungu);
         if (data.bname !== "" && /[동|로|가]$/g.test(data.bname)) {
           extraRoadAddr = data.bname;
         }
@@ -20,7 +20,7 @@ $(document).ready(function () {
         }
 
         var regionChoose = document.querySelector(".region_choose");
-        regionChoose.textContent = extraRoadAddr;
+        regionChoose.textContent = data.sigungu;
       },
     }).open();
   }

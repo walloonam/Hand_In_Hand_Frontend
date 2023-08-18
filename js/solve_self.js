@@ -20,7 +20,7 @@ $(document).ready(function () {
         }
 
         var regionChoose = document.querySelector(".region_choose");
-        regionChoose.textContent = extraRoadAddr;
+        regionChoose.textContent = data.sigungu;
       },
     }).open();
   }
