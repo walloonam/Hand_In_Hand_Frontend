@@ -262,6 +262,9 @@ hr {
     font-weight: 500;
     margin: 0;
     margin-top: 0.4rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .post_chat {
@@ -287,6 +290,9 @@ hr {
     font-weight: 500;
     margin: 0;
     margin-top: 0.4rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .post_content {
@@ -306,6 +312,9 @@ hr {
     margin: 0;
     margin-left: 1.03rem;
     margin-top: 1.19rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .wrap_num {

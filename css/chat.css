@@ -547,6 +547,7 @@ hr {
     height: 12.92rem;
     margin-top: 1.26rem;
     overflow: auto;
+    overflow-x: hidden;
 }
 
 .chat_area::-webkit-scrollbar {
@@ -560,6 +561,12 @@ hr {
 
 .chat_area p {
     padding: 1rem;
+}
+
+.chat_area img {
+    width: 10rem;
+    height: 10rem;
+    margin-left: 2.9rem;
 }
 
 .other_chat {
@@ -650,6 +657,7 @@ hr {
     color: #FFF;
     font-weight: 700;
     border: none;
+    display: none;
 }
 
 .send_btn:hover {

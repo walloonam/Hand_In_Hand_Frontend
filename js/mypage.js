@@ -1,8 +1,6 @@
-/*
+const jwtToken = sessionStorage.getItem("jwtToken");
 
-// const jwtToken = sessionStorage.getItem("jwtToken");
-
-const jwtToken = "6QjIlPiXHs13LLbvA2ufdlubYp3MtQxxzsDYvbJraccTZVpckiE6VSyqAwCmbFlZJKtuATon6bexCoxkDYxycHdxnLEkTAblqK0D";
+// const jwtToken = "6QjIlPiXHs13LLbvA2ufdlubYp3MtQxxzsDYvbJraccTZVpckiE6VSyqAwCmbFlZJKtuATon6bexCoxkDYxycHdxnLEkTAblqK0D";
 
 
 ////// 출석체크
@@ -108,12 +106,12 @@ $.ajax({
 })
 
 
-*/
+
 
 //////////////////////////////////
 
 
-
+/*
 
 // 출석체크
 
@@ -186,3 +184,5 @@ $.getJSON(jsonLocation, function(data) {
     }
     showData();
 });
+
+*/
