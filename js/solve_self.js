@@ -53,7 +53,7 @@ function reportCheck() {
   const jwtToken = sessionStorage.getItem("jwtToken");
   $.ajax({
     type: "POST",
-    url: "http://54.180.109.140:8080/api/user/info/",
+    url: "http://54.180.109.140/api/user/info/",
     contentType: "application/json",
     data: JSON.stringify({
       token: jwtToken,
@@ -104,7 +104,7 @@ $(document).ready(function () {
   if (requestId) {
     $.ajax({
       type: "GET",
-      url: "http://54.180.109.140:8080/api/post/" + requestId + "/",
+      url: "http://54.180.109.140/api/post/" + requestId + "/",
       contentType: "application/json",
       dataType: "json",
       success: function (secondResponse) {
@@ -163,7 +163,7 @@ function deleteCheck() {
   if (confirm("삭제하시겠습니까?")) {
     const requestId = sessionStorage.getItem("requestId");
     $.ajax({
-      url: "http://54.180.109.140:8080/api/post/delete/" + requestId + "/",
+      url: "http://54.180.109.140/api/post/delete/" + requestId + "/",
       method: "DELETE",
       dataType: "json",
       success: function (response) {
@@ -207,7 +207,7 @@ function modifyPost() {
   const requestId = sessionStorage.getItem("requestId");
 
   $.ajax({
-    url: "http://54.180.109.140:8080/api/post/update/" + requestId + "/",
+    url: "http://54.180.109.140/api/post/update/" + requestId + "/",
     method: "PUT",
     contentType: "application/json",
     data: JSON.stringify({
@@ -247,7 +247,7 @@ function userinfo_change(area) {
   console.log("이메일:", userEmail); // 확인용 로그
 
   $.ajax({
-    url: "http://54.180.109.140:8080/api/user/update_info_area/",
+    url: "http://54.180.109.140/api/user/update_info_area/",
     method: "POST",
     data: JSON.stringify({
       email: userEmail,
@@ -259,7 +259,7 @@ function userinfo_change(area) {
 
       $.ajax({
         type: "POST",
-        url: "http://54.180.109.140:8080/api/user/info/",
+        url: "http://54.180.109.140/api/user/info/",
         contentType: "application/json",
         data: JSON.stringify({
           token: jwtToken,

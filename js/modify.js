@@ -8,7 +8,7 @@ var nickname = "";
 
 $.ajax({
   type: "POST",
-  url: "http://54.180.109.140:8080/api/user/info/",
+  url: "http://54.180.109.140/api/user/info/",
   contentType: "application/json",
   data: JSON.stringify({ token: jwtToken }),
   success: function (response) {
@@ -52,7 +52,7 @@ $(".checkNick_btn").on("click", function () {
   const newNick = nickname_input.value;
   $.ajax({
     type: "POST",
-    url: "http://54.180.109.140:8080/api/user/check_nickname/",
+    url: "http://54.180.109.140/api/user/check_nickname/",
     contentType: "application/json",
     data: JSON.stringify({ nickname: newNick }),
     success: function (response) {
@@ -104,7 +104,7 @@ const submit = () => {
 
   $.ajax({
     type: "POST",
-    url: "http://54.180.109.140:8080/api/user/update_info/",
+    url: "http://54.180.109.140/api/user/update_info/",
     contentType: "application/json",
     data: JSON.stringify({
       email: email,
@@ -130,7 +130,7 @@ $(".withdraw_btn").on("click", function () {
   } else {
     $.ajax({
       type: "POST",
-      url: "http://54.180.109.140:8080/api/user/delete/user/",
+      url: "http://54.180.109.140/api/user/delete/user/",
       contentType: "application/json",
       data: JSON.stringify({ email: email }),
       success: function (response) {

@@ -52,7 +52,7 @@ function reportCheck() {
   const jwtToken = sessionStorage.getItem("jwtToken");
   $.ajax({
     type: "POST",
-    url: "http://54.180.109.140:8080/api/user/info/",
+    url: "http://54.180.109.140/api/user/info/",
     contentType: "application/json",
     data: JSON.stringify({
       token: jwtToken,
@@ -103,7 +103,7 @@ $(document).ready(function () {
   if (requestId) {
     $.ajax({
       type: "GET",
-      url: "http://54.180.109.140:8080/api/post/" + requestId + "/",
+      url: "http://54.180.109.140/api/post/" + requestId + "/",
       contentType: "application/json",
       dataType: "json",
       success: function (secondResponse) {
@@ -162,7 +162,7 @@ function reportCheck() {
   if (confirm("신고하시겠습니까?")) {
     const requestId = sessionStorage.getItem("requestId");
     $.ajax({
-      url: "http://54.180.109.140:8080/api/post/declare_post/" + requestId + "/",
+      url: "http://54.180.109.140/api/post/declare_post/" + requestId + "/",
       method: "PUT",
       dataType: "json",
       success: function (response) {
@@ -195,7 +195,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      url: "http://54.180.109.140:8080/api/user/logout/",
+      url: "http://54.180.109.140/api/user/logout/",
       data: JSON.stringify({
         token: jwtToken,
       }),
@@ -227,7 +227,7 @@ $(document).ready(function () {
     const requestId = sessionStorage.getItem("requestId");
     $.ajax({
       type: "POST",
-      url: "http://54.180.109.140:8080/api/chatting/create/room/",
+      url: "http://54.180.109.140/api/chatting/create/room/",
       data: JSON.stringify({
         token: jwtToken,
         post_id: requestId,

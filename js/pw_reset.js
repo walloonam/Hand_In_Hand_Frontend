@@ -47,7 +47,7 @@ function pw_reset() {
 
   $.ajax({
     type: "POST",
-    url: "http://54.180.109.140:8080/api/user/password_reset/",
+    url: "http://54.180.109.140/api/user/password_reset/",
     contentType: "application/json",
 
     data: JSON.stringify({

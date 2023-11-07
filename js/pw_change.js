@@ -9,7 +9,7 @@ const jwtToken = sessionStorage.getItem("jwtToken");
 
 $.ajax({
     type: 'POST',
-    url: 'http://54.180.109.140:8080/api/user/info/',
+    url: 'http://54.180.109.140/api/user/info/',
     contentType: 'application/json',
     data: JSON.stringify({ "token": jwtToken }),
     success: function(response) {
@@ -72,7 +72,7 @@ const submit = () => {
 const sendUpdateRequest = (updatedDate) => {
     $.ajax({
         type: 'POST',
-        url: 'http://54.180.109.140:8080/api/user/password_reset/',
+        url: 'http://54.180.109.140/api/user/password_reset/',
         contentType: 'application/json',
         data: JSON.stringify(updatedDate),
         success: function() {
