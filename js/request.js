@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const jwtToken = sessionStorage.getItem("jwtToken");
 $.ajax({
   type: "POST",
-  url: "http://3.36.130.108:8080/api/user/info/",
+  url: "http://54.180.109.140:8080/api/user/info/",
   contentType: "application/json",
   data: JSON.stringify({
     token: jwtToken,
@@ -130,7 +130,7 @@ function request() {
 
   $.ajax({
     type: "POST",
-    url: "http://3.36.130.108:8080/api/post/create/",
+    url: "http://54.180.109.140:8080/api/post/create/",
     contentType: "application/json",
     data: JSON.stringify({
       title: title,
@@ -165,7 +165,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      url: "http://3.36.130.108:8080/api/user/logout/",
+      url: "http://54.180.109.140:8080/api/user/logout/",
       data: JSON.stringify({
         token: jwtToken,
       }),
@@ -201,7 +201,7 @@ function userinfo_change(area) {
   console.log("이메일:", userEmail); // 확인용 로그
 
   $.ajax({
-    url: "http://3.36.130.108:8080/api/user/update_info_area/",
+    url: "http://54.180.109.140:8080/api/user/update_info_area/",
     method: "POST",
     data: JSON.stringify({
       email: userEmail,
@@ -213,7 +213,7 @@ function userinfo_change(area) {
 
       $.ajax({
         type: "POST",
-        url: "http://3.36.130.108:8080/api/user/info/",
+        url: "http://54.180.109.140:8080/api/user/info/",
         contentType: "application/json",
         data: JSON.stringify({
           token: jwtToken,

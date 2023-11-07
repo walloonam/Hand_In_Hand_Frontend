@@ -36,7 +36,7 @@ document
 
     $.ajax({
       type: "POST",
-      url: "http://3.36.130.108:8080/api/user/find_email/",
+      url: "http://54.180.109.140:8080/api/user/find_email/",
       contentType: "application/json",
       data: JSON.stringify({
         name: name_input,
@@ -71,7 +71,7 @@ function emailvalidation() {
 
   $.ajax({
     type: "POST",
-    url: "http:3.36.130.108:8080/api/user/emailvalidation/",
+    url: "http:54.180.109.140:8080/api/user/emailvalidation/",
     contentType: "application/json",
 
     data: JSON.stringify({
@@ -109,7 +109,7 @@ $(document).ready(function () {
 function emailValidation(email) {
   $.ajax({
     type: "POST",
-    url: "http://3.36.130.108:8080/api/user/emailvalidationP/",
+    url: "http://54.180.109.140:8080/api/user/emailvalidationP/",
     contentType: "application/json",
     data: JSON.stringify({
       email: email,
@@ -152,7 +152,7 @@ document
 function find_pw(id_input, certifiednum_input) {
   $.ajax({
     type: "POST",
-    url: "http://3.36.130.108:8080/api/user/check_code/",
+    url: "http://54.180.109.140:8080/api/user/check_code/",
     contentType: "application/json",
 
     data: JSON.stringify({

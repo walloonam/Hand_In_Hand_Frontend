@@ -10,7 +10,7 @@ const jwtToken = sessionStorage.getItem("jwtToken");
 
 $.ajax({
     type: 'POST',
-    url: 'http://3.36.130.108:8080/api/post/my_post/',
+    url: 'http://54.180.109.140:8080/api/post/my_post/',
     contentType: 'application/json',
     data: JSON.stringify({ "token": jwtToken }),
     success: function(response) {

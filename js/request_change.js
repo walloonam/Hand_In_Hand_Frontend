@@ -69,7 +69,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      url: "http://3.36.130.108:8080/api/user/logout/",
+      url: "http://54.180.109.140:8080/api/user/logout/",
       data: JSON.stringify({
         token: jwtToken,
       }),

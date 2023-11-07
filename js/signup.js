@@ -20,7 +20,7 @@ $(document).ready(function () {
   function checkEmailAvailability(email) {
     $.ajax({
       type: "POST",
-      url: "http://3.36.130.108:8080/api/user/check_email/",
+      url: "http://54.180.109.140:8080/api/user/check_email/",
       contentType: "application/json",
       data: JSON.stringify({
         email: email,
@@ -81,7 +81,7 @@ $("#nickname_check_button").click(function () {
 function checkNicknameAvailability(nickname) {
   $.ajax({
     type: "POST",
-    url: "http://3.36.130.108:8080/api/user/check_nickname/",
+    url: "http://54.180.109.140:8080/api/user/check_nickname/",
     contentType: "application/json",
     data: JSON.stringify({
       nickname: nickname,
@@ -166,7 +166,7 @@ $(document).ready(function () {
 
     $.ajax({
       type: "POST",
-      url: "http://3.36.130.108:8080/api/user/",
+      url: "http://54.180.109.140:8080/api/user/",
       contentType: "application/json",
       data: JSON.stringify({
         email: email,
@@ -201,7 +201,7 @@ $(document).ready(function () {
   function emailvalidation(email) {
     $.ajax({
       type: "POST",
-      url: "http://3.36.130.108:8080/api/user/emailvalidation/",
+      url: "http://54.180.109.140:8080/api/user/emailvalidation/",
       contentType: "application/json",
       data: JSON.stringify({
         email: email,

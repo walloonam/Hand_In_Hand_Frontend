@@ -36,7 +36,7 @@ document.querySelector('.wrap_list').addEventListener('click', function(event) {
 
         $.ajax({
             type: 'POST',
-            url: 'http://3.36.130.108:8080/api/chatting/',
+            url: 'http://54.180.109.140:8080/api/chatting/',
             contentType: 'application/json',
             data: JSON.stringify({ "token": jwtToken }),
             success: function(response) {
@@ -214,7 +214,7 @@ document.querySelector('.wrap_list').addEventListener('click', function(event) {
 
             $.ajax({
                 type: 'DELETE',
-                url: 'http://3.36.130.108:8080/api/chatting/delete/' + roomId + '/',
+                url: 'http://54.180.109.140:8080/api/chatting/delete/' + roomId + '/',
                 contentType: 'application/json',
                 success: function(response) {
                     console.log(response);
@@ -253,7 +253,7 @@ document.querySelector('.post_btn').addEventListener('click', function(event) {
             } else {
                 $.ajax({
                     type: 'POST',
-                    url: 'http://3.36.130.108:8080/api/chatting/choice/',
+                    url: 'http://54.180.109.140:8080/api/chatting/choice/',
                     contentType: 'application/json',
                     data: JSON.stringify({ "room_id": roomId }),
                     success: function(response) {
@@ -297,7 +297,7 @@ document.querySelector('.post_btn').addEventListener('click', function(event) {
 
 $.ajax({
     type: 'POST',
-    url: 'http://3.36.130.108:8080/api/user/info/',
+    url: 'http://54.180.109.140:8080/api/user/info/',
     contentType: 'application/json',
     data: JSON.stringify({ "token": jwtToken }),
     success: function(response) {
@@ -326,7 +326,7 @@ const showMain = () => {
     document.querySelector('.view_btn').setAttribute("data-room-id", 0);
     $.ajax({
         type: 'POST',
-        url: 'http://3.36.130.108:8080/api/chatting/',
+        url: 'http://54.180.109.140:8080/api/chatting/',
         contentType: 'application/json',
         data: JSON.stringify({ "token": jwtToken }),
         success: function(response) {
@@ -422,7 +422,7 @@ switchMonthly.onclick = () => {
 const showSub = () => {
     $.ajax({
         type: 'POST',
-        url: 'http://3.36.130.108:8080/api/chatting/',
+        url: 'http://54.180.109.140:8080/api/chatting/',
         contentType: 'application/json',
         data: JSON.stringify({ "token": jwtToken }),
         success: function(response) {
@@ -556,7 +556,7 @@ const my_id = sessionStorage.getItem("user_id");
 
 $(document).ready(function() {
     var chatSocket = new WebSocket(
-        'ws://' + '3.36.130.108:8080' + '/ws/chat/');
+        'ws://' + '54.180.109.140:8080' + '/ws/chat/');
 
     console.log(chatSocket)
 
@@ -602,7 +602,7 @@ $(document).ready(function() {
             my_chat.appendChild(my_p);
 
             $.ajax({
-                url: 'http://3.36.130.108:8080/api/chatting/create/chat/', //request 보낼 서버의 경로
+                url: 'http://54.180.109.140:8080/api/chatting/create/chat/', //request 보낼 서버의 경로
                 type: 'post', // 메소드(get, post, put 등)
                 data: JSON.stringify({
                     "content": content,
